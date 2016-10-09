@@ -8,7 +8,6 @@ email: 1254155232@qq.com
 description: Beace Blog
 url: "https://beace.github.io" # the base hostname & protocol for your site
 
-<<<<<<< HEAD
 
 #
 ###################################
@@ -68,8 +67,7 @@ owner:
   flickr: #username
   500px: #username
   codepen: #username
-=======
+
 # Build settings
 markdown: kramdown
 theme: leonids
->>>>>>> 9cfbf8a5c1c581f193ace9347b1fdf8e8c71a731
