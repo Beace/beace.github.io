@@ -3,10 +3,10 @@
 # Site wide configuration
 ####################################
 #
-title: Leonids
-email:
-description: A simple and awesome blog theme powered by jekyll.
-url: # the base hostname & protocol for your site
+title: Beace
+email: 1254155232@qq.com
+description: Not just for recording,it's about growing.
+url: https://beace.github.io # the base hostname & protocol for your site
 
 
 #
@@ -33,13 +33,13 @@ kramdown:
 ####################################
 #
 owner:
-  name: Leonids
+  name: Beace
   avatar: leonids-logo.png
-  job: "A jekyll theme"
-  bio: "A simple and awesome blog theme powered by jekyll."
+  job: "FontEnd Developer"
+  bio: "Not just for recording,it's about growing."
   email:
   disqus-shortname:
-  twitter: #username
+  twitter: beaceshimin
   facebook: #username
   google:
     plus: #username
@@ -48,7 +48,7 @@ owner:
     ad-client:
     ad-slot:
   bing-verify:
-  github: #username
+  github: BeAce
   gitlab: #username
   stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
   linkedin: #username
