@@ -17,7 +17,7 @@ title: Beace Blog
 email: 1254155232@qq.com
 description: > # this means to ignore newlines until "baseurl:"
   beace,BeAce,Beace blog,beace的博客，前端开发，前端学习记录，前端问题以及解决方法
-baseurl: "https://beace.github.io/page" # the subpath of your site, e.g. /blog
+#baseurl: "https://beace.github.io/page" # the subpath of your site, e.g. /blog
 url: "https://beace.github.io" # the base hostname & protocol for your site
 twitter_username: beaceshimin
 github_username:  BeAce
