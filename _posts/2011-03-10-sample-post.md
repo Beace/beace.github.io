@@ -1,99 +1,57 @@
----
-layout: post
-title: Sample Post
-excerpt: "Just about everything you'll need to style in the theme: headings, paragraphs, blockquotes, tables, code blocks, and more."
-categories: [hello world]
-comments: true
-image:
-  feature: https://images.unsplash.com/photo-1440635592348-167b1b30296f?crop=entropy&dpr=2&fit=crop&fm=jpg&h=475&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1250
-  credit: thomas shellberg
-  creditlink: https://unsplash.com/photos/Ki0dpxd3LGc
----
+### Who am I
+**虽然我接触前端已经有将近两年半的时间，但是我还是不敢自诩为一名合格的前端开发工程师。于是我找了一个名词来形容我自己的状态--初级前端开发者。之所以写这篇文章，是想抒发一下对如日中天的微信的感慨。** 
+### 小白入门 Hello World
+刚刚接触前端之前，我还在写`C`和`C++`，还在为`C`语言实现一个回文序列而着急忙慌、捉襟见肘，提到结构体，指针更是一塌糊涂。后来学到`JAVA`，`JAVAEE`，才对一年之前的程序有所认知。更让人惭愧的是，很久之前的一个面试官问我，冒泡排序的复杂度，我犹豫半天，说`n吧`，至今想想，真是羞愧难当。我承认，选择前端是因为有预料到人才市场的短缺以及其学习的难易程度。但是没有想到到前端如今如此膨胀。
 
-## HTML Elements
+<!--more-->
 
-Below is just about everything you'll need to style in the theme. Check the source code to see the many embedded elements within paragraphs.
+> 在整个学习和不断成长的过程中，我是始终是被潮流推着走的。
 
-# Heading 1
+### Follow the New World
+`web`前端将要火的时候，有一个预兆。在线教育的飞速发展。那个时候突然有一个腾讯课堂的出现，我在一次qq弹出的小框里偶尔注意到一位女老师正在线上写代码，好奇的我打开了链接，听了下去。没想到一发不可收拾，就一直连续听了几个月。由于是免费教学，讲的内容都会留白，不会把核心的东西告诉你，但越是她不讲，我越好奇。便慢慢开始从图书馆借书，开始学习了前端。
 
-## Heading 2
+大概学了几个月之后就开始着手做小项目，那时候好像外包很火，也有几个创业的同学和学校的项目给的机会，做基础页面。代码都是东拼西凑，一遍查一边写，那时候还不懂得科学上网，只是恨透了百度经验。
 
-### Heading 3
+### The little guy
+大学时候，学校强制实习。不实习没有学分，不能毕业。那时候硬着头皮找啊找，先在宜信做了一些数据上的东西，后来在一家做`webapp`的公司实习了不到两个月的时间。那是我第一次对`app`有了基本的认知。突然感觉前端的知识好强大，算是没有选错这条道路。
 
-#### Heading 4
+当自己学的慢慢多起来的时候，就想着要做些总结的东西来回顾。当问题反复出现自己又忘记解决方案的时候，希望能够快速复习。于是想搭建博客，可是我只会前端，不懂后端。
 
-##### Heading 5
+### PHP
+于是乎，又与`PHP`有了不解之缘。当时的做法简单，了解到了`WordPress`这一神器，还好那时候对`SQL`还比较感冒，没有在表上费过很大劲。
 
-###### Heading 6
+`WordPress`官网在国内访问，速度就像没有翻墙访问`Google`一样。但是还好通过国内某些镜像，最终还是可以实现的。
 
-### Body text
+### Github
+当我在本地搞好一切的时候，想着，如何能够让别人看的到我的东西，我是不是该拥有一个自己的域名，自己的虚拟主机。迫于经济上的压力，舍不得买阿里云，通过舍友的介绍，用了免费的新浪`SAE`，这时候我第一次接触到了`Git`，也是在那一年，注册了`github`。把之前的一些不忍直视的代码，一股脑放了进去。
 
-Lorem ipsum dolor sit amet, test link adipiscing elit. **This is strong**. Nullam dignissim convallis est. Quisque aliquam.
+### Bigger
+毕业前的最后一次实习，是我成长最快，收获最多，也是最迷茫的一个阶段。那时候用的企业QQ，看到自己的职位被标注了`web前端开发工程师`，还挺洋洋得意。现在想想，简直就是渣渣。`AngularJS`很火，`Node`很火，`微信开发`很火，`React`还好。我不知道该学什么。有时候迷茫的时候就去招聘网上看看前端工程师的要求，每次注意的都是最下面写的“加分项”，往往是“了解一门后端语言，熟悉某种框架”。突然感觉自己好像什么都不了解。不能落伍！于是开始学习`Node`，开始尝试用`Node`去开发微信，开始尝试用`Angular`去做一些炫酷的应用，开始舍得去买一台机器，买一个域名，装一个证书。我很感激当时指导我的leader，在我的成长上给予了莫大的帮助，给我留下了深刻的印象。
 
-![Smithsonian Image](https://images.unsplash.com/photo-1440635592348-167b1b30296f?crop=entropy&dpr=2&fit=crop&fm=jpg&h=475&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1250)
-{: .pull-right}
+终于到了毕业设计，我想，如果这次不大干一场，工作之后就再也没有时间了。于是，我决定，把我所了解的，目前流行的框架,语言和数据库，全部用上。`Angular`,`node`,`Ionic`,`Cordova`,`MongoDB`......
 
-*This is emphasized*. Donec faucibus. Nunc iaculis suscipit dui. 53 = 125. Water is H2O. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. The New York Times (That’s a citation). Underline.Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
+### New life
+当来到北京，又开始了`react`之旅.....
 
-HTML and CSS are our tools. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus.
+### Summary
+**可是，回头想想，我一直被流行推着往前走，好像没有驻足的时间和余地。**
 
-### Blockquotes
+`FE`火了，我去学`FE`；
 
-> Lorem ipsum dolor sit amet, test link adipiscing elit. Nullam dignissim convallis est. Quisque aliquam.
+`angular`火了，我去学`angular`；
 
-## List Types
+`node`火了，我去学`node`；
 
-### Ordered Lists
+`Ionic`火了，我去学`Ionic`；
 
-1. Item one
-   1. sub item one
-   2. sub item two
-   3. sub item three
-2. Item two
+`微信开发`火了，我去学`微信开发`；
 
-### Unordered Lists
+`HTML5火了`，我并没有着急。
 
-* Item one
-* Item two
-* Item three
+> 我很想有那么一段时间，去看一本书，去看里面每一个字和术语的含义,去认知别人没有领悟到的一些知识，去写一些能够真正启发自己的文章。可是到现在，我还没有真正意义上的看完一本`JavaScript`，《锋利的`jQuery`》倒是看过很多遍（因为很薄）。
 
-## Tables
+这也是我不敢说我是一名合格的前端开发工程师的原因。
 
-| Header 1 | Header 2 | Header 3 |
-|:--------|:-------:|--------:|
-| cell 1   | cell 2   | cell 3   |
-| cell 4   | cell 5   | cell 6   |
-|----
-| cell 1   | cell 2   | cell 3   |
-| cell 4   | cell 5   | cell 6   |
-|=====
-| Foot 1   | Foot 2   | Foot 3   |
+**我并不是对代码产生了厌倦，而是我足够热爱，却不能欣赏。**
 
-## Code Snippets
-
-{% highlight css %}
-#container {
-  float: left;
-  margin: 0 -240px 0 0;
-  width: 100%;
-}
-{% endhighlight %}
-
-## Buttons
-
-Make any link standout more when applying the `.btn` class.
-
-{% highlight html %}
-<a href="#" class="btn btn-success">Success Button</a>
-{% endhighlight %}
-
-<div markdown="0"><a href="#" class="btn">Primary Button</a></div>
-<div markdown="0"><a href="#" class="btn btn-success">Success Button</a></div>
-<div markdown="0"><a href="#" class="btn btn-warning">Warning Button</a></div>
-<div markdown="0"><a href="#" class="btn btn-danger">Danger Button</a></div>
-<div markdown="0"><a href="#" class="btn btn-info">Info Button</a></div>
-
-## Notices
-
-**Watch out!** You can also add notices by appending `{: .notice}` to a paragraph.
-{: .notice}
+而如今微信又开始大红大紫，刚刚验证完这个`signature`的我,又要开始新的旅程。希望，这是一趟绿皮车，在等车变轨之前，有时间停留下来，看看沿途的风景。
