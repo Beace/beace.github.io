@@ -2,7 +2,7 @@
 layout: post
 title:  "XMLHttpRequest and JSON-Server"
 date:   2016-10-29 16:55:15 +0800
-categories: jekyll update
+categories: posts
 ---
 
 ## 前提
@@ -32,7 +32,8 @@ $ npm install -g json-server
 ### [json-server](https://github.com/typicode/json-server)的启动
 
 在启动之前，先来伪造一些数据。新建一个`json`文件，命名为`/db.json`,添加以下数据：
-```json
+
+```
 {
   "getArticle": [
     {
@@ -74,17 +75,21 @@ $ json-server /path/to/db.json
 可以通过POSTMAN来进行测试,效果如下诸多截图。
 
 获取数据
+
 ![img](https://images-manager.oss-cn-shanghai.aliyuncs.com/static/json-server/json-server-postman.png)
 
 通过`id`获取数据
+
 ![img](https://images-manager.oss-cn-shanghai.aliyuncs.com/static/json-server/json-server-postman-delete.png)
 
 
 `POST`数据
+
 ![img](https://images-manager.oss-cn-shanghai.aliyuncs.com/static/json-server/json-server-postman-post.png)
 
 
 `DELETE`数据
+
 ![img](https://images-manager.oss-cn-shanghai.aliyuncs.com/static/json-server/json-server-postman-delete.png)
 
 一系列操作之后 ，回到`/db.json`中会发现数据发生了改变。
