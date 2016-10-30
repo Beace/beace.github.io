@@ -65,7 +65,7 @@ $ json-server /path/to/db.json
 
 我们可以访问[http://localhost:3000/getArticle](http://localhost:3000/getArticle),来看到服务返回的`json`信息。(当然，可也以访问[http://localhost:3000/postArticle](http://localhost:3000/postArticle)，总之既定规则由你来决定)
 
-![json-server-return](http://images-manager.oss-cn-shanghai.aliyuncs.com/static/json-server/json-server-get.png)
+![json-server-return](https://images-manager.oss-cn-shanghai.aliyuncs.com/static/json-server/json-server-get.png)
 
 ### POSTMAN测试
 
