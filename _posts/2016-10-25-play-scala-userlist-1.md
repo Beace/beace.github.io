@@ -16,6 +16,7 @@ categories: posts
 
 [更多效果](https://github.com/BeAce/scala-and-playframework-userlist)
 
+<!-- excerpt -->
 ## 前提
 - 必须具有`java`开发环境
 
