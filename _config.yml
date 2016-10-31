@@ -22,6 +22,8 @@ url: "https://beace.github.io" # the base hostname & protocol for your site
 twitter_username: beaceshimin
 github_username:  BeAce
 
+excerpt_separator: <!--more-->
 # Build settings
 markdown: kramdown
 theme: minima
+
