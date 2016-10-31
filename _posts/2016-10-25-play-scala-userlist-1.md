@@ -62,4 +62,4 @@ $ activator new
 ```
 `play`会让你选择你想要的模板，模板列表如下：
 
-![img](http://images-manager.oss-cn-shanghai.aliyuncs.com/static/play-scala-userlist/play-scala-1.jpg)
+![img](https://images-manager.oss-cn-shanghai.aliyuncs.com/static/play-scala-userlist/play-scala-1.jpg)
