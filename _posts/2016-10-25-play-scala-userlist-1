@@ -1,5 +1,11 @@
 # play framework-scala项目搭建
 
+---
+layout: post
+title:  "play framework-scala项目搭建"
+categories: posts
+---
+
 [toc]
 ## 需求
 - 为了更好更快更有趣味地学习`scala`这门编程语言，结合`play framework`在实际开发场景中的运用，目标建立一个简单的用户列表的`RSAD`（read，search，add，delete）系统。特别记录此次学习过程。
