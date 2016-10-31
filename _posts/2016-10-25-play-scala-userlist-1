@@ -1,0 +1,65 @@
+---
+layout: post
+title:  "play framework-scala项目搭建"
+categories: posts
+---
+# play framework-scala项目搭建
+
+[toc]
+## 需求
+- 为了更好更快更有趣味地学习`scala`这门编程语言，结合`play framework`在实际开发场景中的运用，目标建立一个简单的用户列表的`RSAD`（read，search，add，delete）系统。特别记录此次学习过程。
+
+- [代码托管](https://github.com/BeAce/scala-and-playframework-userlist)
+
+### 效果
+![img](https://camo.githubusercontent.com/5ee38df9cb5155b2d6f2bad5207b65482de1929a/687474703a2f2f696d616765732d6d616e616765722e6f73732d636e2d7368616e676861692e616c6979756e63732e636f6d2f7374617469632f757365726c6973742e706e67)
+
+[更多效果](https://github.com/BeAce/scala-and-playframework-userlist)
+
+## 前提
+- 必须具有`java`开发环境
+
+- `eclipse`或`intellij`IDE
+
+- `mysql 5.6`版本
+
+- 该项目所有操作均是在`MAC OSX`上操作，不同操作系统本质相同，操作会略有差异
+
+
+包含以下知识点：
+
+
+- 下载`Activator`
+
+- 配置环境变量
+
+- 命令行中生成第一个`Play`项目
+
+
+## 下载`Activator`
+
+可以通过，`playframework`[官网下载离线环境](https://playframework.com/download),点击`offline distribution`下载。
+
+## 环境变量
+
+在`$HOME/.profile`中写入`activator`路径,并写入权限
+
+```
+export PATH=/path/to/activator-x.x.x/bin:$PATH
+```
+
+## 生成第一个`Play`项目
+
+通过命令，分别指定了项目名称，与项目模板。
+
+```
+$ activator new my-first-app play-scala
+```
+在此我用的是`play`的`scala`模板，也可以使用`play-java`.当使用命令：
+
+```
+$ activator new
+```
+`play`会让你选择你想要的模板，模板列表如下：
+
+![img](http://images-manager.oss-cn-shanghai.aliyuncs.com/static/play-scala-userlist/play-scala-1.jpg)
