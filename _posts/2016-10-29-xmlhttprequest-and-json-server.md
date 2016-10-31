@@ -2,6 +2,7 @@
 layout: post
 title:  "XMLHttpRequest and JSON-Server"
 date:   2016-10-29 16:55:15 +0800
+comments: true
 categories: posts
 ---
 
