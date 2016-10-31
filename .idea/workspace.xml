@@ -38,8 +38,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
+            <state relative-caret-position="273">
+              <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -49,13 +49,13 @@
         <entry file="file://$PROJECT_DIR$/_posts/2016-10-29-xmlhttprequest-and-json-server.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="180">
-                <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+              <first_editor relative-caret-position="72">
+                <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
                 <folding>
-                  <marker date="1477883423000" expanded="true" signature="2322:2349" ph="{...}" />
-                  <marker date="1477883423000" expanded="true" signature="2383:2645" ph="{...}" />
-                  <marker date="1477883423000" expanded="true" signature="2500:2618" ph="{...}" />
-                  <marker date="1477883423000" expanded="true" signature="2545:2612" ph="{...}" />
+                  <marker date="1477884596000" expanded="true" signature="2337:2364" ph="{...}" />
+                  <marker date="1477884596000" expanded="true" signature="2398:2660" ph="{...}" />
+                  <marker date="1477884596000" expanded="true" signature="2515:2633" ph="{...}" />
+                  <marker date="1477884596000" expanded="true" signature="2560:2627" ph="{...}" />
                 </folding>
               </first_editor>
               <second_editor />
@@ -89,8 +89,8 @@
         <option value="$PROJECT_DIR$/about.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/_config.yml" />
-        <option value="$PROJECT_DIR$/_posts/2016-10-29-xmlhttprequest-and-json-server.md" />
         <option value="$PROJECT_DIR$/_posts/2016-10-29-welcome-to-jekyll.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2016-10-29-xmlhttprequest-and-json-server.md" />
         <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
@@ -295,12 +295,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1477882869941</updated>
-      <workItem from="1477882871632" duration="1207000" />
+      <workItem from="1477882871632" duration="1412000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1207000" />
+    <option name="totallyTimeSpent" value="1412000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="23" width="1373" height="877" extended-state="6" />
@@ -367,22 +367,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2016-10-29-xmlhttprequest-and-json-server.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="180">
-            <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-            <folding>
-              <marker date="1477883423000" expanded="true" signature="2322:2349" ph="{...}" />
-              <marker date="1477883423000" expanded="true" signature="2383:2645" ph="{...}" />
-              <marker date="1477883423000" expanded="true" signature="2500:2618" ph="{...}" />
-              <marker date="1477883423000" expanded="true" signature="2545:2612" ph="{...}" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2016-10-29-welcome-to-jekyll.markdown">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -391,10 +375,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2016-10-29-xmlhttprequest-and-json-server.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="72">
+            <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+            <folding>
+              <marker date="1477884596000" expanded="true" signature="2337:2364" ph="{...}" />
+              <marker date="1477884596000" expanded="true" signature="2398:2660" ph="{...}" />
+              <marker date="1477884596000" expanded="true" signature="2515:2633" ph="{...}" />
+              <marker date="1477884596000" expanded="true" signature="2560:2627" ph="{...}" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
+        <state relative-caret-position="273">
+          <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
           <folding />
         </state>
       </provider>
