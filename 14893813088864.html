@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  beace lee的博客
+  json-server and xmlhttprequest - beace lee的博客
   
   </title>
   
@@ -92,23 +92,36 @@
        
 
  <script type="text/javascript">
-	$(function(){
-		$('#menu_item_index').addClass('is_active');
-	});
+  $(function(){
+    $('#menu_item_index').addClass('is_active');
+  });
 </script>
 <div class="row">
-	<div class="large-8 medium-8 columns">
-		<div class="markdown-body home-categories">
-		
-			<div class="article">
-                <a class="clearlink" href="14893813088864.html">
-                
-                  <h1>json-server and xmlhttprequest</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">前提</h2>
+  <div class="large-8 medium-8 columns">
+      <div class="markdown-body article-wrap">
+       <div class="article">
+          
+          <h1>json-server and xmlhttprequest</h1>
+     
+        <div class="read-more clearfix">
+          <span class="date">2017/3/13 13:1 下午</span>
+
+          <span>posted in&nbsp;</span> 
+          
+              <span class="posted-in"><a href='json-server.html'>json-server</a></span>
+           
+         
+          <span class="comments">
+            
+
+            
+          </span>
+
+        </div>
+      </div><!-- article -->
+
+      <div class="article-content">
+      <h2 id="toc_0">前提</h2>
 
 <p>在很多时候，前端程序员往往较早一步实现页面逻辑，后端程序员由于需要联调、掌握业务逻辑，消耗的时间比较长一点。那前端为了等后端程序员开发完成之后，<code>API</code>能够通过直接修改<code>URL</code>来对接，就需要伪造一些数据，但是，大部分情况而言，伪造的数据都是不变的。前端脚本不可能用来实现对数据的增删该查。但是，昨天意外发现一个工具——<a href="https://github.com/typicode/json-server">json-server</a>,可以帮助前端程序员来解决页面逻辑控制的痛点。下面我通过一个简单的增删改查的例子来进行记录。</p>
 
@@ -230,136 +243,40 @@ $ http-server<br/>
 </code><br/>
 打开浏览器，进入<a href="http://localhost:8080">http://localhost:8080</a>.</p>
 
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2017/3/13 13:1 下午</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='json-server.html'>json-server</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
 
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="14893812500035.html">
-                
-                  <h1>Scala && Playframework user-list-demo</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">需求</h2>
+    
 
-<ul>
-<li><p>为了更好更快更有趣味地学习<code>scala</code>这门编程语言，结合<code>play framework</code>在实际开发场景中的运用，目标建立一个简单的用户列表的<code>RSAD</code>（read，search，add，delete）系统。特别记录此次学习过程。</p></li>
-<li><p><a href="https://github.com/BeAce/scala-and-playframework-userlist">代码托管</a></p></li>
-</ul>
+      </div>
 
-<h3 id="toc_1">效果</h3>
+      <div class="row">
+        <div class="large-6 columns">
+        <p class="text-left" style="padding:15px 0px;">
+      
+        </p>
+        </div>
+        <div class="large-6 columns">
+      <p class="text-right" style="padding:15px 0px;">
+      
+          <a  href="14893812500035.html" 
+          title="Next Post: Scala && Playframework user-list-demo">Scala && Playframework user-list-demo &raquo;</a>
+      
+      </p>
+        </div>
+      </div>
+      <div class="comments-wrap">
+        <div class="share-comments">
+          
 
-<p><img src="https://camo.githubusercontent.com/5ee38df9cb5155b2d6f2bad5207b65482de1929a/687474703a2f2f696d616765732d6d616e616765722e6f73732d636e2d7368616e676861692e616c6979756e63732e636f6d2f7374617469632f757365726c6973742e706e67" alt="img"/></p>
+          
 
-<p><a href="https://github.com/BeAce/scala-and-playframework-userlist">更多效果</a></p>
-
-<!-- excerpt -->
-
-<h2 id="toc_2">前提</h2>
-
-<ul>
-<li><p>必须具有<code>java</code>开发环境</p></li>
-<li><p><code>eclipse</code>或<code>intellij</code>IDE</p></li>
-<li><p><code>mysql 5.6</code>版本</p></li>
-<li><p>该项目所有操作均是在<code>MAC OSX</code>上操作，不同操作系统本质相同，操作会略有差异</p></li>
-</ul>
-
-<p>包含以下知识点：</p>
-
-<ul>
-<li><p>下载<code>Activator</code></p></li>
-<li><p>配置环境变量</p></li>
-<li><p>命令行中生成第一个<code>Play</code>项目</p></li>
-</ul>
-
-<h2 id="toc_3">下载<code>Activator</code></h2>
-
-<p>可以通过，<code>playframework</code><a href="https://playframework.com/download">官网下载离线环境</a>,点击<code>offline distribution</code>下载。</p>
-
-<h2 id="toc_4">环境变量</h2>
-
-<p>在<code>$HOME/.profile</code>中写入<code>activator</code>路径,并写入权限</p>
-
-<pre><code>export PATH=/path/to/activator-x.x.x/bin:$PATH
-</code></pre>
-
-<h2 id="toc_5">生成第一个<code>Play</code>项目</h2>
-
-<p>通过命令，分别指定了项目名称，与项目模板。</p>
-
-<pre><code>$ activator new my-first-app play-scala
-</code></pre>
-
-<p>在此我用的是<code>play</code>的<code>scala</code>模板，也可以使用<code>play-java</code>.当使用命令：</p>
-
-<pre><code>$ activator new
-</code></pre>
-
-<p><code>play</code>会让你选择你想要的模板，模板列表如下：</p>
-
-<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/play-scala-userlist/play-scala-1.jpg" alt="img"/></p>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2017/3/13 13:0 下午</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='scala.html'>scala</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-              
+          
+        </div>
+      </div>
+    </div><!-- article-wrap -->
+  </div><!-- large 8 -->
 
 
-			<div class="row">
-			  <div class="large-6 columns">
-			  <p class="text-left" style="padding-top:25px;">
-			   
-			  </p>
-			  </div>
-			  <div class="large-6 columns">
-			<p class="text-right" style="padding-top:25px;">
-			
-			</p>
-			  </div>
-			</div>
-		</div>
-	</div><!-- large 8 -->
+
 
  <div class="large-4 medium-4 columns">
   <div class="hide-for-small">
