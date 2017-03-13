@@ -112,123 +112,6 @@
 
 <p>在很多时候，前端程序员往往较早一步实现页面逻辑，后端程序员由于需要联调、掌握业务逻辑，消耗的时间比较长一点。那前端为了等后端程序员开发完成之后，<code>API</code>能够通过直接修改<code>URL</code>来对接，就需要伪造一些数据，但是，大部分情况而言，伪造的数据都是不变的。前端脚本不可能用来实现对数据的增删该查。但是，昨天意外发现一个工具——<a href="https://github.com/typicode/json-server">json-server</a>,可以帮助前端程序员来解决页面逻辑控制的痛点。下面我通过一个简单的增删改查的例子来进行记录。</p>
 
-<!-- excerpt -->
-
-<h3 id="toc_1">知识点</h3>
-
-<ul>
-<li><p><a href="https://github.com/typicode/json-server">json-server</a>的安装和使用</p></li>
-<li><p>POSTMAN的简单实用</p></li>
-<li><p><code>XMLHttpRequest</code>对象的用法</p></li>
-</ul>
-
-<hr/>
-
-<h2 id="toc_2">具体实现</h2>
-
-<h3 id="toc_3"><a href="https://github.com/typicode/json-server">json-server</a>的安装</h3>
-
-<p>可以直接去<code>github</code>中查询其<code>API</code>。通过<code>npm</code>安装在全局中：</p>
-
-<pre><code class="language-bash">$ npm install -g json-server
-</code></pre>
-
-<h3 id="toc_4"><a href="https://github.com/typicode/json-server">json-server</a>的启动</h3>
-
-<p>在启动之前，先来伪造一些数据。新建一个<code>json</code>文件，命名为<code>/db.json</code>,添加以下数据：</p>
-
-<pre><code>{
-  &quot;getArticle&quot;: [
-    {
-      &quot;id&quot;: 2,
-      &quot;title&quot;: &quot;json-1&quot;,
-      &quot;content&quot;: &quot;beace2&quot;
-    },
-    {
-      &quot;id&quot;: 3,
-      &quot;title&quot;: &quot;json-2&quot;,
-      &quot;content&quot;: &quot;beace3&quot;
-    }
-  ],
-  &quot;postArticle&quot;: [
-    {
-      &quot;id&quot;: 1,
-      &quot;title&quot;: &quot;json-server&quot;,
-      &quot;content&quot;: &quot;typicode&quot;
-    }
-  ]
-}
-</code></pre>
-
-<p>在命令行中，键入:<br/>
-<code>bash<br/>
-$ json-server /path/to/db.json<br/>
-</code><br/>
-可以观察到，服务启动在了本地的<code>3000</code>端口，截图如下：</p>
-
-<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/json-server/json-server-start.png" alt="img"/></p>
-
-<p>我们可以访问<a href="http://localhost:3000/getArticle">http://localhost:3000/getArticle</a>,来看到服务返回的<code>json</code>信息。(当然，可也以访问<a href="http://localhost:3000/postArticle">http://localhost:3000/postArticle</a>，总之既定规则由你来决定)</p>
-
-<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/json-server/json-server-get.png" alt="json-server-return"/></p>
-
-<h3 id="toc_5">POSTMAN测试</h3>
-
-<p>其实，这样的功能并不能够证明其有多么遍历，我们随便伪造一个<code>json</code>文件也可以通过这样请求来获取数据，其实便利在于我们可以改变数据，而且是真实发生。</p>
-
-<p>可以通过POSTMAN来进行测试,效果如下诸多截图。</p>
-
-<p>获取数据</p>
-
-<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/json-server/json-server-postman.png" alt="img"/></p>
-
-<p>通过<code>id</code>获取数据</p>
-
-<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/json-server/json-server-postman-delete.png" alt="img"/></p>
-
-<p><code>POST</code>数据</p>
-
-<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/json-server/json-server-postman-post.png" alt="img"/></p>
-
-<p><code>DELETE</code>数据</p>
-
-<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/json-server/json-server-postman-delete.png" alt="img"/></p>
-
-<p>一系列操作之后 ，回到<code>/db.json</code>中会发现数据发生了改变。</p>
-
-<h3 id="toc_6">XMLHttpRequest</h3>
-
-<p>通过一个简单的请求来获取数据并展示在网页上：</p>
-
-<pre><code class="language-js">getJSON(&#39;http://localhost:3000/getArticle&#39;, function(response) {
-    console.log(response);
-})
-function getJSON(url, callback) {
-    var request = new XMLHttpRequest();
-    request.open(&#39;GET&#39;, url);
-    request.onreadystatechange = function () {
-    //为了排版优美，省略了状态判断
-        if (callback) {
-            callback(JSON.parse(request.responseText));
-        }
-    };
-    request.send(null);
-}
-
-</code></pre>
-
-<p><code>XMLHttpRequest</code>的使用必须通过<code>http</code>协议，在这里介绍一个轻量级的<code>web server</code>——<code>http-server</code>.</p>
-
-<p>通过npm全局安装：</p>
-
-<pre><code class="language-bash">$ npm install -g http-server
-</code></pre>
-
-<p>在项目根目录中运行：<br/>
-<code>bash<br/>
-$ http-server<br/>
-</code><br/>
-打开浏览器，进入<a href="http://localhost:8080">http://localhost:8080</a>.</p>
 
                         
                       </div>
@@ -236,7 +119,7 @@ $ http-server<br/>
                 </a>
                 <div class="read-more clearfix">
                   <div class="more-left left">
-                  
+                   <a href="14893813088864.html">Read more</a>&nbsp;&nbsp; 
                     <span class="date">2017/3/13 13:1 下午</span>
                     <span>posted in&nbsp;</span> 
           				  
@@ -276,51 +159,6 @@ $ http-server<br/>
 
 <p><a href="https://github.com/BeAce/scala-and-playframework-userlist">更多效果</a></p>
 
-<!-- excerpt -->
-
-<h2 id="toc_2">前提</h2>
-
-<ul>
-<li><p>必须具有<code>java</code>开发环境</p></li>
-<li><p><code>eclipse</code>或<code>intellij</code>IDE</p></li>
-<li><p><code>mysql 5.6</code>版本</p></li>
-<li><p>该项目所有操作均是在<code>MAC OSX</code>上操作，不同操作系统本质相同，操作会略有差异</p></li>
-</ul>
-
-<p>包含以下知识点：</p>
-
-<ul>
-<li><p>下载<code>Activator</code></p></li>
-<li><p>配置环境变量</p></li>
-<li><p>命令行中生成第一个<code>Play</code>项目</p></li>
-</ul>
-
-<h2 id="toc_3">下载<code>Activator</code></h2>
-
-<p>可以通过，<code>playframework</code><a href="https://playframework.com/download">官网下载离线环境</a>,点击<code>offline distribution</code>下载。</p>
-
-<h2 id="toc_4">环境变量</h2>
-
-<p>在<code>$HOME/.profile</code>中写入<code>activator</code>路径,并写入权限</p>
-
-<pre><code>export PATH=/path/to/activator-x.x.x/bin:$PATH
-</code></pre>
-
-<h2 id="toc_5">生成第一个<code>Play</code>项目</h2>
-
-<p>通过命令，分别指定了项目名称，与项目模板。</p>
-
-<pre><code>$ activator new my-first-app play-scala
-</code></pre>
-
-<p>在此我用的是<code>play</code>的<code>scala</code>模板，也可以使用<code>play-java</code>.当使用命令：</p>
-
-<pre><code>$ activator new
-</code></pre>
-
-<p><code>play</code>会让你选择你想要的模板，模板列表如下：</p>
-
-<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/play-scala-userlist/play-scala-1.jpg" alt="img"/></p>
 
                         
                       </div>
@@ -328,7 +166,7 @@ $ http-server<br/>
                 </a>
                 <div class="read-more clearfix">
                   <div class="more-left left">
-                  
+                   <a href="14893812500035.html">Read more</a>&nbsp;&nbsp; 
                     <span class="date">2017/3/13 13:0 下午</span>
                     <span>posted in&nbsp;</span> 
           				  
