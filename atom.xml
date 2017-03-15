@@ -4,7 +4,7 @@
   <title><![CDATA[beace lee的博客]]></title>
   <link href="beace.github.io/atom.xml" rel="self"/>
   <link href="beace.github.io/"/>
-  <updated>2017-03-14T19:45:29+08:00</updated>
+  <updated>2017-03-15T10:40:25+08:00</updated>
   <id>beace.github.io/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -21,11 +21,13 @@
     <content type="html"><![CDATA[
 <blockquote>
 <p>首先在这里声明，对于<code>css</code>画图来说，大部分的图案的宽度甚至高度都是固定的，就算采用百分比的方式来绘制，也会有最外面的边界限制。尽量在PC端或者响应式要求不太高的场景下进行，当然会有一些比较简单的图案绘制能够适应响应式的方式，可以采用canvas或svg来绘制。</p>
+</blockquote>
+
+<span id="more"></span><!-- more -->
 
 <h2 id="toc_0">矩形的堆叠</h2>
 
 <p>如下图形，可以用来表示服务器。是最简单的一种图形绘制，不需要太多技巧。简单的div嵌套即可完成。为一个注意的地方就是里面的图形，可以用百分比来绘制，这样改变外层div的同时，里面也会相应变化。在这里就省略代码了。</p>
-</blockquote>
 
 <p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890753662725.jpg" alt=""/></p>
 
@@ -95,6 +97,8 @@
     <id>beace.github.io/14895440571780.html</id>
     <content type="html"><![CDATA[
 <p>三角形相对来说比较简单，我们可以通过设置border属性轻易实现。我来实现一个简单的和一个有难度的。</p>
+
+<span id="more"></span><!-- more -->
 
 <h2 id="toc_0">三角形（简单）</h2>
 
@@ -210,6 +214,8 @@
 
 <p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890752967384.jpg" alt=""/></p>
 
+<span id="more"></span><!-- more -->
+
 <p>原理很简单，六边形的左下和右下的边是由分别有不同位置的两个三角形堆叠而成，这里会有一些简单的计算，建议直接在浏览器端调试即可。中间类似插孔形状的东西其实只不过是圆角的利用罢了。</p>
 
 <pre><code class="language-html">&lt;div class=&quot;plus-wrapper&quot;&gt;
@@ -321,6 +327,8 @@
 </blockquote>
 
 <p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890752802585.jpg" alt="img"/></p>
+
+<span id="more"></span><!-- more -->
 
 <h2 id="toc_0">原理</h2>
 

@@ -90,74 +90,17 @@ $(document).ready(function(event) {
 		  	
 		  	<blockquote>
 <p>首先在这里声明，对于<code>css</code>画图来说，大部分的图案的宽度甚至高度都是固定的，就算采用百分比的方式来绘制，也会有最外面的边界限制。尽量在PC端或者响应式要求不太高的场景下进行，当然会有一些比较简单的图案绘制能够适应响应式的方式，可以采用canvas或svg来绘制。</p>
-
-<h2 id="toc_0">矩形的堆叠</h2>
-
-<p>如下图形，可以用来表示服务器。是最简单的一种图形绘制，不需要太多技巧。简单的div嵌套即可完成。为一个注意的地方就是里面的图形，可以用百分比来绘制，这样改变外层div的同时，里面也会相应变化。在这里就省略代码了。</p>
 </blockquote>
 
-<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890753662725.jpg" alt=""/></p>
-
-<h2 id="toc_1">凹凸形(矩形)</h2>
-
-<p>其实这种图形（如下图）比较少见，但是常常用来描述端口。原理是几个矩形的堆叠，通过相对定位/绝对定位之后的top属性来固定位置，z-index属性来遮掩上下边框。</p>
-
-<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890709420668.jpg" alt=""/></p>
-
-<p>你可以设置每个矩形的宽度为百分比，但是最终会于设计图相差甚远。而且，还要去考虑绝对定位元素居中的问题，当然这不是很困难。但是如果你的场景没有那么复杂，你可以像我这样来写。</p>
-
-<p>先固定最外面盒子的宽高，然后通过top的属性值来决定元素的上下堆叠位置，left为居中设置。border设置边框的有无，z-index属性决定元素垂直屏幕的层级关系。从下往上，逐层的z-index逐渐变大。</p>
-
-<pre><code class="language-css">.switch-wrapper{
-  width: 54px;
-  position: relative;
-  height: 30px;  
-}
-.switch{
-  border: 2px solid #000;
-  margin: 0 auto;
-  position: absolute;
-  background-color: #fff;
-}
-.switch-1,
-.switch-2 {
-  border-bottom: 0;
-}
-.switch-1{
-  width: 14px;
-  height: 4px;
-  z-index: 3;
-  left: 18px;
-}
-.switch-2 {
-  width: 30px;
-  height: 6px;
-  z-index: 2;
-  top: 4px;
-  left: 10px;
-}
-.switch-3 {
-  width: 50px;
-  height: 16px;
-  font-size: 12px;
-  text-align: center;
-  line-height: 15px;
-  z-index: 1;
-  bottom: 0;
-}
-</code></pre>
-
-<pre><code class="language-html">&lt;div className=&quot;switch-wrapper&quot;&gt;
-    &lt;div className=&quot;switch switch-1&quot;&gt;&lt;/div&gt;
-    &lt;div className=&quot;switch switch-2&quot;&gt;&lt;/div&gt;
-    &lt;div className=&quot;switch switch-3&quot;&gt;G0/1&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
 
 
 		</div>
 
-		
+		 
+		 <footer>
+      	<a rel="full-article" href="14895440571722.html#more">read more &rarr;</a>
+    	</footer>
+    	
 
 	</article>
  
@@ -171,96 +114,15 @@ $(document).ready(function(event) {
 		  	
 		  	<p>三角形相对来说比较简单，我们可以通过设置border属性轻易实现。我来实现一个简单的和一个有难度的。</p>
 
-<h2 id="toc_0">三角形（简单）</h2>
-
-<p>通过设置三角形（如下图）的四个边的不同颜色，来实现三角形的绘制。其中，包括直角三角形、等边三角形等特殊三角形。</p>
-
-<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890722556585.jpg" alt=""/></p>
-
-<p>其实从严格意义上来说这不是一个三角形(如下图)，只不过我们看到的是一个三角形的形状。它的形成过程是这样的。</p>
-
-<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890732104056.jpg" alt=""/></p>
-
-<p>如下图所示，它并非只占有一个三角形的区域，而是一个正方形div盒子。类似一张三角形的png图片，右上方是透明的。</p>
-
-<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890723173742.jpg" alt=""/></p>
-
-<p>下面展示了一个直角三角形的实现方式。<br/>
-<code>css<br/>
-.triangle {<br/>
-    width: 0;<br/>
-    height: 0;<br/>
-    border-right: 50px solid transparent;<br/>
-    border-bottom: 50px solid #abcdef;<br/>
-}<br/>
-</code><br/>
-<code>html<br/>
-&lt;div class=&quot;triangle&quot;&gt;&lt;/div&gt;<br/>
-</code></p>
-
-<h3 id="toc_1">留下一个思考题。</h3>
-
-<p>回顾一个三角形的变化那张图，细心的可以发现，边框所设置的宽度，与div盒子占有的宽高好像不太一致。如下图，我设置了每个方向的 border 都为100px,为何占有的宽度为99.2呢？</p>
-
-<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890735852383.jpg" alt=""/></p>
-
-<h2 id="toc_2">三角形（复杂）</h2>
-
-<p>我们来实现一个比较常用的tooltip效果。做这样的一个效果（如下图）有很多方法。比如通过三角形的堆叠差异，来实现三角形的两条线。或者先绘制一个三角形，然后将两个线定位到三角形的边上。其实都不优雅，因为我们知道通过border来绘制三角形只能填充其border-color，没有办法描边。</p>
-
-<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890739284055.jpg" alt=""/></p>
-
-<p>在这里，我采用一种比较独特的方法。为了避免三角形的边框修补问题，我选择了不绘制三角形，而是绘制一个正方形将其旋转45°，通过设置正方形的两个相邻边框让其拥有“三角形边框”，并且通过定位来实现三角形的遮盖。</p>
-
-<p>整个过程如下。</p>
-
-<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890747854821.jpg" alt=""/></p>
-
-<p>详细代码如下。</p>
-
-<pre><code class="language-css">.tooltip {
- width: 100px;
- height: 50px;
- border: 1px solid #5a89c7;
- border-radius: 2px;
- box-shadow: 0 0 10px #abcdef;
- padding: 2px;
- box-sizing: border-box;
- position: relative;
- z-index: 9;
- font-size: 12px;
- line-height: 12px;
- text-align: center;
-}
-
-.tooltip::after {
- content: &#39;&#39;;
- position: absolute;
- display: block;
- text-align: center;
- width: 30px;
- height: 30px;
- background-color: #fff;
- border: 1px solid #5a89c7;
- border-style: solid;
- border-width: 1px;
- border-width: 0 1px 1px 0;
- bottom: -32px;
- left: 50%;
- transform: translate(-50%, -50%) rotate(45deg);
- z-index: -1; 
-}
-</code></pre>
-
-<pre><code class="language-html">&lt;div class=&quot;tooltip&quot;&gt;
-    &lt;div class=&quot;content&quot;&gt;Hello, tooltip!Hover to see me!&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
 
 
 		</div>
 
-		
+		 
+		 <footer>
+      	<a rel="full-article" href="14895440571780.html#more">read more &rarr;</a>
+    	</footer>
+    	
 
 	</article>
  
@@ -297,107 +159,15 @@ $(document).ready(function(event) {
 
 <p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890752967384.jpg" alt=""/></p>
 
-<p>原理很简单，六边形的左下和右下的边是由分别有不同位置的两个三角形堆叠而成，这里会有一些简单的计算，建议直接在浏览器端调试即可。中间类似插孔形状的东西其实只不过是圆角的利用罢了。</p>
-
-<pre><code class="language-html">&lt;div class=&quot;plus-wrapper&quot;&gt;
-    &lt;div class=&quot;plus&quot;&gt;
-     &lt;div class=&quot;triangle triangle-lb&quot;&gt;&lt;/div&gt;
-     &lt;div class=&quot;triangle triangle-rb&quot;&gt;&lt;/div&gt;
-     &lt;div class=&quot;plus-port-wrapper plus-port-wrapper-t&quot;&gt;
-       &lt;div class=&quot;plus-port&quot;&gt;&lt;/div&gt;
-       &lt;div class=&quot;plus-port&quot;&gt;&lt;/div&gt;
-     &lt;/div&gt;
-     &lt;div class=&quot;plus-port-wrapper&quot;&gt;
-       &lt;div class=&quot;plus-port&quot;&gt;&lt;/div&gt;
-     &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-
-<p>我会经常通过一些伪类来实现一些<code>css</code>效果，尤其是<code>::after</code>、<code>::before</code>。这样减少了冗余的标签的同时，样式也容易控制。</p>
-
-<p>通过<code>triangle-lb,::before</code>和<code>triangle-rb,::after</code>的堆叠来实现六边形的两条边。</p>
-
-<pre><code class="language-css">.plus-wrapper {
-    width: 130px;
-    height: 98px;
-    border: 1px solid #000;
-    padding: 16px;
-    box-sizing: border-box;
-    position: relative;
-  }
-  .plus {
-    border: 1px solid #000;
-    width: 100%;
-    height: 100%;
-  }
-  .plus::before {
-    content: &quot;&quot;;
-    position: absolute;
-    top: 61px;
-    left: 17px;
-    width: 0;
-    height: 0;
-    border-left: 0 solid transparent;
-    border-right: 24px solid transparent;
-    border-bottom: 20px solid #000;
-    z-index: 1;
-  }
-  .plus::after {
-    content: &quot;&quot;;
-    position: absolute;
-    top: 61px;
-    right: 15px;
-    width: 0;
-    height: 0;
-    border-left: 24px solid transparent;
-    border-right: 0;
-    border-bottom: 20px solid #000;
-    z-index: 1;
-  }
-  .triangle {
-    position: absolute;
-    z-index: 3;
-  }
-  .triangle-lb {
-    top: 61px;
-    left: 16px;
-    width: 0;
-    height: 0;
-    border-left: 0 solid transparent;
-    border-right: 25px solid transparent;
-    border-bottom: 21px solid #fff;
-  }
-  .triangle-rb {
-    top: 61px;
-    right: 14px;
-    width: 0;
-    height: 0;
-    border-left: 25px solid transparent;
-    border-right: 0;
-    border-bottom: 21px solid #fff;
-  }
-  .plus-port-wrapper {
-    width: 100%;
-    text-align: center;
-  }
-  .plus-port-wrapper-t{
-    margin-top: 4px
-  }
-  .plus-port {
-    margin: 0 12px 0;
-    width: 5px;
-    border: 1px solid #000;
-    height: 24px;
-    display: inline-block;
-    border-radius: 10px;
-  }
-</code></pre>
 
 
 		</div>
 
-		
+		 
+		 <footer>
+      	<a rel="full-article" href="14895440571879.html#more">read more &rarr;</a>
+    	</footer>
+    	
 
 	</article>
  
@@ -415,92 +185,15 @@ $(document).ready(function(event) {
 
 <p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890752802585.jpg" alt="img"/></p>
 
-<h2 id="toc_0">原理</h2>
-
-<p>最外面的<code>div</code>可以使用圆角的特性，来定义不同位置的圆角显示。</p>
-
-<p>对于两边螺丝钉，我仍然喜欢借助伪类<code>::before</code>和<code>::after</code>来进行螺丝钉的绘制。这两个螺丝钉，大小，形状，内容完全一致。只有位置不统一，因此我们可以先写common部分，然后去分别定义位置信息。</p>
-
-<h4 id="toc_1">HTML结构</h4>
-
-<pre><code class="language-html">&lt;div class=&quot;container&quot;&gt;
-    &lt;div class=&quot;port-wrapper&quot;&gt;
-      &lt;div class=&quot;port-dot-wrapper&quot;&gt;
-        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
-        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
-        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
-        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
-        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;port-dot-wrapper&quot;&gt;
-        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
-        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
-        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
-        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-</code></pre>
-
-<p>​           </p>
-
-<h3 id="toc_2">最外层div的圆角实现</h3>
-
-<pre><code class="language-css">.container {  
-  position: relative;
-  width: 80px;
-}
-.port-wrapper {
-  border: 1px solid #000;
-  width: 78px;
-  height: 36px;
-  padding: 4px;
-  box-sizing: border-box;
-  border-radius: 4px 4px 17px 17px;
-}
-</code></pre>
-
-<h3 id="toc_3">螺丝钉原理</h3>
-
-<h4 id="toc_4">公共部分</h4>
-
-<p>通过伪类的<code>content</code>来定义内容，通过绝对定位定义其位置信息。</p>
-
-<pre><code class="language-css">.port-wrapper::before,
-.port-wrapper::after {
-  content: &quot;x&quot;;
-  display: block;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  text-align: center;
-  border: 1px solid #000;
-  line-height: 12px;
-  font-size: 12px;
-  position: absolute;
-}
-</code></pre>
-
-<h4 id="toc_5">位置信息</h4>
-
-<pre><code class="language-Css">.port-wrapper::before {
-  left: -16px;
-  top: 0;
-}
-.port-wrapper::after {
-  right: -14px;
-  top: 0;
-}
-</code></pre>
-
-<h3 id="toc_6">端口原理</h3>
-
-<p>端口其实比较简单，只需要定义两行端口居中排开即可。</p>
 
 
 		</div>
 
-		
+		 
+		 <footer>
+      	<a rel="full-article" href="14895440571929.html#more">read more &rarr;</a>
+    	</footer>
+    	
 
 	</article>
   
