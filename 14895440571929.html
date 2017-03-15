@@ -1,0 +1,318 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>
+    
+  分享一些CSS画图技巧(5)—插头 - beace lee的博客
+  
+
+  </title>
+  <meta name="author" content="">
+  <meta name="description" content="">
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link href="asset/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="atom.xml" rel="alternate" title="beace lee的博客" type="application/atom+xml">
+  <script src="asset/js/modernizr-2.0.js"></script>
+  <script src="asset/js/jquery.min.js"></script>
+  <script src="asset/highlightjs/highlight.pack.js"></script>
+  <link href="asset/highlightjs/styles/solarized_light.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <style type="text/css">
+  .cat-children-p{ padding: 6px 0px;}
+  .hljs{background: none;}
+  </style>
+  <script type="text/javascript">
+  var isAddSildbar = true;
+  </script>
+  <script src="asset/js/octopress.js" type="text/javascript"></script>
+</head>
+<script type="text/javascript">
+//链接新开窗口
+function addBlankTargetForLinks () {
+  $('a[href^="http"]').each(function(){
+      $(this).attr('target', '_blank');
+  });
+}
+$(document).ready(function(event) {
+  addBlankTargetForLinks();
+});
+</script>
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="index.html">beace lee的博客</a></h1>
+  
+    <h2></h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:beace.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+
+  <li id=""><a target="self" href="index.html">Home</a></li>
+
+  <li id=""><a target="_self" href="archives.html">Archives</a></li>
+
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content"> 
+<div>
+	<article class="hentry" role="article">
+	<header>
+			  	<h1 class="entry-title">分享一些CSS画图技巧(5)—插头</h1>
+				<p class="meta"><time datetime="2017-03-15T10:14:17+08:00" pubdate data-updated="true">2017/3/15 10:14 上午</time></p>
+			 </header>
+		  	<div class="entry-content">
+			  	<blockquote>
+<p>这个图形其实很少看到，其实在实际生活中，经常会有这样的插头形状，像主机和显示器的相连接的插头。需要两个螺丝钉去固定，以及几个端口去连接。</p>
+</blockquote>
+
+<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890752802585.jpg" alt="img"/></p>
+
+<h2 id="toc_0">原理</h2>
+
+<p>最外面的<code>div</code>可以使用圆角的特性，来定义不同位置的圆角显示。</p>
+
+<p>对于两边螺丝钉，我仍然喜欢借助伪类<code>::before</code>和<code>::after</code>来进行螺丝钉的绘制。这两个螺丝钉，大小，形状，内容完全一致。只有位置不统一，因此我们可以先写common部分，然后去分别定义位置信息。</p>
+
+<h4 id="toc_1">HTML结构</h4>
+
+<pre><code class="language-html">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;port-wrapper&quot;&gt;
+      &lt;div class=&quot;port-dot-wrapper&quot;&gt;
+        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;port-dot-wrapper&quot;&gt;
+        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</code></pre>
+
+<p>​           </p>
+
+<h3 id="toc_2">最外层div的圆角实现</h3>
+
+<pre><code class="language-css">.container {  
+  position: relative;
+  width: 80px;
+}
+.port-wrapper {
+  border: 1px solid #000;
+  width: 78px;
+  height: 36px;
+  padding: 4px;
+  box-sizing: border-box;
+  border-radius: 4px 4px 17px 17px;
+}
+</code></pre>
+
+<h3 id="toc_3">螺丝钉原理</h3>
+
+<h4 id="toc_4">公共部分</h4>
+
+<p>通过伪类的<code>content</code>来定义内容，通过绝对定位定义其位置信息。</p>
+
+<pre><code class="language-css">.port-wrapper::before,
+.port-wrapper::after {
+  content: &quot;x&quot;;
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  text-align: center;
+  border: 1px solid #000;
+  line-height: 12px;
+  font-size: 12px;
+  position: absolute;
+}
+</code></pre>
+
+<h4 id="toc_5">位置信息</h4>
+
+<pre><code class="language-Css">.port-wrapper::before {
+  left: -16px;
+  top: 0;
+}
+.port-wrapper::after {
+  right: -14px;
+  top: 0;
+}
+</code></pre>
+
+<h3 id="toc_6">端口原理</h3>
+
+<p>端口其实比较简单，只需要定义两行端口居中排开即可。</p>
+
+			</div>
+
+		
+	  
+		<footer>
+		 <p class="meta">
+
+			<strong>Categories:</strong>&nbsp; 
+			<span class="categories">
+			
+			    <a class='category' href='doc-css.html'>doc-css</a>&nbsp;
+			 
+			</span>
+		    </p>
+		    <p class="meta">
+		      
+		 </p>
+	    
+		<div class="sharing">
+		  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"shimin"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+          
+
+          
+              <div class="ds-thread" data-thread-key="14895440571929.html" data-url="beace.github.io/14895440571929.html" data-title="分享一些CSS画图技巧(5)—插头"></div>
+          
+
+		</div>
+
+	    <p class="meta">
+	    
+	        <a class="basic-alignment left" href="14895440571879.html" 
+	        title="Previous Post: 分享一些CSS画图技巧(4)—— 电源插头">&laquo; 分享一些CSS画图技巧(4)—— 电源插头</a>
+	    
+	    
+	        <a class="basic-alignment right" href="14893813088864.html" 
+	        title="Next Post: json-server and xmlhttprequest">json-server and xmlhttprequest &raquo;</a>
+	    
+	    </p>
+	  </footer>
+	</article>
+</div>
+ <aside class="sidebar"> 
+
+	<section>
+	  <h1>Categories</h1>
+	  <ul id="recent_posts">
+	  
+	      <li class="post">
+	        <a href="doc-css.html"><strong>doc-css&nbsp;(5)</strong></a>
+	        
+	        
+	        
+	      </li>
+	  
+	      <li class="post">
+	        <a href="json-server.html"><strong>json-server&nbsp;(1)</strong></a>
+	        
+	        
+	        
+	      </li>
+	   
+	  </ul>
+	</section>
+	<section>
+	  <h1>Recent Posts</h1>
+	  <ul id="recent_posts">
+	  
+	      
+		      <li class="post">
+		        <a href="14895440571722.html">分享一些CSS画图技巧(1)——矩形</a>
+		      </li>
+	     
+	  
+	      
+		      <li class="post">
+		        <a href="14895440571780.html">分享一些CSS画图技巧(2)——三角形</a>
+		      </li>
+	     
+	  
+	      
+		      <li class="post">
+		        <a href="14895440571829.html">分享一些CSS画图技巧(3)——未完待续</a>
+		      </li>
+	     
+	  
+	      
+		      <li class="post">
+		        <a href="14895440571879.html">分享一些CSS画图技巧(4)—— 电源插头</a>
+		      </li>
+	     
+	  
+	      
+		      <li class="post">
+		        <a href="14895440571929.html">分享一些CSS画图技巧(5)—插头</a>
+		      </li>
+	     
+	  
+	      
+	   
+	  </ul>
+	</section>
+	
+</aside> </div></div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 -  -
+  <span class="credit">Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; Theme by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+
+  
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:'shimin'};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+    
+
+
+
+
+</body>
+</html>
