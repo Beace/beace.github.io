@@ -2,7 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>beace.github.io/</loc>
-  <lastmod>2017-03-16T00:02:13+08:00</lastmod>
+  <lastmod>2017-03-17T10:47:25+08:00</lastmod>
+</url>
+
+<url>
+  <loc>beace.github.io/14896361746626.html</loc>
+  <lastmod>2017-03-16T11:49:34+08:00</lastmod>
 </url>
 
 <url>
@@ -43,6 +48,10 @@
 
 <url>
   <loc>beace.github.io/doc-css.html</loc>
+</url>
+
+<url>
+  <loc>beace.github.io/javascript-funny.html</loc>
 </url>
 
 

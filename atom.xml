@@ -4,7 +4,7 @@
   <title><![CDATA[beace lee的博客]]></title>
   <link href="beace.github.io/atom.xml" rel="self"/>
   <link href="beace.github.io/"/>
-  <updated>2017-03-15T13:15:46+08:00</updated>
+  <updated>2017-03-16T00:02:13+08:00</updated>
   <id>beace.github.io/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -12,6 +12,39 @@
   </author>
   <generator uri="http://www.coderforart.com/">CoderForArt</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[JavaScript一些有趣的地方]]></title>
+    <link href="beace.github.io/14896361746626.html"/>
+    <updated>2017-03-16T11:49:34+08:00</updated>
+    <id>beace.github.io/14896361746626.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">对象(<em>Object</em>)</h2>
+
+<ul>
+<li>对象不加引号和加引号的区别</li>
+</ul>
+
+<pre><code class="language-js">var a = {a: &quot;a&quot;};
+var b = {&quot;b&quot;: &quot;b&quot;};
+console.log(a); //&quot;a&quot;
+console.log(b); //&quot;b&quot;
+</code></pre>
+
+<ul>
+<li>特殊情况不可以用<em>点</em>的属性访问</li>
+</ul>
+
+<pre><code class="language-js">var a = {0: &quot;a&quot;}; 
+console.log(a.0); //Uncaught SyntaxError: Unexpected number
+//竟然可以像一个数组进行访问
+console.log(a[0]); // &quot;a&quot;
+//为了以便区分，可以加上引号
+console.log(a[&#39;0&#39;]) // &quot;a&quot;
+</code></pre>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[分享一些CSS画图技巧(1)——矩形]]></title>

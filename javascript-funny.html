@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <title>
     
-  分享一些CSS画图技巧(3)——未完待续 - beace lee的博客
+  javascript-funny - beace lee的博客
   
 
   </title>
@@ -78,71 +78,53 @@ $(document).ready(function(event) {
 </nav>
   <div id="main">
     <div id="content"> 
-<div>
-	<article class="hentry" role="article">
-	<header>
-			  	<h1 class="entry-title">分享一些CSS画图技巧(3)——未完待续</h1>
-				<p class="meta"><time datetime="2017-03-15T10:14:17+08:00" pubdate data-updated="true">2017/3/15 10:14 上午</time></p>
-			 </header>
-		  	<div class="entry-content">
-			  	<p>明天我将继续记录以下图形的绘制。有些很简单，有些也很简单。</p>
+<div class="blog-index">
 
-<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890752802585.jpg" alt=""/></p>
+	<article>
+		 <header>
+		  	<h1 class="entry-title"><a href="14896361746626.html">JavaScript一些有趣的地方</a></h1>
+			<p class="meta"><time datetime="2017-03-16T11:49:34+08:00" 
+			pubdate data-updated="true">2017/3/16 11:49 上午</time></p>
+		 </header>
+	  	<div class="entry-content">
+		  	
+		  	<h2 id="toc_0">对象(<em>Object</em>)</h2>
 
-<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890752967384.jpg" alt=""/></p>
+<ul>
+<li>对象不加引号和加引号的区别</li>
+</ul>
 
-			</div>
+<pre><code class="language-js">var a = {a: &quot;a&quot;};
+var b = {&quot;b&quot;: &quot;b&quot;};
+console.log(a); //&quot;a&quot;
+console.log(b); //&quot;b&quot;
+</code></pre>
 
-		
-	  
-		<footer>
-		 <p class="meta">
+<ul>
+<li>特殊情况不可以用<em>点</em>的属性访问</li>
+</ul>
 
-			<strong>Categories:</strong>&nbsp; 
-			<span class="categories">
-			
-			    <a class='category' href='doc-css.html'>doc-css</a>&nbsp;
-			 
-			</span>
-		    </p>
-		    <p class="meta">
-		      
-		 </p>
-	    
-		<div class="sharing">
-		  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"shimin"};
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] 
-     || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
-  </script>
-<!-- 多说公共JS代码 end -->
-          
+<pre><code class="language-js">var a = {0: &quot;a&quot;}; 
+console.log(a.0); //Uncaught SyntaxError: Unexpected number
+//竟然可以像一个数组进行访问
+console.log(a[0]); // &quot;a&quot;
+//为了以便区分，可以加上引号
+console.log(a[&#39;0&#39;]) // &quot;a&quot;
+</code></pre>
 
-          
-              <div class="ds-thread" data-thread-key="14895440571829.html" data-url="beace.github.io/14895440571829.html" data-title="分享一些CSS画图技巧(3)——未完待续"></div>
-          
 
 		</div>
 
-	    <p class="meta">
-	    
-	        <a class="basic-alignment left" href="14895440571780.html" 
-	        title="Previous Post: 分享一些CSS画图技巧(2)——三角形">&laquo; 分享一些CSS画图技巧(2)——三角形</a>
-	    
-	    
-	        <a class="basic-alignment right" href="14895440571879.html" 
-	        title="Next Post: 分享一些CSS画图技巧(4)—— 电源插头">分享一些CSS画图技巧(4)—— 电源插头 &raquo;</a>
-	    
-	    </p>
-	  </footer>
+		
+
 	</article>
+  
+	<div class="pagination">
+	
+<a href="archives.html">Blog Archives</a>
+	 
+	    
+	</div>
 </div>
  <aside class="sidebar"> 
 
