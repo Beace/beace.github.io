@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <title>
     
-  分享一些CSS画图技巧(5)—插头 - beace lee的博客
+  JavaScript一些有趣的地方 - beace lee的博客
   
 
   </title>
@@ -88,99 +88,33 @@ $(document).ready(function(event) {
 <div>
 	<article class="hentry" role="article">
 	<header>
-			  	<h1 class="entry-title">分享一些CSS画图技巧(5)—插头</h1>
-				<p class="meta"><time datetime="2017-03-15T10:14:17+08:00" pubdate data-updated="true">2017/3/15 10:14 上午</time></p>
+			  	<h1 class="entry-title">JavaScript一些有趣的地方</h1>
+				<p class="meta"><time datetime="2017-03-16T11:49:34+08:00" pubdate data-updated="true">2017/3/16 11:49 上午</time></p>
 			 </header>
 		  	<div class="entry-content">
-			  	<blockquote>
-<p>这个图形其实很少看到，其实在实际生活中，经常会有这样的插头形状，像主机和显示器的相连接的插头。需要两个螺丝钉去固定，以及几个端口去连接。</p>
-</blockquote>
+			  	<h2 id="toc_0">对象(<em>Object</em>)</h2>
 
-<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890752802585.jpg" alt="img"/></p>
+<ul>
+<li>对象不加引号和加引号的区别</li>
+</ul>
 
-<span id="more"></span><!-- more -->
-
-<h2 id="toc_0">原理</h2>
-
-<p>最外面的<code>div</code>可以使用圆角的特性，来定义不同位置的圆角显示。</p>
-
-<p>对于两边螺丝钉，我仍然喜欢借助伪类<code>::before</code>和<code>::after</code>来进行螺丝钉的绘制。这两个螺丝钉，大小，形状，内容完全一致。只有位置不统一，因此我们可以先写common部分，然后去分别定义位置信息。</p>
-
-<h4 id="toc_1">HTML结构</h4>
-
-<pre><code class="language-html">&lt;div class=&quot;container&quot;&gt;
-    &lt;div class=&quot;port-wrapper&quot;&gt;
-      &lt;div class=&quot;port-dot-wrapper&quot;&gt;
-        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
-        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
-        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
-        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
-        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;port-dot-wrapper&quot;&gt;
-        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
-        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
-        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
-        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
+<pre><code class="language-js">var a = {a: &quot;a&quot;};
+var b = {&quot;b&quot;: &quot;b&quot;};
+console.log(a); //&quot;a&quot;
+console.log(b); //&quot;b&quot;
 </code></pre>
 
-<p>​           </p>
+<ul>
+<li>特殊情况不可以用<em>点</em>的属性访问</li>
+</ul>
 
-<h3 id="toc_2">最外层div的圆角实现</h3>
-
-<pre><code class="language-css">.container {  
-  position: relative;
-  width: 80px;
-}
-.port-wrapper {
-  border: 1px solid #000;
-  width: 78px;
-  height: 36px;
-  padding: 4px;
-  box-sizing: border-box;
-  border-radius: 4px 4px 17px 17px;
-}
+<pre><code class="language-js">var a = {0: &quot;a&quot;}; 
+console.log(a.0); //Uncaught SyntaxError: Unexpected number
+//竟然可以像一个数组进行访问
+console.log(a[0]); // &quot;a&quot;
+//为了以便区分，可以加上引号
+console.log(a[&#39;0&#39;]) // &quot;a&quot;
 </code></pre>
-
-<h3 id="toc_3">螺丝钉原理</h3>
-
-<h4 id="toc_4">公共部分</h4>
-
-<p>通过伪类的<code>content</code>来定义内容，通过绝对定位定义其位置信息。</p>
-
-<pre><code class="language-css">.port-wrapper::before,
-.port-wrapper::after {
-  content: &quot;x&quot;;
-  display: block;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  text-align: center;
-  border: 1px solid #000;
-  line-height: 12px;
-  font-size: 12px;
-  position: absolute;
-}
-</code></pre>
-
-<h4 id="toc_5">位置信息</h4>
-
-<pre><code class="language-Css">.port-wrapper::before {
-  left: -16px;
-  top: 0;
-}
-.port-wrapper::after {
-  right: -14px;
-  top: 0;
-}
-</code></pre>
-
-<h3 id="toc_6">端口原理</h3>
-
-<p>端口其实比较简单，只需要定义两行端口居中排开即可。</p>
 
 			</div>
 
@@ -192,7 +126,7 @@ $(document).ready(function(event) {
 			<strong>Categories:</strong>&nbsp; 
 			<span class="categories">
 			
-			    <a class='category' href='doc-css.html'>doc-css</a>&nbsp;
+			    <a class='category' href='javascript-funny.html'>javascript-funny</a>&nbsp;
 			 
 			</span>
 		    </p>
@@ -217,19 +151,16 @@ var duoshuoQuery = {short_name:"shimin"};
           
 
           
-              <div class="ds-thread" data-thread-key="14895440571929.html" data-url="beace.github.io/14895440571929.html" data-title="分享一些CSS画图技巧(5)—插头"></div>
+              <div class="ds-thread" data-thread-key="javascript-object-funny.html" data-url="beace.github.io/javascript-object-funny.html" data-title="JavaScript一些有趣的地方"></div>
           
 
 		</div>
 
 	    <p class="meta">
 	    
-	        <a class="basic-alignment left" href="14895440571879.html" 
-	        title="Previous Post: 分享一些CSS画图技巧(4)—— 电源插头">&laquo; 分享一些CSS画图技巧(4)—— 电源插头</a>
 	    
-	    
-	        <a class="basic-alignment right" href="14893813088864.html" 
-	        title="Next Post: json-server and xmlhttprequest">json-server and xmlhttprequest &raquo;</a>
+	        <a class="basic-alignment right" href="css-draw-rectangle.html" 
+	        title="Next Post: 分享一些CSS画图技巧(1)——矩形">分享一些CSS画图技巧(1)——矩形 &raquo;</a>
 	    
 	    </p>
 	  </footer>
@@ -270,31 +201,31 @@ var duoshuoQuery = {short_name:"shimin"};
 	  
 	      
 		      <li class="post">
-		        <a href="14896361746626.html">JavaScript一些有趣的地方</a>
+		        <a href="javascript-object-funny.html">JavaScript一些有趣的地方</a>
 		      </li>
 	     
 	  
 	      
 		      <li class="post">
-		        <a href="14895440571722.html">分享一些CSS画图技巧(1)——矩形</a>
+		        <a href="css-draw-rectangle.html">分享一些CSS画图技巧(1)——矩形</a>
 		      </li>
 	     
 	  
 	      
 		      <li class="post">
-		        <a href="14895440571780.html">分享一些CSS画图技巧(2)——三角形</a>
+		        <a href="css-draw-triangle.html">分享一些CSS画图技巧(2)——三角形</a>
 		      </li>
 	     
 	  
 	      
 		      <li class="post">
-		        <a href="14895440571829.html">分享一些CSS画图技巧(3)——未完待续</a>
+		        <a href="css-draw-more.html">分享一些CSS画图技巧(3)——未完待续</a>
 		      </li>
 	     
 	  
 	      
 		      <li class="post">
-		        <a href="14895440571879.html">分享一些CSS画图技巧(4)—— 电源插头</a>
+		        <a href="css-draw-power-plug.html">分享一些CSS画图技巧(4)—— 电源插头</a>
 		      </li>
 	     
 	  

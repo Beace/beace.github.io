@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <title>
     
-  分享一些CSS画图技巧(5)—插头 - beace lee的博客
+  分享一些CSS画图技巧(2)——三角形 - beace lee的博客
   
 
   </title>
@@ -88,99 +88,99 @@ $(document).ready(function(event) {
 <div>
 	<article class="hentry" role="article">
 	<header>
-			  	<h1 class="entry-title">分享一些CSS画图技巧(5)—插头</h1>
+			  	<h1 class="entry-title">分享一些CSS画图技巧(2)——三角形</h1>
 				<p class="meta"><time datetime="2017-03-15T10:14:17+08:00" pubdate data-updated="true">2017/3/15 10:14 上午</time></p>
 			 </header>
 		  	<div class="entry-content">
-			  	<blockquote>
-<p>这个图形其实很少看到，其实在实际生活中，经常会有这样的插头形状，像主机和显示器的相连接的插头。需要两个螺丝钉去固定，以及几个端口去连接。</p>
-</blockquote>
-
-<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890752802585.jpg" alt="img"/></p>
+			  	<p>三角形相对来说比较简单，我们可以通过设置border属性轻易实现。我来实现一个简单的和一个有难度的。</p>
 
 <span id="more"></span><!-- more -->
 
-<h2 id="toc_0">原理</h2>
+<h2 id="toc_0">三角形（简单）</h2>
 
-<p>最外面的<code>div</code>可以使用圆角的特性，来定义不同位置的圆角显示。</p>
+<p>通过设置三角形（如下图）的四个边的不同颜色，来实现三角形的绘制。其中，包括直角三角形、等边三角形等特殊三角形。</p>
 
-<p>对于两边螺丝钉，我仍然喜欢借助伪类<code>::before</code>和<code>::after</code>来进行螺丝钉的绘制。这两个螺丝钉，大小，形状，内容完全一致。只有位置不统一，因此我们可以先写common部分，然后去分别定义位置信息。</p>
+<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890722556585.jpg" alt=""/></p>
 
-<h4 id="toc_1">HTML结构</h4>
+<p>其实从严格意义上来说这不是一个三角形(如下图)，只不过我们看到的是一个三角形的形状。它的形成过程是这样的。</p>
 
-<pre><code class="language-html">&lt;div class=&quot;container&quot;&gt;
-    &lt;div class=&quot;port-wrapper&quot;&gt;
-      &lt;div class=&quot;port-dot-wrapper&quot;&gt;
-        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
-        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
-        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
-        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
-        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;port-dot-wrapper&quot;&gt;
-        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
-        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
-        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
-        &lt;span class=&quot;port-dot&quot;&gt;&lt;/span&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-</code></pre>
+<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890732104056.jpg" alt=""/></p>
 
-<p>​           </p>
+<p>如下图所示，它并非只占有一个三角形的区域，而是一个正方形div盒子。类似一张三角形的png图片，右上方是透明的。</p>
 
-<h3 id="toc_2">最外层div的圆角实现</h3>
+<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890723173742.jpg" alt=""/></p>
 
-<pre><code class="language-css">.container {  
-  position: relative;
-  width: 80px;
-}
-.port-wrapper {
-  border: 1px solid #000;
-  width: 78px;
-  height: 36px;
-  padding: 4px;
-  box-sizing: border-box;
-  border-radius: 4px 4px 17px 17px;
+<p>下面展示了一个直角三角形的实现方式。</p>
+
+<pre><code class="language-css">.triangle {
+    width: 0;
+    height: 0;
+    border-right: 50px solid transparent;
+    border-bottom: 50px solid #abcdef;
 }
 </code></pre>
 
-<h3 id="toc_3">螺丝钉原理</h3>
+<pre><code class="language-html">&lt;div class=&quot;triangle&quot;&gt;&lt;/div&gt;
+</code></pre>
 
-<h4 id="toc_4">公共部分</h4>
+<h3 id="toc_1">留下一个思考题。</h3>
 
-<p>通过伪类的<code>content</code>来定义内容，通过绝对定位定义其位置信息。</p>
+<p>回顾一个三角形的变化那张图，细心的可以发现，边框所设置的宽度，与div盒子占有的宽高好像不太一致。如下图，我设置了每个方向的 border 都为100px,为何占有的宽度为99.2呢？</p>
 
-<pre><code class="language-css">.port-wrapper::before,
-.port-wrapper::after {
-  content: &quot;x&quot;;
-  display: block;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  text-align: center;
-  border: 1px solid #000;
-  line-height: 12px;
-  font-size: 12px;
-  position: absolute;
+<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890735852383.jpg" alt=""/></p>
+
+<h2 id="toc_2">三角形（复杂）</h2>
+
+<p>我们来实现一个比较常用的tooltip效果。做这样的一个效果（如下图）有很多方法。比如通过三角形的堆叠差异，来实现三角形的两条线。或者先绘制一个三角形，然后将两个线定位到三角形的边上。其实都不优雅，因为我们知道通过border来绘制三角形只能填充其border-color，没有办法描边。</p>
+
+<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890739284055.jpg" alt=""/></p>
+
+<p>在这里，我采用一种比较独特的方法。为了避免三角形的边框修补问题，我选择了不绘制三角形，而是绘制一个正方形将其旋转45°，通过设置正方形的两个相邻边框让其拥有“三角形边框”，并且通过定位来实现三角形的遮盖。</p>
+
+<p>整个过程如下。</p>
+
+<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890747854821.jpg" alt=""/></p>
+
+<p>详细代码如下。</p>
+
+<pre><code class="language-css">.tooltip {
+ width: 100px;
+ height: 50px;
+ border: 1px solid #5a89c7;
+ border-radius: 2px;
+ box-shadow: 0 0 10px #abcdef;
+ padding: 2px;
+ box-sizing: border-box;
+ position: relative;
+ z-index: 9;
+ font-size: 12px;
+ line-height: 12px;
+ text-align: center;
+}
+
+.tooltip::after {
+ content: &#39;&#39;;
+ position: absolute;
+ display: block;
+ text-align: center;
+ width: 30px;
+ height: 30px;
+ background-color: #fff;
+ border: 1px solid #5a89c7;
+ border-style: solid;
+ border-width: 1px;
+ border-width: 0 1px 1px 0;
+ bottom: -32px;
+ left: 50%;
+ transform: translate(-50%, -50%) rotate(45deg);
+ z-index: -1; 
 }
 </code></pre>
 
-<h4 id="toc_5">位置信息</h4>
-
-<pre><code class="language-Css">.port-wrapper::before {
-  left: -16px;
-  top: 0;
-}
-.port-wrapper::after {
-  right: -14px;
-  top: 0;
-}
+<pre><code class="language-html">&lt;div class=&quot;tooltip&quot;&gt;
+    &lt;div class=&quot;content&quot;&gt;Hello, tooltip!Hover to see me!&lt;/div&gt;
+&lt;/div&gt;
 </code></pre>
-
-<h3 id="toc_6">端口原理</h3>
-
-<p>端口其实比较简单，只需要定义两行端口居中排开即可。</p>
 
 			</div>
 
@@ -217,19 +217,19 @@ var duoshuoQuery = {short_name:"shimin"};
           
 
           
-              <div class="ds-thread" data-thread-key="14895440571929.html" data-url="beace.github.io/14895440571929.html" data-title="分享一些CSS画图技巧(5)—插头"></div>
+              <div class="ds-thread" data-thread-key="css-draw-triangle.html" data-url="beace.github.io/css-draw-triangle.html" data-title="分享一些CSS画图技巧(2)——三角形"></div>
           
 
 		</div>
 
 	    <p class="meta">
 	    
-	        <a class="basic-alignment left" href="14895440571879.html" 
-	        title="Previous Post: 分享一些CSS画图技巧(4)—— 电源插头">&laquo; 分享一些CSS画图技巧(4)—— 电源插头</a>
+	        <a class="basic-alignment left" href="css-draw-rectangle.html" 
+	        title="Previous Post: 分享一些CSS画图技巧(1)——矩形">&laquo; 分享一些CSS画图技巧(1)——矩形</a>
 	    
 	    
-	        <a class="basic-alignment right" href="14893813088864.html" 
-	        title="Next Post: json-server and xmlhttprequest">json-server and xmlhttprequest &raquo;</a>
+	        <a class="basic-alignment right" href="css-draw-more.html" 
+	        title="Next Post: 分享一些CSS画图技巧(3)——未完待续">分享一些CSS画图技巧(3)——未完待续 &raquo;</a>
 	    
 	    </p>
 	  </footer>
@@ -270,31 +270,31 @@ var duoshuoQuery = {short_name:"shimin"};
 	  
 	      
 		      <li class="post">
-		        <a href="14896361746626.html">JavaScript一些有趣的地方</a>
+		        <a href="javascript-object-funny.html">JavaScript一些有趣的地方</a>
 		      </li>
 	     
 	  
 	      
 		      <li class="post">
-		        <a href="14895440571722.html">分享一些CSS画图技巧(1)——矩形</a>
+		        <a href="css-draw-rectangle.html">分享一些CSS画图技巧(1)——矩形</a>
 		      </li>
 	     
 	  
 	      
 		      <li class="post">
-		        <a href="14895440571780.html">分享一些CSS画图技巧(2)——三角形</a>
+		        <a href="css-draw-triangle.html">分享一些CSS画图技巧(2)——三角形</a>
 		      </li>
 	     
 	  
 	      
 		      <li class="post">
-		        <a href="14895440571829.html">分享一些CSS画图技巧(3)——未完待续</a>
+		        <a href="css-draw-more.html">分享一些CSS画图技巧(3)——未完待续</a>
 		      </li>
 	     
 	  
 	      
 		      <li class="post">
-		        <a href="14895440571879.html">分享一些CSS画图技巧(4)—— 电源插头</a>
+		        <a href="css-draw-power-plug.html">分享一些CSS画图技巧(4)—— 电源插头</a>
 		      </li>
 	     
 	  

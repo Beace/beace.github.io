@@ -4,7 +4,7 @@
   <title><![CDATA[beace lee的博客]]></title>
   <link href="beace.github.io/atom.xml" rel="self"/>
   <link href="beace.github.io/"/>
-  <updated>2017-03-16T00:02:13+08:00</updated>
+  <updated>2017-03-17T19:48:57+08:00</updated>
   <id>beace.github.io/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[JavaScript一些有趣的地方]]></title>
-    <link href="beace.github.io/14896361746626.html"/>
+    <link href="beace.github.io/javascript-object-funny.html"/>
     <updated>2017-03-16T11:49:34+08:00</updated>
-    <id>beace.github.io/14896361746626.html</id>
+    <id>beace.github.io/javascript-object-funny.html</id>
     <content type="html"><![CDATA[
 <h2 id="toc_0">对象(<em>Object</em>)</h2>
 
@@ -48,9 +48,9 @@ console.log(a[&#39;0&#39;]) // &quot;a&quot;
   
   <entry>
     <title type="html"><![CDATA[分享一些CSS画图技巧(1)——矩形]]></title>
-    <link href="beace.github.io/14895440571722.html"/>
+    <link href="beace.github.io/css-draw-rectangle.html"/>
     <updated>2017-03-15T10:14:17+08:00</updated>
-    <id>beace.github.io/14895440571722.html</id>
+    <id>beace.github.io/css-draw-rectangle.html</id>
     <content type="html"><![CDATA[
 <blockquote>
 <p>首先在这里声明，对于<code>css</code>画图来说，大部分的图案的宽度甚至高度都是固定的，就算采用百分比的方式来绘制，也会有最外面的边界限制。尽量在PC端或者响应式要求不太高的场景下进行，当然会有一些比较简单的图案绘制能够适应响应式的方式，可以采用canvas或svg来绘制。</p>
@@ -125,9 +125,9 @@ console.log(a[&#39;0&#39;]) // &quot;a&quot;
   
   <entry>
     <title type="html"><![CDATA[分享一些CSS画图技巧(2)——三角形]]></title>
-    <link href="beace.github.io/14895440571780.html"/>
+    <link href="beace.github.io/css-draw-triangle.html"/>
     <updated>2017-03-15T10:14:17+08:00</updated>
-    <id>beace.github.io/14895440571780.html</id>
+    <id>beace.github.io/css-draw-triangle.html</id>
     <content type="html"><![CDATA[
 <p>三角形相对来说比较简单，我们可以通过设置border属性轻易实现。我来实现一个简单的和一个有难度的。</p>
 
@@ -224,9 +224,9 @@ console.log(a[&#39;0&#39;]) // &quot;a&quot;
   
   <entry>
     <title type="html"><![CDATA[分享一些CSS画图技巧(3)——未完待续]]></title>
-    <link href="beace.github.io/14895440571829.html"/>
+    <link href="beace.github.io/css-draw-more.html"/>
     <updated>2017-03-15T10:14:17+08:00</updated>
-    <id>beace.github.io/14895440571829.html</id>
+    <id>beace.github.io/css-draw-more.html</id>
     <content type="html"><![CDATA[
 <p>明天我将继续记录以下图形的绘制。有些很简单，有些也很简单。</p>
 
@@ -239,9 +239,9 @@ console.log(a[&#39;0&#39;]) // &quot;a&quot;
   
   <entry>
     <title type="html"><![CDATA[分享一些CSS画图技巧(4)—— 电源插头]]></title>
-    <link href="beace.github.io/14895440571879.html"/>
+    <link href="beace.github.io/css-draw-power-plug.html"/>
     <updated>2017-03-15T10:14:17+08:00</updated>
-    <id>beace.github.io/14895440571879.html</id>
+    <id>beace.github.io/css-draw-power-plug.html</id>
     <content type="html"><![CDATA[
 <p>电源插头组合了很多内容，包括三角形，矩形，其实最终形成的图形类似多边形，如下图所示。</p>
 
@@ -351,9 +351,9 @@ console.log(a[&#39;0&#39;]) // &quot;a&quot;
   
   <entry>
     <title type="html"><![CDATA[分享一些CSS画图技巧(5)—插头]]></title>
-    <link href="beace.github.io/14895440571929.html"/>
+    <link href="beace.github.io/css-draw-plug.html"/>
     <updated>2017-03-15T10:14:17+08:00</updated>
-    <id>beace.github.io/14895440571929.html</id>
+    <id>beace.github.io/css-draw-plug.html</id>
     <content type="html"><![CDATA[
 <blockquote>
 <p>这个图形其实很少看到，其实在实际生活中，经常会有这样的插头形状，像主机和显示器的相连接的插头。需要两个螺丝钉去固定，以及几个端口去连接。</p>
@@ -450,9 +450,9 @@ console.log(a[&#39;0&#39;]) // &quot;a&quot;
   
   <entry>
     <title type="html"><![CDATA[json-server and xmlhttprequest]]></title>
-    <link href="beace.github.io/14893813088864.html"/>
+    <link href="beace.github.io/json-server-ajax.html"/>
     <updated>2017-03-13T13:01:48+08:00</updated>
-    <id>beace.github.io/14893813088864.html</id>
+    <id>beace.github.io/json-server-ajax.html</id>
     <content type="html"><![CDATA[
 <h2 id="toc_0">前提</h2>
 
