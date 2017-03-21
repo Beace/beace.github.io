@@ -438,6 +438,11 @@ big {
     font-size: 1.2em
 }
 
+article img {
+    display: block;
+    margin: 0 auto;
+}
+
 article blockquote {
     font-style: italic;
     position: relative;
@@ -1556,7 +1561,7 @@ html .gist .gist-file .gist-meta a[href*=raw] {
 }
 
 pre {
-    background: black url('../img/noise.png?1388121979') top left;
+    background: #333 url('../img/noise.png?1388121979') top left;
     -webkit-border-radius: 0.4em;
     -moz-border-radius: 0.4em;
     -ms-border-radius: 0.4em;
