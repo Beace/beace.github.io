@@ -18,7 +18,7 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link href="asset/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="asset/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css">  
   <link href="atom.xml" rel="alternate" title="beace lee的博客" type="application/atom+xml">
   <script src="asset/js/modernizr-2.0.js"></script>
   <script src="asset/js/jquery.min.js"></script>
@@ -94,11 +94,47 @@ $(document).ready(function(event) {
 		  	<div class="entry-content">
 			  	<h2 id="toc_0">前提</h2>
 
+<blockquote>
 <p>在很多时候，前端程序员往往较早一步实现页面逻辑，后端程序员由于需要联调、掌握业务逻辑，消耗的时间比较长一点。那前端为了等后端程序员开发完成之后，<em>API</em>能够通过直接修改<em>URL</em>来对接，就需要伪造一些数据，但是，大部分情况而言，伪造的数据都是不变的。前端脚本不可能用来实现对数据的增删该查。但是，昨天意外发现一个工具——<a href="https://github.com/typicode/json-server">json-server</a>,可以帮助前端程序员来解决页面逻辑控制的痛点。下面我通过一个简单的增删改查的例子来进行记录。</p>
+</blockquote>
 
 <span id="more"></span><!-- more -->
 
-<h3 id="toc_1">知识点</h3>
+<h2 id="toc_1">目录</h2>
+
+<ul>
+<li>
+<a href="#toc_0">前提</a>
+</li>
+<li>
+<a href="#toc_1">目录</a>
+<ul>
+<li>
+<a href="#toc_2">知识点</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_3">具体实现</a>
+<ul>
+<li>
+<a href="#toc_4">json-server的安装</a>
+</li>
+<li>
+<a href="#toc_5">json-server的启动</a>
+</li>
+<li>
+<a href="#toc_6">POSTMAN测试</a>
+</li>
+<li>
+<a href="#toc_7">XMLHttpRequest</a>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3 id="toc_2">知识点</h3>
 
 <ul>
 <li><p><a href="https://github.com/typicode/json-server">json-server</a>的安装和使用</p></li>
@@ -106,16 +142,16 @@ $(document).ready(function(event) {
 <li><p><em>XMLHttpRequest</em>对象的用法</p></li>
 </ul>
 
-<h2 id="toc_2">具体实现</h2>
+<h2 id="toc_3">具体实现</h2>
 
-<h3 id="toc_3"><a href="https://github.com/typicode/json-server">json-server</a>的安装</h3>
+<h3 id="toc_4"><a href="https://github.com/typicode/json-server">json-server</a>的安装</h3>
 
 <p>可以直接去<em>github</em>中查询其<em>API</em>。通过<em>npm</em>安装在全局中：</p>
 
 <pre><code class="language-sh">$ npm install -g json-server
 </code></pre>
 
-<h3 id="toc_4"><a href="https://github.com/typicode/json-server">json-server</a>的启动</h3>
+<h3 id="toc_5"><a href="https://github.com/typicode/json-server">json-server</a>的启动</h3>
 
 <p>在启动之前，先来伪造一些数据。新建一个<em>json</em>文件，命名为<em>/db.json</em>,添加以下数据：</p>
 
@@ -155,7 +191,7 @@ $(document).ready(function(event) {
 
 <p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/json-server/json-server-get.png" alt="json-server-return"/></p>
 
-<h3 id="toc_5">POSTMAN测试</h3>
+<h3 id="toc_6">POSTMAN测试</h3>
 
 <p>其实，这样的功能并不能够证明其有多么遍历，我们随便伪造一个<em>json</em>文件也可以通过这样请求来获取数据，其实便利在于我们可以改变数据，而且是真实发生。</p>
 
@@ -179,7 +215,7 @@ $(document).ready(function(event) {
 
 <p>一系列操作之后 ，回到<em>/db.json</em>中会发现数据发生了改变。</p>
 
-<h3 id="toc_6">XMLHttpRequest</h3>
+<h3 id="toc_7">XMLHttpRequest</h3>
 
 <p>通过一个简单的请求来获取数据并展示在网页上：</p>
 

@@ -18,7 +18,7 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link href="asset/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="asset/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css">  
   <link href="atom.xml" rel="alternate" title="beace lee的博客" type="application/atom+xml">
   <script src="asset/js/modernizr-2.0.js"></script>
   <script src="asset/js/jquery.min.js"></script>
@@ -96,7 +96,27 @@ $(document).ready(function(event) {
 
 <span id="more"></span><!-- more -->
 
-<h2 id="toc_0">三角形（简单）</h2>
+<h2 id="toc_0">目录</h2>
+
+<ul>
+<li>
+<a href="#toc_0">目录</a>
+</li>
+<li>
+<a href="#toc_1">三角形（简单）</a>
+<ul>
+<li>
+<a href="#toc_2">留下一个思考题。</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_3">三角形（复杂）</a>
+</li>
+</ul>
+
+
+<h2 id="toc_1">三角形（简单）</h2>
 
 <p>通过设置三角形（如下图）的四个边的不同颜色，来实现三角形的绘制。其中，包括直角三角形、等边三角形等特殊三角形。</p>
 
@@ -123,13 +143,13 @@ $(document).ready(function(event) {
 <pre><code class="language-html">&lt;div class=&quot;triangle&quot;&gt;&lt;/div&gt;
 </code></pre>
 
-<h3 id="toc_1">留下一个思考题。</h3>
+<h3 id="toc_2">留下一个思考题。</h3>
 
 <p>回顾一个三角形的变化那张图，细心的可以发现，边框所设置的宽度，与div盒子占有的宽高好像不太一致。如下图，我设置了每个方向的 border 都为100px,为何占有的宽度为99.2呢？</p>
 
 <p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890735852383.jpg" alt=""/></p>
 
-<h2 id="toc_2">三角形（复杂）</h2>
+<h2 id="toc_3">三角形（复杂）</h2>
 
 <p>我们来实现一个比较常用的tooltip效果。做这样的一个效果（如下图）有很多方法。比如通过三角形的堆叠差异，来实现三角形的两条线。或者先绘制一个三角形，然后将两个线定位到三角形的边上。其实都不优雅，因为我们知道通过border来绘制三角形只能填充其border-color，没有办法描边。</p>
 

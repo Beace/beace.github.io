@@ -18,7 +18,7 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link href="asset/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="asset/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css">  
   <link href="atom.xml" rel="alternate" title="beace lee的博客" type="application/atom+xml">
   <script src="asset/js/modernizr-2.0.js"></script>
   <script src="asset/js/jquery.min.js"></script>
@@ -92,19 +92,32 @@ $(document).ready(function(event) {
 				<p class="meta"><time datetime="2017-03-15T10:14:17+08:00" pubdate data-updated="true">2017/3/15 10:14 上午</time></p>
 			 </header>
 		  	<div class="entry-content">
-			  	<blockquote>
-<p>首先在这里声明，对于<code>css</code>画图来说，大部分的图案的宽度甚至高度都是固定的，就算采用百分比的方式来绘制，也会有最外面的边界限制。尽量在PC端或者响应式要求不太高的场景下进行，当然会有一些比较简单的图案绘制能够适应响应式的方式，可以采用canvas或svg来绘制。</p>
-</blockquote>
+			  	<p>首先在这里声明，对于<code>css</code>画图来说，大部分的图案的宽度甚至高度都是固定的，就算采用百分比的方式来绘制，也会有最外面的边界限制。尽量在PC端或者响应式要求不太高的场景下进行，当然会有一些比较简单的图案绘制能够适应响应式的方式，可以采用canvas或svg来绘制。</p>
 
 <span id="more"></span><!-- more -->
 
-<h2 id="toc_0">矩形的堆叠</h2>
+<h2 id="toc_0">目录</h2>
+
+<ul>
+<li>
+<a href="#toc_0">目录</a>
+</li>
+<li>
+<a href="#toc_1">矩形的堆叠</a>
+</li>
+<li>
+<a href="#toc_2">凹凸形(矩形)</a>
+</li>
+</ul>
+
+
+<h2 id="toc_1">矩形的堆叠</h2>
 
 <p>如下图形，可以用来表示服务器。是最简单的一种图形绘制，不需要太多技巧。简单的div嵌套即可完成。为一个注意的地方就是里面的图形，可以用百分比来绘制，这样改变外层div的同时，里面也会相应变化。在这里就省略代码了。</p>
 
 <p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890753662725.jpg" alt=""/></p>
 
-<h2 id="toc_1">凹凸形(矩形)</h2>
+<h2 id="toc_2">凹凸形(矩形)</h2>
 
 <p>其实这种图形（如下图）比较少见，但是常常用来描述端口。原理是几个矩形的堆叠，通过相对定位/绝对定位之后的top属性来固定位置，z-index属性来遮掩上下边框。</p>
 

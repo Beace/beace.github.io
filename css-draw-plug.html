@@ -18,7 +18,7 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link href="asset/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="asset/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css">  
   <link href="atom.xml" rel="alternate" title="beace lee的博客" type="application/atom+xml">
   <script src="asset/js/modernizr-2.0.js"></script>
   <script src="asset/js/jquery.min.js"></script>
@@ -100,13 +100,47 @@ $(document).ready(function(event) {
 
 <span id="more"></span><!-- more -->
 
-<h2 id="toc_0">原理</h2>
+<h2 id="toc_0">目录</h2>
+
+<ul>
+<li>
+<a href="#toc_0">目录</a>
+</li>
+<li>
+<a href="#toc_1">原理</a>
+<ul>
+<li>
+<a href="#toc_2">HTML结构</a>
+</li>
+<li>
+<a href="#toc_3">最外层div的圆角实现</a>
+</li>
+<li>
+<a href="#toc_4">螺丝钉原理</a>
+<ul>
+<li>
+<a href="#toc_5">公共部分</a>
+</li>
+<li>
+<a href="#toc_6">位置信息</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_7">端口原理</a>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h2 id="toc_1">原理</h2>
 
 <p>最外面的<code>div</code>可以使用圆角的特性，来定义不同位置的圆角显示。</p>
 
 <p>对于两边螺丝钉，我仍然喜欢借助伪类<code>::before</code>和<code>::after</code>来进行螺丝钉的绘制。这两个螺丝钉，大小，形状，内容完全一致。只有位置不统一，因此我们可以先写common部分，然后去分别定义位置信息。</p>
 
-<h4 id="toc_1">HTML结构</h4>
+<h3 id="toc_2">HTML结构</h3>
 
 <pre><code class="language-html">&lt;div class=&quot;container&quot;&gt;
     &lt;div class=&quot;port-wrapper&quot;&gt;
@@ -129,7 +163,7 @@ $(document).ready(function(event) {
 
 <p>​           </p>
 
-<h3 id="toc_2">最外层div的圆角实现</h3>
+<h3 id="toc_3">最外层div的圆角实现</h3>
 
 <pre><code class="language-css">.container {  
   position: relative;
@@ -145,9 +179,9 @@ $(document).ready(function(event) {
 }
 </code></pre>
 
-<h3 id="toc_3">螺丝钉原理</h3>
+<h3 id="toc_4">螺丝钉原理</h3>
 
-<h4 id="toc_4">公共部分</h4>
+<h4 id="toc_5">公共部分</h4>
 
 <p>通过伪类的<code>content</code>来定义内容，通过绝对定位定义其位置信息。</p>
 
@@ -166,7 +200,7 @@ $(document).ready(function(event) {
 }
 </code></pre>
 
-<h4 id="toc_5">位置信息</h4>
+<h4 id="toc_6">位置信息</h4>
 
 <pre><code class="language-Css">.port-wrapper::before {
   left: -16px;
@@ -178,7 +212,7 @@ $(document).ready(function(event) {
 }
 </code></pre>
 
-<h3 id="toc_6">端口原理</h3>
+<h3 id="toc_7">端口原理</h3>
 
 <p>端口其实比较简单，只需要定义两行端口居中排开即可。</p>
 

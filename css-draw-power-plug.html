@@ -18,7 +18,7 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link href="asset/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="asset/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css">  
   <link href="atom.xml" rel="alternate" title="beace lee的博客" type="application/atom+xml">
   <script src="asset/js/modernizr-2.0.js"></script>
   <script src="asset/js/jquery.min.js"></script>
@@ -92,11 +92,27 @@ $(document).ready(function(event) {
 				<p class="meta"><time datetime="2017-03-15T10:14:17+08:00" pubdate data-updated="true">2017/3/15 10:14 上午</time></p>
 			 </header>
 		  	<div class="entry-content">
-			  	<p>电源插头组合了很多内容，包括三角形，矩形，其实最终形成的图形类似多边形，如下图所示。</p>
+			  	<blockquote>
+<p>电源插头组合了很多内容，包括三角形，矩形，其实最终形成的图形类似多边形，如下图所示。</p>
+</blockquote>
 
 <p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890752967384.jpg" alt=""/></p>
 
 <span id="more"></span><!-- more -->
+
+<h2 id="toc_0">目录</h2>
+
+<ul>
+<li>
+<a href="#toc_0">目录</a>
+</li>
+<li>
+<a href="#toc_1">原理与实现</a>
+</li>
+</ul>
+
+
+<h2 id="toc_1">原理与实现</h2>
 
 <p>原理很简单，六边形的左下和右下的边是由分别有不同位置的两个三角形堆叠而成，这里会有一些简单的计算，建议直接在浏览器端调试即可。中间类似插孔形状的东西其实只不过是圆角的利用罢了。</p>
 
