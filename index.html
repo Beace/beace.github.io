@@ -89,16 +89,42 @@ $(document).ready(function(event) {
 
 	<article>
 		 <header>
+		  	<h1 class="entry-title"><a href="JavaScript-arguments.html">JavaScript Arguments</a></h1>
+			<p class="meta"><time datetime="2017-03-24T17:26:49+08:00" 
+			pubdate data-updated="true">2017/3/24 17:26 下午</time></p>
+		 </header>
+	  	<div class="entry-content">
+		  	
+		  	<p>上一次说到了JavaScript中加引号和不加引号的区别，已经认知到了在大体上还是没有区别的。这里我将深入的了解JavaScript函数中的arguments对象，将其运用到实战。</p>
+
+
+
+		</div>
+
+		 
+		 <footer>
+      	<a rel="full-article" href="JavaScript-arguments.html#more">read more &rarr;</a>
+    	</footer>
+    	
+
+	</article>
+ 
+	<article>
+		 <header>
 		  	<h1 class="entry-title"><a href="javascript-object-funny.html">JavaScript一些有趣的地方</a></h1>
 			<p class="meta"><time datetime="2017-03-16T11:49:34+08:00" 
 			pubdate data-updated="true">2017/3/16 11:49 上午</time></p>
 		 </header>
 	  	<div class="entry-content">
 		  	
-		  	<h2 id="toc_0">对象(<em>Object</em>)</h2>
+		  	<h2 id="toc_0">Array-like</h2>
+
+<p>所谓的Array-like,即类数组。其实并不是数组，但是可以像数组一样的进行访问，在这里，仅仅是写法上的一致。其实并不是数组。</p>
+
+<h2 id="toc_1">对象(<em>Object</em>)</h2>
 
 <ul>
-<li>对象不加引号和加引号的区别</li>
+<li>对象不加引号和加引号的区别，可以参考该链接（<a href="http://stackoverflow.com/questions/4348478/what-is-the-difference-between-object-keys-with-quotes-and-without-quotes%EF%BC%89">http://stackoverflow.com/questions/4348478/what-is-the-difference-between-object-keys-with-quotes-and-without-quotes）</a></li>
 </ul>
 
 <pre><code class="language-js">var a = {a: &quot;a&quot;};
@@ -118,6 +144,28 @@ console.log(a[0]); // &quot;a&quot;
 //为了以便区分，可以加上引号
 console.log(a[&#39;0&#39;]) // &quot;a&quot;
 </code></pre>
+
+<blockquote>
+<p>No, the quotes do not make a difference (unless, as you noted, you want to use a key that’s not a valid JavaScript identifier).</p>
+</blockquote>
+
+<p>可见，如果符合规范的定义<code>key</code>值，加引号和不加引号是没有区别的。如果你的<code>key</code>值中出现数字或者<code>JavaScript</code>中的关键字，可以通过加引号的方式访问<code>obj[&#39;key&#39;]</code></p>
+
+<h2 id="toc_2">引申</h2>
+
+<p>说到这里，我想引申一个东西，跟上面的对象理解（类数组）完全一致。就是<em>JavaScript</em>函数中的<em>arguments</em>参数。</p>
+
+<p><em>arguments</em>对象是所有<em>JavaScript</em>函数中的局部变量。通过<em>arguments</em>我们可以获取函数中的所有参数。</p>
+
+<pre><code class="language-js">function getArgs(a, b) {
+  console.log(arguments[0])
+  console.log(arguments[1])  
+}
+
+getArgs(1, 2); // 1 2
+</code></pre>
+
+<p>通过上述代码，我们可以通过类似数组的方式进行参数的读取，判断等等。接下来的一篇文章将会探索<em>arguments</em>的真正类型以及含义。</p>
 
 
 		</div>
@@ -190,32 +238,6 @@ console.log(a[&#39;0&#39;]) // &quot;a&quot;
 		
 
 	</article>
- 
-	<article>
-		 <header>
-		  	<h1 class="entry-title"><a href="css-draw-power-plug.html">分享一些CSS画图技巧(4)—— 电源插头</a></h1>
-			<p class="meta"><time datetime="2017-03-15T10:14:17+08:00" 
-			pubdate data-updated="true">2017/3/15 10:14 上午</time></p>
-		 </header>
-	  	<div class="entry-content">
-		  	
-		  	<blockquote>
-<p>电源插头组合了很多内容，包括三角形，矩形，其实最终形成的图形类似多边形，如下图所示。</p>
-</blockquote>
-
-<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890752967384.jpg" alt=""/></p>
-
-
-
-		</div>
-
-		 
-		 <footer>
-      	<a rel="full-article" href="css-draw-power-plug.html#more">read more &rarr;</a>
-    	</footer>
-    	
-
-	</article>
   
 	<div class="pagination">
 	 <a class="prev" href="all_1.html">&larr; Older</a> 
@@ -245,7 +267,7 @@ console.log(a[&#39;0&#39;]) // &quot;a&quot;
 	      </li>
 	  
 	      <li class="post">
-	        <a href="javascript-funny.html"><strong>javascript-funny&nbsp;(1)</strong></a>
+	        <a href="javascript-funny.html"><strong>javascript-funny&nbsp;(2)</strong></a>
 	        
 	        
 	        
@@ -256,6 +278,12 @@ console.log(a[&#39;0&#39;]) // &quot;a&quot;
 	<section>
 	  <h1>Recent Posts</h1>
 	  <ul id="recent_posts">
+	  
+	      
+		      <li class="post">
+		        <a href="JavaScript-arguments.html">JavaScript Arguments</a>
+		      </li>
+	     
 	  
 	      
 		      <li class="post">
@@ -282,10 +310,6 @@ console.log(a[&#39;0&#39;]) // &quot;a&quot;
 	     
 	  
 	      
-		      <li class="post">
-		        <a href="css-draw-power-plug.html">分享一些CSS画图技巧(4)—— 电源插头</a>
-		      </li>
-	     
 	  
 	      
 	  

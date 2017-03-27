@@ -92,10 +92,14 @@ $(document).ready(function(event) {
 				<p class="meta"><time datetime="2017-03-16T11:49:34+08:00" pubdate data-updated="true">2017/3/16 11:49 上午</time></p>
 			 </header>
 		  	<div class="entry-content">
-			  	<h2 id="toc_0">对象(<em>Object</em>)</h2>
+			  	<h2 id="toc_0">Array-like</h2>
+
+<p>所谓的Array-like,即类数组。其实并不是数组，但是可以像数组一样的进行访问，在这里，仅仅是写法上的一致。其实并不是数组。</p>
+
+<h2 id="toc_1">对象(<em>Object</em>)</h2>
 
 <ul>
-<li>对象不加引号和加引号的区别</li>
+<li>对象不加引号和加引号的区别，可以参考该链接（<a href="http://stackoverflow.com/questions/4348478/what-is-the-difference-between-object-keys-with-quotes-and-without-quotes%EF%BC%89">http://stackoverflow.com/questions/4348478/what-is-the-difference-between-object-keys-with-quotes-and-without-quotes）</a></li>
 </ul>
 
 <pre><code class="language-js">var a = {a: &quot;a&quot;};
@@ -115,6 +119,28 @@ console.log(a[0]); // &quot;a&quot;
 //为了以便区分，可以加上引号
 console.log(a[&#39;0&#39;]) // &quot;a&quot;
 </code></pre>
+
+<blockquote>
+<p>No, the quotes do not make a difference (unless, as you noted, you want to use a key that’s not a valid JavaScript identifier).</p>
+</blockquote>
+
+<p>可见，如果符合规范的定义<code>key</code>值，加引号和不加引号是没有区别的。如果你的<code>key</code>值中出现数字或者<code>JavaScript</code>中的关键字，可以通过加引号的方式访问<code>obj[&#39;key&#39;]</code></p>
+
+<h2 id="toc_2">引申</h2>
+
+<p>说到这里，我想引申一个东西，跟上面的对象理解（类数组）完全一致。就是<em>JavaScript</em>函数中的<em>arguments</em>参数。</p>
+
+<p><em>arguments</em>对象是所有<em>JavaScript</em>函数中的局部变量。通过<em>arguments</em>我们可以获取函数中的所有参数。</p>
+
+<pre><code class="language-js">function getArgs(a, b) {
+  console.log(arguments[0])
+  console.log(arguments[1])  
+}
+
+getArgs(1, 2); // 1 2
+</code></pre>
+
+<p>通过上述代码，我们可以通过类似数组的方式进行参数的读取，判断等等。接下来的一篇文章将会探索<em>arguments</em>的真正类型以及含义。</p>
 
 			</div>
 
@@ -158,6 +184,9 @@ var duoshuoQuery = {short_name:"shimin"};
 
 	    <p class="meta">
 	    
+	        <a class="basic-alignment left" href="JavaScript-arguments.html" 
+	        title="Previous Post: JavaScript Arguments">&laquo; JavaScript Arguments</a>
+	    
 	    
 	        <a class="basic-alignment right" href="css-draw-rectangle.html" 
 	        title="Next Post: 分享一些CSS画图技巧(1)——矩形">分享一些CSS画图技巧(1)——矩形 &raquo;</a>
@@ -187,7 +216,7 @@ var duoshuoQuery = {short_name:"shimin"};
 	      </li>
 	  
 	      <li class="post">
-	        <a href="javascript-funny.html"><strong>javascript-funny&nbsp;(1)</strong></a>
+	        <a href="javascript-funny.html"><strong>javascript-funny&nbsp;(2)</strong></a>
 	        
 	        
 	        
@@ -198,6 +227,12 @@ var duoshuoQuery = {short_name:"shimin"};
 	<section>
 	  <h1>Recent Posts</h1>
 	  <ul id="recent_posts">
+	  
+	      
+		      <li class="post">
+		        <a href="JavaScript-arguments.html">JavaScript Arguments</a>
+		      </li>
+	     
 	  
 	      
 		      <li class="post">
@@ -224,10 +259,6 @@ var duoshuoQuery = {short_name:"shimin"};
 	     
 	  
 	      
-		      <li class="post">
-		        <a href="css-draw-power-plug.html">分享一些CSS画图技巧(4)—— 电源插头</a>
-		      </li>
-	     
 	  
 	      
 	  
