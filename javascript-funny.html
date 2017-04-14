@@ -260,6 +260,20 @@ getArgs(1, 2); // 1 2
 </p>
 
 </footer>
+<script src="asset/js/big-picture.min.js"></script>  
+<script>
+  (function() {
+    function setClickHandler(id, fn) {
+      document.querySelector(id).onclick = fn;
+    }
+    setClickHandler('body', function(e) {
+      e.target.tagName === 'IMG' && BigPicture({
+        el: e.target,
+        imgSrc: e.target.src
+      });
+    });
+  })()
+</script>
 
   
 
