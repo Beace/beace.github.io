@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <title>
     
-  beace lee的博客
+  html5 - beace lee的博客
   
 
   </title>
@@ -89,13 +89,16 @@ $(document).ready(function(event) {
 
 	<article>
 		 <header>
-		  	<h1 class="entry-title"><a href="css-draw-triangle.html">分享一些CSS画图技巧(2)——三角形</a></h1>
-			<p class="meta"><time datetime="2017-03-15T10:14:17+08:00" 
-			pubdate data-updated="true">2017/3/15 10:14 上午</time></p>
+		  	<h1 class="entry-title"><a href="HTML5%20dataset.html">HTML5 dataset 属性不为人知的地方（命名规则和原理）</a></h1>
+			<p class="meta"><time datetime="2017-04-18T14:06:51+08:00" 
+			pubdate data-updated="true">2017/4/18 14:6 下午</time></p>
 		 </header>
 	  	<div class="entry-content">
 		  	
-		  	<p>三角形相对来说比较简单，我们可以通过设置border属性轻易实现。我来实现一个简单的和一个有难度的。</p>
+		  	<p><em>HTML5</em>在元素中增加了<em>data-*</em>，可以允许用户自定义属性。这种可读写的方式极大的方便了<br/>
+操作元素时的数据存储、状态保留。经常可以在各大主流网站上面看到它的使用，例如淘宝首页。</p>
+
+<p><img src="media/14924956119427/14924960637439.jpg" alt=""/></p>
 
 
 
@@ -103,106 +106,7 @@ $(document).ready(function(event) {
 
 		 
 		 <footer>
-      	<a rel="full-article" href="css-draw-triangle.html#more">read more &rarr;</a>
-    	</footer>
-    	
-
-	</article>
- 
-	<article>
-		 <header>
-		  	<h1 class="entry-title"><a href="css-draw-more.html">分享一些CSS画图技巧(3)——未完待续</a></h1>
-			<p class="meta"><time datetime="2017-03-15T10:14:17+08:00" 
-			pubdate data-updated="true">2017/3/15 10:14 上午</time></p>
-		 </header>
-	  	<div class="entry-content">
-		  	
-		  	<p>明天我将继续记录以下图形的绘制。有些很简单，有些也很简单。</p>
-
-<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890752802585.jpg" alt=""/></p>
-
-<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890752967384.jpg" alt=""/></p>
-
-
-		</div>
-
-		
-
-	</article>
- 
-	<article>
-		 <header>
-		  	<h1 class="entry-title"><a href="css-draw-power-plug.html">分享一些CSS画图技巧(4)—— 电源插头</a></h1>
-			<p class="meta"><time datetime="2017-03-15T10:14:17+08:00" 
-			pubdate data-updated="true">2017/3/15 10:14 上午</time></p>
-		 </header>
-	  	<div class="entry-content">
-		  	
-		  	<blockquote>
-<p>电源插头组合了很多内容，包括三角形，矩形，其实最终形成的图形类似多边形，如下图所示。</p>
-</blockquote>
-
-<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890752967384.jpg" alt=""/></p>
-
-
-
-		</div>
-
-		 
-		 <footer>
-      	<a rel="full-article" href="css-draw-power-plug.html#more">read more &rarr;</a>
-    	</footer>
-    	
-
-	</article>
- 
-	<article>
-		 <header>
-		  	<h1 class="entry-title"><a href="css-draw-plug.html">分享一些CSS画图技巧(5)—插头</a></h1>
-			<p class="meta"><time datetime="2017-03-15T10:14:17+08:00" 
-			pubdate data-updated="true">2017/3/15 10:14 上午</time></p>
-		 </header>
-	  	<div class="entry-content">
-		  	
-		  	<blockquote>
-<p>这个图形其实很少看到，其实在实际生活中，经常会有这样的插头形状，像主机和显示器的相连接的插头。需要两个螺丝钉去固定，以及几个端口去连接。</p>
-</blockquote>
-
-<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890752802585.jpg" alt="img"/></p>
-
-
-
-		</div>
-
-		 
-		 <footer>
-      	<a rel="full-article" href="css-draw-plug.html#more">read more &rarr;</a>
-    	</footer>
-    	
-
-	</article>
- 
-	<article>
-		 <header>
-		  	<h1 class="entry-title"><a href="json-server-ajax.html">json-server and xmlhttprequest</a></h1>
-			<p class="meta"><time datetime="2017-03-13T13:01:48+08:00" 
-			pubdate data-updated="true">2017/3/13 13:1 下午</time></p>
-		 </header>
-	  	<div class="entry-content">
-		  	
-		  	<h2 id="toc_0">前提</h2>
-
-<blockquote>
-<p>在很多时候，前端程序员往往较早一步实现页面逻辑，后端程序员由于需要联调、掌握业务逻辑，消耗的时间比较长一点。那前端为了等后端程序员开发完成之后，<em>API</em>能够通过直接修改<em>URL</em>来对接，就需要伪造一些数据，但是，大部分情况而言，伪造的数据都是不变的。前端脚本不可能用来实现对数据的增删该查。但是，昨天意外发现一个工具——<a href="https://github.com/typicode/json-server">json-server</a>,可以帮助前端程序员来解决页面逻辑控制的痛点。下面我通过一个简单的增删改查的例子来进行记录。</p>
-</blockquote>
-
-
-
-		</div>
-
-		 
-		 <footer>
-      	<a rel="full-article" href="json-server-ajax.html#more">read more &rarr;</a>
+      	<a rel="full-article" href="HTML5%20dataset.html#more">read more &rarr;</a>
     	</footer>
     	
 
@@ -211,7 +115,7 @@ $(document).ready(function(event) {
 	<div class="pagination">
 	
 <a href="archives.html">Blog Archives</a>
-	 <a class="next" href="all.html">Newer &rarr;</a>  
+	 
 	    
 	</div>
 </div>

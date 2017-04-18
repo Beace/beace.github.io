@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <title>
     
-  beace lee的博客
+  HTML5 dataset 属性不为人知的地方（命名规则和原理） - beace lee的博客
   
 
   </title>
@@ -85,135 +85,147 @@ $(document).ready(function(event) {
 </nav>
   <div id="main">
     <div id="content"> 
-<div class="blog-index">
+<div>
+	<article class="hentry" role="article">
+	<header>
+			  	<h1 class="entry-title">HTML5 dataset 属性不为人知的地方（命名规则和原理）</h1>
+				<p class="meta"><time datetime="2017-04-18T14:06:51+08:00" pubdate data-updated="true">2017/4/18 14:6 下午</time></p>
+			 </header>
+		  	<div class="entry-content">
+			  	<p><em>HTML5</em>在元素中增加了<em>data-*</em>，可以允许用户自定义属性。这种可读写的方式极大的方便了<br/>
+操作元素时的数据存储、状态保留。经常可以在各大主流网站上面看到它的使用，例如淘宝首页。</p>
 
-	<article>
-		 <header>
-		  	<h1 class="entry-title"><a href="css-draw-triangle.html">分享一些CSS画图技巧(2)——三角形</a></h1>
-			<p class="meta"><time datetime="2017-03-15T10:14:17+08:00" 
-			pubdate data-updated="true">2017/3/15 10:14 上午</time></p>
-		 </header>
-	  	<div class="entry-content">
-		  	
-		  	<p>三角形相对来说比较简单，我们可以通过设置border属性轻易实现。我来实现一个简单的和一个有难度的。</p>
+<p><img src="media/14924956119427/14924960637439.jpg" alt=""/></p>
 
+<span id="more"></span><!-- more -->
 
+<p>下面记录下一些使用细节。</p>
 
-		</div>
+<h2 id="toc_0">语法</h2>
 
-		 
-		 <footer>
-      	<a rel="full-article" href="css-draw-triangle.html#more">read more &rarr;</a>
-    	</footer>
-    	
+<p>在语法上，我们可以在任何DOM元素上添加该属性，但是需要遵照一些命名规则。</p>
 
-	</article>
- 
-	<article>
-		 <header>
-		  	<h1 class="entry-title"><a href="css-draw-more.html">分享一些CSS画图技巧(3)——未完待续</a></h1>
-			<p class="meta"><time datetime="2017-03-15T10:14:17+08:00" 
-			pubdate data-updated="true">2017/3/15 10:14 上午</time></p>
-		 </header>
-	  	<div class="entry-content">
-		  	
-		  	<p>明天我将继续记录以下图形的绘制。有些很简单，有些也很简单。</p>
+<h3 id="toc_1">命名规则</h3>
 
-<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890752802585.jpg" alt=""/></p>
+<ul>
+<li>必须使用<em>data-</em>最为前缀，<em>data-</em>后面数据类型允许<em>字符串</em>，<em>数字</em>，<em>-</em>，<em>.</em>，<em>:</em>，<em>_</em> 。当然了，在使用JavaScript获取时就不能单纯地将一些特殊字符直接点属性使用了。</li>
+</ul>
 
-<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890752967384.jpg" alt=""/></p>
+<p><img src="media/14924956119427/14924965473433.jpg" alt=""/></p>
 
+<ul>
+<li>不可以使用大写字母。这里说不可以是不太准确的，建议可能更加恰当。但是为了避免出错还是不要使用这种写法，尤其是驼峰式命名。因为获取<em>dataset</em>时，会看到输出的object中该属性都变为了小写。</li>
+</ul>
 
-		</div>
+<h4 id="toc_2">举个例子</h4>
 
-		
+<p>下面这段代码中加入了自定义属性<em>data-bgColor</em>，采用了驼峰式命名，希望能够记住该属性通过JavaScript动态赋值。</p>
 
-	</article>
- 
-	<article>
-		 <header>
-		  	<h1 class="entry-title"><a href="css-draw-power-plug.html">分享一些CSS画图技巧(4)—— 电源插头</a></h1>
-			<p class="meta"><time datetime="2017-03-15T10:14:17+08:00" 
-			pubdate data-updated="true">2017/3/15 10:14 上午</time></p>
-		 </header>
-	  	<div class="entry-content">
-		  	
-		  	<blockquote>
-<p>电源插头组合了很多内容，包括三角形，矩形，其实最终形成的图形类似多边形，如下图所示。</p>
-</blockquote>
+<pre><code class="language-html">&lt;div id=&quot;container2&quot; data-bgColor=&quot;yellow&quot;&gt;&lt;/div&gt;
+</code></pre>
 
-<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890752967384.jpg" alt=""/></p>
+<p>可是通过JavaScript获取到该属性时，却变为了小写。如下图。</p>
 
+<pre><code class="language-javascript">var container2 = document.getElementById(&#39;container2&#39;);
+var dataset2 = container2.dataset;
+console.log(dataset2);
+</code></pre>
 
+<p><img src="media/14924956119427/14924968409115.jpg" alt=""/></p>
 
-		</div>
+<p>那如果非要使用驼峰式命名该如何呢？上面有个例子举得好像正好规避了这个问题。有这样的一个属性<em>data-name-1</em>，访问到的还是<em>name-1</em>，如果将其换为字符串<em>data-bg-color</em>，可以看到获取的时候就变为了驼峰。</p>
 
-		 
-		 <footer>
-      	<a rel="full-article" href="css-draw-power-plug.html#more">read more &rarr;</a>
-    	</footer>
-    	
+<p><img src="media/14924956119427/14924973616744.jpg" alt=""/></p>
 
-	</article>
- 
-	<article>
-		 <header>
-		  	<h1 class="entry-title"><a href="css-draw-plug.html">分享一些CSS画图技巧(5)—插头</a></h1>
-			<p class="meta"><time datetime="2017-03-15T10:14:17+08:00" 
-			pubdate data-updated="true">2017/3/15 10:14 上午</time></p>
-		 </header>
-	  	<div class="entry-content">
-		  	
-		  	<blockquote>
-<p>这个图形其实很少看到，其实在实际生活中，经常会有这样的插头形状，像主机和显示器的相连接的插头。需要两个螺丝钉去固定，以及几个端口去连接。</p>
-</blockquote>
-
-<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/Css-draw/14890752802585.jpg" alt="img"/></p>
-
-
-
-		</div>
-
-		 
-		 <footer>
-      	<a rel="full-article" href="css-draw-plug.html#more">read more &rarr;</a>
-    	</footer>
-    	
-
-	</article>
- 
-	<article>
-		 <header>
-		  	<h1 class="entry-title"><a href="json-server-ajax.html">json-server and xmlhttprequest</a></h1>
-			<p class="meta"><time datetime="2017-03-13T13:01:48+08:00" 
-			pubdate data-updated="true">2017/3/13 13:1 下午</time></p>
-		 </header>
-	  	<div class="entry-content">
-		  	
-		  	<h2 id="toc_0">前提</h2>
+<p>这是因为浏览器有一个<em>Name conversion（命名转换）</em>的过程，在获取时将<em>data-</em>去掉，并且将之后的命名中如果含有破折号的，将其变为大写。当然了，变为大写的字符也是有范围的。首先它必须具有大写，<em>ASCII</em>中的<em>A</em>到<em>Z</em>。</p>
 
 <blockquote>
-<p>在很多时候，前端程序员往往较早一步实现页面逻辑，后端程序员由于需要联调、掌握业务逻辑，消耗的时间比较长一点。那前端为了等后端程序员开发完成之后，<em>API</em>能够通过直接修改<em>URL</em>来对接，就需要伪造一些数据，但是，大部分情况而言，伪造的数据都是不变的。前端脚本不可能用来实现对数据的增删该查。但是，昨天意外发现一个工具——<a href="https://github.com/typicode/json-server">json-server</a>,可以帮助前端程序员来解决页面逻辑控制的痛点。下面我通过一个简单的增删改查的例子来进行记录。</p>
+<p>any dash (U+002D) followed by an ASCII lowercase letter a to z, the dash is removed and the letter is transformed into its uppercase counterpart;</p>
 </blockquote>
 
+<p>当然了，这是一个双向的过程。我们也可以给DOM元素指定不存在的<em>data-</em>属性。</p>
 
+<pre><code class="language-javascript">container2.dataset.itemIndex = &quot;1&quot;;
+</code></pre>
+
+<p>这时，在<em>HTML</em>中，将会如此渲染。如下图，可以看到又加上了破折号<em>data-item-index</em>。</p>
+
+<p><img src="media/14924956119427/14924980360328.jpg" alt=""/></p>
+
+<blockquote>
+<p>any ASCII uppercase letter A to Z is transformed into a dash followed by its lowercase counterpart;</p>
+</blockquote>
+
+<h2 id="toc_3">操作</h2>
+
+<p><code>JavaScript</code>来获取data-*属性。</p>
+
+<h3 id="toc_4">获取并操作元素样式</h3>
+
+<pre><code class="language-javascript">var container = document.getElementById(&#39;container&#39;);
+var dataset = container.dataset;
+container.style = `
+width: ${dataset.width};
+height: ${dataset.height};
+background-color: ${dataset.bgcolor};`;
+</code></pre>
+
+<p><img src="media/14924956119427/14924987600651.jpg" alt=""/></p>
+
+<h3 id="toc_5">也可以在选取特定的元素上起作用。</h3>
+
+<pre><code class="language-javascript">const audio = document.querySelector(`audio[data-key=&quot;${e.keyCode}&quot;]`);
+</code></pre>
+
+			</div>
+
+		
+	  
+		<footer>
+		 <p class="meta">
+
+			<strong>Categories:</strong>&nbsp; 
+			<span class="categories">
+			
+			    <a class='category' href='html5.html'>html5</a>&nbsp;
+			 
+			</span>
+		    </p>
+		    <p class="meta">
+		      
+		 </p>
+	    
+		<div class="sharing">
+		  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"shimin"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+          
+
+          
+              <div class="ds-thread" data-thread-key="HTML5%20dataset.html" data-url="beace.github.io/HTML5%20dataset.html" data-title="HTML5 dataset 属性不为人知的地方（命名规则和原理）"></div>
+          
 
 		</div>
 
-		 
-		 <footer>
-      	<a rel="full-article" href="json-server-ajax.html#more">read more &rarr;</a>
-    	</footer>
-    	
-
-	</article>
-  
-	<div class="pagination">
-	
-<a href="archives.html">Blog Archives</a>
-	 <a class="next" href="all.html">Newer &rarr;</a>  
+	    <p class="meta">
 	    
-	</div>
+	    
+	        <a class="basic-alignment right" href="14921760383479.html" 
+	        title="Next Post: 【摘抄】You Don't Need jQuery (选自 https://travis-ci.org/oneuijs/You-Dont-Need-jQuery)">【摘抄】You Don't Need jQuery (选自 https://travis-ci.org/oneuijs/You-Dont-Need-jQuery) &raquo;</a>
+	    
+	    </p>
+	  </footer>
+	</article>
 </div>
  <aside class="sidebar"> 
 

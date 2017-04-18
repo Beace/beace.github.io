@@ -4,7 +4,7 @@
   <title><![CDATA[beace lee的博客]]></title>
   <link href="beace.github.io/atom.xml" rel="self"/>
   <link href="beace.github.io/"/>
-  <updated>2017-04-14T20:34:53+08:00</updated>
+  <updated>2017-04-18T15:23:20+08:00</updated>
   <id>beace.github.io/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -12,6 +12,1525 @@
   </author>
   <generator uri="http://www.coderforart.com/">CoderForArt</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[HTML5 dataset 属性不为人知的地方（命名规则和原理）]]></title>
+    <link href="beace.github.io/HTML5%20dataset.html"/>
+    <updated>2017-04-18T14:06:51+08:00</updated>
+    <id>beace.github.io/HTML5%20dataset.html</id>
+    <content type="html"><![CDATA[
+<p><em>HTML5</em>在元素中增加了<em>data-*</em>，可以允许用户自定义属性。这种可读写的方式极大的方便了<br/>
+操作元素时的数据存储、状态保留。经常可以在各大主流网站上面看到它的使用，例如淘宝首页。</p>
+
+<p><img src="media/14924956119427/14924960637439.jpg" alt=""/></p>
+
+<span id="more"></span><!-- more -->
+
+<p>下面记录下一些使用细节。</p>
+
+<h2 id="toc_0">语法</h2>
+
+<p>在语法上，我们可以在任何DOM元素上添加该属性，但是需要遵照一些命名规则。</p>
+
+<h3 id="toc_1">命名规则</h3>
+
+<ul>
+<li>必须使用<em>data-</em>最为前缀，<em>data-</em>后面数据类型允许<em>字符串</em>，<em>数字</em>，<em>-</em>，<em>.</em>，<em>:</em>，<em>_</em> 。当然了，在使用JavaScript获取时就不能单纯地将一些特殊字符直接点属性使用了。</li>
+</ul>
+
+<p><img src="media/14924956119427/14924965473433.jpg" alt=""/></p>
+
+<ul>
+<li>不可以使用大写字母。这里说不可以是不太准确的，建议可能更加恰当。但是为了避免出错还是不要使用这种写法，尤其是驼峰式命名。因为获取<em>dataset</em>时，会看到输出的object中该属性都变为了小写。</li>
+</ul>
+
+<h4 id="toc_2">举个例子</h4>
+
+<p>下面这段代码中加入了自定义属性<em>data-bgColor</em>，采用了驼峰式命名，希望能够记住该属性通过JavaScript动态赋值。</p>
+
+<pre><code class="language-html">&lt;div id=&quot;container2&quot; data-bgColor=&quot;yellow&quot;&gt;&lt;/div&gt;
+</code></pre>
+
+<p>可是通过JavaScript获取到该属性时，却变为了小写。如下图。</p>
+
+<pre><code class="language-javascript">var container2 = document.getElementById(&#39;container2&#39;);
+var dataset2 = container2.dataset;
+console.log(dataset2);
+</code></pre>
+
+<p><img src="media/14924956119427/14924968409115.jpg" alt=""/></p>
+
+<p>那如果非要使用驼峰式命名该如何呢？上面有个例子举得好像正好规避了这个问题。有这样的一个属性<em>data-name-1</em>，访问到的还是<em>name-1</em>，如果将其换为字符串<em>data-bg-color</em>，可以看到获取的时候就变为了驼峰。</p>
+
+<p><img src="media/14924956119427/14924973616744.jpg" alt=""/></p>
+
+<p>这是因为浏览器有一个<em>Name conversion（命名转换）</em>的过程，在获取时将<em>data-</em>去掉，并且将之后的命名中如果含有破折号的，将其变为大写。当然了，变为大写的字符也是有范围的。首先它必须具有大写，<em>ASCII</em>中的<em>A</em>到<em>Z</em>。</p>
+
+<blockquote>
+<p>any dash (U+002D) followed by an ASCII lowercase letter a to z, the dash is removed and the letter is transformed into its uppercase counterpart;</p>
+</blockquote>
+
+<p>当然了，这是一个双向的过程。我们也可以给DOM元素指定不存在的<em>data-</em>属性。</p>
+
+<pre><code class="language-javascript">container2.dataset.itemIndex = &quot;1&quot;;
+</code></pre>
+
+<p>这时，在<em>HTML</em>中，将会如此渲染。如下图，可以看到又加上了破折号<em>data-item-index</em>。</p>
+
+<p><img src="media/14924956119427/14924980360328.jpg" alt=""/></p>
+
+<blockquote>
+<p>any ASCII uppercase letter A to Z is transformed into a dash followed by its lowercase counterpart;</p>
+</blockquote>
+
+<h2 id="toc_3">操作</h2>
+
+<p><code>JavaScript</code>来获取data-*属性。</p>
+
+<h3 id="toc_4">获取并操作元素样式</h3>
+
+<pre><code class="language-javascript">var container = document.getElementById(&#39;container&#39;);
+var dataset = container.dataset;
+container.style = `
+width: ${dataset.width};
+height: ${dataset.height};
+background-color: ${dataset.bgcolor};`;
+</code></pre>
+
+<p><img src="media/14924956119427/14924987600651.jpg" alt=""/></p>
+
+<h3 id="toc_5">也可以在选取特定的元素上起作用。</h3>
+
+<pre><code class="language-javascript">const audio = document.querySelector(`audio[data-key=&quot;${e.keyCode}&quot;]`);
+</code></pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[【摘抄】You Don't Need jQuery (选自 https://travis-ci.org/oneuijs/You-Dont-Need-jQuery)]]></title>
+    <link href="beace.github.io/14921760383479.html"/>
+    <updated>2017-04-14T21:20:38+08:00</updated>
+    <id>beace.github.io/14921760383479.html</id>
+    <content type="html"><![CDATA[
+<p>前端发展很快，现代浏览器原生 API 已经足够好用。我们并不需要为了操作 DOM、Event 等再学习一下 jQuery 的 API。同时由于 React、Angular、Vue 等框架的流行，直接操作 DOM 不再是好的模式，jQuery 使用场景大大减少。本项目总结了大部分 jQuery API 替代的方法，暂时只支持 IE10+ 以上浏览器。</p>
+
+<span id="more"></span><!-- more -->
+
+<h2 id="toc_0">目录</h2>
+
+<ol>
+<li><a href="#translations">Translations</a></li>
+<li><a href="#query-selector">Query Selector</a></li>
+<li><a href="#css--style">CSS &amp; Style</a></li>
+<li><a href="#dom-manipulation">DOM Manipulation</a></li>
+<li><a href="#ajax">Ajax</a></li>
+<li><a href="#events">Events</a></li>
+<li><a href="#utilities">Utilities</a></li>
+<li><a href="#promises">Promises</a></li>
+<li><a href="#animation">Animation</a></li>
+<li><a href="#alternatives">Alternatives</a></li>
+<li><a href="#browser-support">Browser Support</a></li>
+</ol>
+
+<h2 id="toc_1">Translations</h2>
+
+<ul>
+<li><a href="./README.ko-KR.md">한국어</a></li>
+<li><a href="./README.zh-CN.md">简体中文</a></li>
+<li><a href="./README-my.md">Bahasa Melayu</a></li>
+<li><a href="./README-id.md">Bahasa Indonesia</a></li>
+<li><a href="./README.pt-BR.md">Português(PT-BR)</a></li>
+<li><a href="./README-vi.md">Tiếng Việt Nam</a></li>
+<li><a href="./README-es.md">Español</a></li>
+<li><a href="./README-ru.md">Русский</a></li>
+<li><a href="./README-kg.md">Кыргызча</a></li>
+<li><a href="./README-tr.md">Türkçe</a></li>
+<li><a href="./README-it.md">Italiano</a></li>
+<li><a href="./README-fr.md">Français</a></li>
+<li><a href="./README-ja.md">日本語</a></li>
+<li><a href="./README-pl.md">Polski</a></li>
+</ul>
+
+<h2 id="toc_2">Query Selector</h2>
+
+<p>常用的 class、id、属性 选择器都可以使用 <code>document.querySelector</code> 或 <code>document.querySelectorAll</code> 替代。区别是<br/>
+* <code>document.querySelector</code> 返回第一个匹配的 Element<br/>
+* <code>document.querySelectorAll</code> 返回所有匹配的 Element 组成的 NodeList。它可以通过 <code>[].slice.call()</code> 把它转成 Array<br/>
+* 如果匹配不到任何 Element，jQuery 返回空数组 <code>[]</code>，但 <code>document.querySelector</code> 返回 <code>null</code>，注意空指针异常。当找不到时，也可以使用 <code>||</code> 设置默认的值，如 <code>document.querySelectorAll(selector) || []</code></p>
+
+<blockquote>
+<p>注意：<code>document.querySelector</code> 和 <code>document.querySelectorAll</code> 性能很<strong>差</strong>。如果想提高性能，尽量使用 <code>document.getElementById</code>、<code>document.getElementsByClassName</code> 或 <code>document.getElementsByTagName</code>。</p>
+</blockquote>
+
+<ul>
+<li><p><a href="#1.0">1.0</a> <a name='1.0'></a> 选择器查询</p>
+
+<pre><code class="language-js">// jQuery
+$(&#39;selector&#39;);
+
+// Native
+document.querySelectorAll(&#39;selector&#39;);
+</code></pre></li>
+<li><p><a href="#1.1">1.1</a> <a name='1.1'></a> class 查询</p>
+
+<pre><code class="language-js">// jQuery
+$(&#39;.class&#39;);
+
+// Native
+document.querySelectorAll(&#39;.class&#39;);
+
+// or
+document.getElementsByClassName(&#39;class&#39;);
+</code></pre></li>
+<li><p><a href="#1.2">1.2</a> <a name='1.2'></a> id 查询</p>
+
+<pre><code class="language-js">// jQuery
+$(&#39;#id&#39;);
+
+// Native
+document.querySelector(&#39;#id&#39;);
+
+// or
+document.getElementById(&#39;id&#39;);
+</code></pre></li>
+<li><p><a href="#1.3">1.3</a> <a name='1.3'></a> 属性查询</p>
+
+<pre><code class="language-js">// jQuery
+$(&#39;a[target=_blank]&#39;);
+
+// Native
+document.querySelectorAll(&#39;a[target=_blank]&#39;);
+</code></pre></li>
+<li><p><a href="#1.4">1.4</a> <a name='1.4'></a> 后代查询</p>
+
+<pre><code class="language-js">// jQuery
+$el.find(&#39;li&#39;);
+
+// Native
+el.querySelectorAll(&#39;li&#39;);
+</code></pre></li>
+<li><p><a href="#1.5">1.5</a> <a name='1.5'></a> 兄弟及上下元素</p>
+
+<ul>
+<li>兄弟元素</li>
+</ul>
+
+<pre><code class="language-js">// jQuery
+$el.siblings();
+
+// Native - latest, Edge13+
+[...el.parentNode.children].filter((child) =&gt;
+  child !== el
+);
+// Native (alternative) - latest, Edge13+
+Array.from(el.parentNode.children).filter((child) =&gt;
+  child !== el
+);
+// Native - IE10+
+Array.prototype.filter.call(el.parentNode.children, (child) =&gt;
+  child !== el
+);
+</code></pre>
+
+<ul>
+<li>上一个元素</li>
+</ul>
+
+<pre><code class="language-js">// jQuery
+$el.prev();
+
+// Native
+el.previousElementSibling;
+
+</code></pre>
+
+<ul>
+<li>下一个元素</li>
+</ul>
+
+<pre><code class="language-js">// next
+$el.next();
+
+// Native
+el.nextElementSibling;
+</code></pre></li>
+<li><p><a href="#1.6">1.6</a> <a name='1.6'></a> Closest</p>
+
+<p>Closest 获得匹配选择器的第一个祖先元素，从当前元素开始沿 DOM 树向上。</p>
+
+<pre><code class="language-js">// jQuery
+$el.closest(queryString);
+
+// Native - Only latest, NO IE
+el.closest(selector);
+
+// Native - IE10+
+function closest(el, selector) {
+const matchesSelector = el.matches || el.webkitMatchesSelector || el.mozMatchesSelector || el.msMatchesSelector;
+
+while (el) {
+  if (matchesSelector.call(el, selector)) {
+    return el;
+  } else {
+    el = el.parentElement;
+  }
+}
+return null;
+}
+</code></pre></li>
+<li><p><a href="#1.7">1.7</a> <a name='1.7'></a> Parents Until</p>
+
+<p>获取当前每一个匹配元素集的祖先，不包括匹配元素的本身。</p>
+
+<pre><code class="language-js">// jQuery
+$el.parentsUntil(selector, filter);
+
+// Native
+function parentsUntil(el, selector, filter) {
+const result = [];
+const matchesSelector = el.matches || el.webkitMatchesSelector || el.mozMatchesSelector || el.msMatchesSelector;
+
+// match start from parent
+el = el.parentElement;
+while (el &amp;&amp; !matchesSelector.call(el, selector)) {
+  if (!filter) {
+    result.push(el);
+  } else {
+    if (matchesSelector.call(el, filter)) {
+      result.push(el);
+    }
+  }
+  el = el.parentElement;
+}
+return result;
+}
+</code></pre></li>
+<li><p><a href="#1.8">1.8</a> <a name='1.8'></a> Form</p>
+
+<ul>
+<li>Input/Textarea</li>
+</ul>
+
+<pre><code class="language-js">// jQuery
+$(&#39;#my-input&#39;).val();
+
+// Native
+document.querySelector(&#39;#my-input&#39;).value;
+</code></pre>
+
+<ul>
+<li>获取 e.currentTarget 在 <code>.radio</code> 中的数组索引</li>
+</ul>
+
+<pre><code class="language-js">// jQuery
+$(&#39;.radio&#39;).index(e.currentTarget);
+
+// Native
+Array.prototype.indexOf.call(document.querySelectorAll(&#39;.radio&#39;), e.currentTarget);
+</code></pre></li>
+<li><p><a href="#1.9">1.9</a> <a name='1.9'></a> Iframe Contents</p>
+
+<p>jQuery 对象的 iframe <code>contents()</code> 返回的是 iframe 内的 <code>document</code></p>
+
+<ul>
+<li>Iframe contents</li>
+</ul>
+
+<pre><code class="language-js">// jQuery
+$iframe.contents();
+
+// Native
+iframe.contentDocument;
+</code></pre>
+
+<ul>
+<li>Iframe Query</li>
+</ul>
+
+<pre><code class="language-js">// jQuery
+$iframe.contents().find(&#39;.css&#39;);
+
+// Native
+iframe.contentDocument.querySelectorAll(&#39;.css&#39;);
+</code></pre></li>
+<li><p><a href="#1.10">1.10</a> <a name='1.10'></a> 获取 body</p>
+
+<pre><code class="language-js">// jQuery
+$(&#39;body&#39;);
+
+// Native
+document.body;
+</code></pre></li>
+<li><p><a href="#1.11">1.11</a> <a name='1.11'></a> 获取或设置属性</p>
+
+<ul>
+<li>获取属性</li>
+</ul>
+
+<pre><code class="language-js">// jQuery
+$el.attr(&#39;foo&#39;);
+
+// Native
+el.getAttribute(&#39;foo&#39;);
+</code></pre>
+
+<ul>
+<li>设置属性</li>
+</ul>
+
+<pre><code class="language-js">// jQuery, note that this works in memory without change the DOM
+$el.attr(&#39;foo&#39;, &#39;bar&#39;);
+
+// Native
+el.setAttribute(&#39;foo&#39;, &#39;bar&#39;);
+</code></pre>
+
+<ul>
+<li>获取 <code>data-</code> 属性</li>
+</ul>
+
+<pre><code class="language-js">// jQuery
+$el.data(&#39;foo&#39;);
+
+// Native (use `getAttribute`)
+el.getAttribute(&#39;data-foo&#39;);
+
+// Native (use `dataset` if only need to support IE 11+)
+el.dataset[&#39;foo&#39;];
+</code></pre></li>
+</ul>
+
+<p><strong><a href="#%E7%9B%AE%E5%BD%95">⬆ 回到顶部</a></strong></p>
+
+<h2 id="toc_3">CSS &amp; Style</h2>
+
+<ul>
+<li><p><a href="#2.1">2.1</a> <a name='2.1'></a> CSS</p>
+
+<ul>
+<li>Get style</li>
+</ul>
+
+<pre><code class="language-js">// jQuery
+$el.css(&quot;color&quot;);
+
+// Native
+// 注意：此处为了解决当 style 值为 auto 时，返回 auto 的问题
+const win = el.ownerDocument.defaultView;
+
+// null 的意思是不返回伪类元素
+win.getComputedStyle(el, null).color;
+</code></pre>
+
+<ul>
+<li>Set style</li>
+</ul>
+
+<pre><code class="language-js">// jQuery
+$el.css({ color: &quot;#ff0011&quot; });
+
+// Native
+el.style.color = &#39;#ff0011&#39;;
+</code></pre>
+
+<ul>
+<li>Get/Set Styles</li>
+</ul>
+
+<p>注意，如果想一次设置多个 style，可以参考 oui-dom-utils 中 <a href="https://github.com/oneuijs/oui-dom-utils/blob/master/src/index.js#L194">setStyles</a> 方法</p>
+
+<ul>
+<li>Add class</li>
+</ul>
+
+<pre><code class="language-js">// jQuery
+$el.addClass(className);
+
+// Native
+el.classList.add(className);
+</code></pre>
+
+<ul>
+<li>Remove class</li>
+</ul>
+
+<pre><code class="language-js">// jQuery
+$el.removeClass(className);
+
+// Native
+el.classList.remove(className);
+</code></pre>
+
+<ul>
+<li>has class</li>
+</ul>
+
+<pre><code class="language-js">// jQuery
+$el.hasClass(className);
+
+// Native
+el.classList.contains(className);
+</code></pre>
+
+<ul>
+<li>Toggle class</li>
+</ul>
+
+<pre><code class="language-js">// jQuery
+$el.toggleClass(className);
+
+// Native
+el.classList.toggle(className);
+</code></pre></li>
+<li><p><a href="#2.2">2.2</a> <a name='2.2'></a> Width &amp; Height</p>
+
+<p>Width 与 Height 获取方法相同，下面以 Height 为例：</p>
+
+<ul>
+<li>Window height</li>
+</ul>
+
+<pre><code class="language-js">// window height
+$(window).height();
+
+// 含 scrollbar
+window.document.documentElement.clientHeight;
+
+// 不含 scrollbar，与 jQuery 行为一致
+window.innerHeight;
+</code></pre>
+
+<ul>
+<li>Document height</li>
+</ul>
+
+<pre><code class="language-js">// jQuery
+$(document).height();
+
+// Native
+const body = document.body;
+const html = document.documentElement;
+const height = Math.max(
+  body.offsetHeight,
+  body.scrollHeight,
+  html.clientHeight,
+  html.offsetHeight,
+  html.scrollHeight
+);
+</code></pre>
+
+<ul>
+<li>Element height</li>
+</ul>
+
+<pre><code class="language-js">// jQuery
+$el.height();
+
+// Native
+function getHeight(el) {
+  const styles = this.getComputedStyle(el);
+  const height = el.offsetHeight;
+  const borderTopWidth = parseFloat(styles.borderTopWidth);
+  const borderBottomWidth = parseFloat(styles.borderBottomWidth);
+  const paddingTop = parseFloat(styles.paddingTop);
+  const paddingBottom = parseFloat(styles.paddingBottom);
+  return height - borderBottomWidth - borderTopWidth - paddingTop - paddingBottom;
+}
+
+// 精确到整数（border-box 时为 height - border 值，content-box 时为 height + padding 值）
+el.clientHeight;
+
+// 精确到小数（border-box 时为 height 值，content-box 时为 height + padding + border 值）
+el.getBoundingClientRect().height;
+</code></pre></li>
+<li><p><a href="#2.3">2.3</a> <a name='2.3'></a> Position &amp; Offset</p>
+
+<ul>
+<li>Position</li>
+</ul>
+
+<p>获得匹配元素相对父元素的偏移</p>
+
+<pre><code class="language-js">// jQuery
+$el.position();
+
+// Native
+{ left: el.offsetLeft, top: el.offsetTop }
+</code></pre>
+
+<ul>
+<li>Offset</li>
+</ul>
+
+<p>获得匹配元素相对文档的偏移</p>
+
+<pre><code class="language-js">// jQuery
+$el.offset();
+
+// Native
+function getOffset (el) {
+  const box = el.getBoundingClientRect();
+
+  return {
+    top: box.top + window.pageYOffset - document.documentElement.clientTop,
+    left: box.left + window.pageXOffset - document.documentElement.clientLeft
+  }
+}
+</code></pre></li>
+<li><p><a href="#2.4">2.4</a> <a name='2.4'></a> Scroll Top</p>
+
+<p>获取元素滚动条垂直位置。</p>
+
+<pre><code class="language-js">// jQuery
+$(window).scrollTop();
+
+// Native
+(document.documentElement &amp;&amp; document.documentElement.scrollTop) || document.body.scrollTop;
+</code></pre></li>
+</ul>
+
+<p><strong><a href="#%E7%9B%AE%E5%BD%95">⬆ 回到顶部</a></strong></p>
+
+<h2 id="toc_4">DOM Manipulation</h2>
+
+<ul>
+<li><p><a href="#3.1">3.1</a> <a name='3.1'></a> Remove</p>
+
+<p>从 DOM 中移除元素。</p>
+
+<pre><code class="language-js">// jQuery
+$el.remove();
+
+// Native
+el.parentNode.removeChild(el);
+</code></pre></li>
+<li><p><a href="#3.2">3.2</a> <a name='3.2'></a> Text</p>
+
+<ul>
+<li>Get text</li>
+</ul>
+
+<p>返回指定元素及其后代的文本内容。</p>
+
+<pre><code class="language-js">// jQuery
+$el.text();
+
+// Native
+el.textContent;
+</code></pre>
+
+<ul>
+<li>Set text</li>
+</ul>
+
+<p>设置元素的文本内容。</p>
+
+<pre><code class="language-js">// jQuery
+$el.text(string);
+
+// Native
+el.textContent = string;
+</code></pre></li>
+<li><p><a href="#3.3">3.3</a> <a name='3.3'></a> HTML</p>
+
+<ul>
+<li>Get HTML</li>
+</ul>
+
+<pre><code class="language-js">// jQuery
+$el.html();
+
+// Native
+el.innerHTML;
+</code></pre>
+
+<ul>
+<li>Set HTML</li>
+</ul>
+
+<pre><code class="language-js">// jQuery
+$el.html(htmlString);
+
+// Native
+el.innerHTML = htmlString;
+</code></pre></li>
+<li><p><a href="#3.4">3.4</a> <a name='3.4'></a> Append</p>
+
+<p>Append 插入到子节点的末尾</p>
+
+<pre><code class="language-js">// jQuery
+$el.append(&quot;&lt;div id=&#39;container&#39;&gt;hello&lt;/div&gt;&quot;);
+
+// Native (HTML string)
+el.insertAdjacentHTML(&#39;beforeend&#39;, &#39;&lt;div id=&quot;container&quot;&gt;Hello World&lt;/div&gt;&#39;);
+
+// Native (Element)
+el.appendChild(newEl);
+</code></pre></li>
+<li><p><a href="#3.5">3.5</a> <a name='3.5'></a> Prepend</p>
+
+<pre><code class="language-js">// jQuery
+$el.prepend(&quot;&lt;div id=&#39;container&#39;&gt;hello&lt;/div&gt;&quot;);
+
+// Native (HTML string)
+el.insertAdjacentHTML(&#39;afterbegin&#39;, &#39;&lt;div id=&quot;container&quot;&gt;Hello World&lt;/div&gt;&#39;);
+
+// Native (Element)
+el.insertBefore(newEl, el.firstChild);
+</code></pre></li>
+<li><p><a href="#3.6">3.6</a> <a name='3.6'></a> insertBefore</p>
+
+<p>在选中元素前插入新节点</p>
+
+<pre><code class="language-js">// jQuery
+$newEl.insertBefore(queryString);
+
+// Native (HTML string)
+el.insertAdjacentHTML(&#39;beforebegin &#39;, &#39;&lt;div id=&quot;container&quot;&gt;Hello World&lt;/div&gt;&#39;);
+
+// Native (Element)
+const el = document.querySelector(selector);
+if (el.parentNode) {
+el.parentNode.insertBefore(newEl, el);
+}
+</code></pre></li>
+<li><p><a href="#3.7">3.7</a> <a name='3.7'></a> insertAfter</p>
+
+<p>在选中元素后插入新节点</p>
+
+<pre><code class="language-js">// jQuery
+$newEl.insertAfter(queryString);
+
+// Native (HTML string)
+el.insertAdjacentHTML(&#39;afterend&#39;, &#39;&lt;div id=&quot;container&quot;&gt;Hello World&lt;/div&gt;&#39;);
+
+// Native (Element)
+const el = document.querySelector(selector);
+if (el.parentNode) {
+el.parentNode.insertBefore(newEl, el.nextSibling);
+}
+</code></pre></li>
+<li><p><a href="#3.8">3.8</a> <a name='3.8'></a> is</p>
+
+<p>如果匹配查询选择器则 <code>true</code></p>
+
+<pre><code class="language-js">// jQuery - Notice `is` also work with `function` or `elements` which is not concerned here
+$el.is(selector);
+
+// Native
+el.matches(selector);
+</code></pre></li>
+<li><p><a href="#3.9">3.9</a> <a name='3.9'></a> clone</p>
+
+<p>创建元素的深度拷贝</p>
+
+<pre><code class="language-js">// jQuery
+$el.clone();
+
+// Native
+el.cloneNode();
+
+// For Deep clone , set param as `true`
+</code></pre></li>
+<li><p><a href="#3.10">3.10</a> <a name='3.10'></a> empty</p>
+
+<p>移除所有子节点</p>
+
+<pre><code class="language-js">// jQuery
+$el.empty();
+
+// Native
+el.innerHTML = &#39;&#39;;
+</code></pre></li>
+<li><p><a href="#3.11">3.11</a> <a name='3.11'></a> wrap</p>
+
+<p>使用 HTML 结构包装每个元素</p>
+
+<pre><code class="language-js">// jQuery
+$(&#39;.inner&#39;).wrap(&#39;&lt;div class=&quot;wrapper&quot;&gt;&lt;/div&gt;&#39;);
+
+// Native
+Array.prototype.forEach.call(document.querySelectorAll(&#39;.inner&#39;), (el) =&gt; {
+const wrapper = document.createElement(&#39;div&#39;);
+wrapper.className = &#39;wrapper&#39;;
+el.parentNode.insertBefore(wrapper, el);
+el.parentNode.removeChild(el);
+wrapper.appendChild(el);
+});
+</code></pre></li>
+<li><p><a href="#3.12">3.12</a> <a name='3.12'></a> unwrap</p>
+
+<p>从 DOM 中移除匹配元素的父集</p>
+
+<pre><code class="language-js">// jQuery
+$(&#39;.inner&#39;).unwrap();
+
+// Native
+Array.prototype.forEach.call(document.querySelectorAll(&#39;.inner&#39;), (el) =&gt; {
+Array.prototype.forEach.call(el.childNodes, (child) =&gt; {
+  el.parentNode.insertBefore(child, el);
+});
+el.parentNode.removeChild(el);
+});
+</code></pre></li>
+<li><p><a href="#3.13">3.13</a> <a name='3.13'></a> replaceWith</p>
+
+<p>使用提供的新内容替换匹配元素的内容</p>
+
+<pre><code class="language-js">// jQuery
+$(&#39;.inner&#39;).replaceWith(&#39;&lt;div class=&quot;outer&quot;&gt;&lt;/div&gt;&#39;);
+
+// Native
+Array.prototype.forEach.call(document.querySelectorAll(&#39;.inner&#39;), (el) =&gt; {
+const outer = document.createElement(&#39;div&#39;);
+outer.className = &#39;outer&#39;;
+el.parentNode.insertBefore(outer, el);
+el.parentNode.removeChild(el);
+});
+</code></pre></li>
+<li><p><a href="#3.8">3.8</a> <a name='3.8'></a> is</p>
+
+<p>如果匹配给定的选择器，返回true</p>
+
+<pre><code class="language-js">// jQuery
+$el.is(selector);
+
+// Native
+el.matches(selector);
+</code></pre></li>
+<li><p><a href="#3.9">3.9</a> <a name='3.9'></a> clone</p>
+
+<p>深拷贝被选元素。（生成被选元素的副本，包含子节点、文本和属性。）</p>
+
+<pre><code class="language-js">//jQuery
+$el.clone();
+
+//Native
+el.cloneNode();
+</code></pre></li>
+<li><p><a href="#3.10">3.10</a> <a name='3.10'></a> empty</p>
+
+<p>移除所有子节点</p></li>
+</ul>
+
+<pre><code class="language-js">//jQuery
+$el.empty();
+
+//Native
+el.innerHTML = &#39;&#39;;
+</code></pre>
+
+<p>-<a href="#3.11">3.11</a> <a name='3.11'></a> wrap</p>
+
+<p>把每个被选元素放置在指定的HTML结构中。</p>
+
+<pre><code class="language-js"> //jQuery
+ $(&quot;.inner&quot;).wrap(&#39;&lt;div class=&quot;wrapper&quot;&gt;&lt;/div&gt;&#39;);
+
+ //Native
+ Array.prototype.forEach.call(document.querySelector(&#39;.inner&#39;), (el) =&gt; {
+   const wrapper = document.createElement(&quot;div&quot;);
+   wrapper.className = &quot;wrapper&quot;;
+   el.parentNode.
+ });
+
+</code></pre>
+
+<p>-<a href="#3.12">3.12</a> <a name="3.12"></a> unwrap</p>
+
+<p>把被选元素的父元素移除DOM结构</p>
+
+<pre><code class="language-js">  //jQuery
+  $(&quot;.inner&quot;).unwrap();
+
+  //Native
+  Array.prototype.forEach.call(document.querySelectorAll(&#39;.inner&#39;), (el) =&gt; {
+  Array.prototype.forEach.call(el.childNodes, (child) =&gt; {
+    el.parentNode.insertBefore(child, el);
+  });
+  el.parentNode.removeChild(el);
+});
+</code></pre>
+
+<p>-<a href="#3.13">3.13</a> <a name="3.13"></a> replaceWith</p>
+
+<p>用指定的元素替换被选的元素</p>
+
+<pre><code class="language-js">  //jQuery
+  $(&#39;.inner&#39;).replaceWith(&#39;&lt;div class=&quot;outer&quot;&gt;&lt;/div&gt;&#39;);
+
+  //Native
+  Array.prototype.forEach.call(document.querySelectorAll(&#39;.inner&#39;),(el) =&gt; {
+    const outer = document.createElement(&quot;div&quot;);
+    outer.className = &quot;outer&quot;;
+    el.parentNode.insertBefore(outer, el);
+    el.parentNode.removeChild(el);
+  });
+</code></pre>
+
+<p><strong><a href="#%E7%9B%AE%E5%BD%95">⬆ 回到顶部</a></strong></p>
+
+<h2 id="toc_5">Ajax</h2>
+
+<p><a href="https://fetch.spec.whatwg.org/">Fetch API</a> 是用于替换 XMLHttpRequest 处理 ajax 的新标准，Chrome 和 Firefox 均支持，旧浏览器可以使用 polyfills 提供支持。</p>
+
+<p>IE9+ 请使用 <a href="http://github.com/github/fetch">github/fetch</a>，IE8+ 请使用 <a href="https://github.com/camsong/fetch-ie8/">fetch-ie8</a>，JSONP 请使用 <a href="https://github.com/camsong/fetch-jsonp">fetch-jsonp</a>。</p>
+
+<ul>
+<li><p><a href="#4.1">4.1</a> <a name='4.1'></a> 从服务器读取数据并替换匹配元素的内容。</p>
+
+<pre><code class="language-js">// jQuery
+$(selector).load(url, completeCallback)
+
+// Native
+fetch(url).then(data =&gt; data.text()).then(data =&gt; {
+document.querySelector(selector).innerHTML = data
+}).then(completeCallback)
+</code></pre></li>
+</ul>
+
+<p><strong><a href="#%E7%9B%AE%E5%BD%95">⬆ 回到顶部</a></strong></p>
+
+<h2 id="toc_6">Events</h2>
+
+<p>完整地替代命名空间和事件代理，链接到 <a href="https://github.com/oneuijs/oui-dom-events">https://github.com/oneuijs/oui-dom-events</a></p>
+
+<ul>
+<li><p><a href="#5.0">5.0</a> <a name='5.0'></a> Document ready by <code>DOMContentLoaded</code></p>
+
+<pre><code class="language-js">// jQuery
+$(document).ready(eventHandler);
+
+// Native
+// 检测 DOMContentLoaded 是否已完成
+if (document.readyState === &#39;complete&#39; || document.readyState !== &#39;loading&#39;) {
+eventHandler();
+} else {
+document.addEventListener(&#39;DOMContentLoaded&#39;, eventHandler);
+}
+</code></pre></li>
+<li><p><a href="#5.1">5.1</a> <a name='5.1'></a> 使用 on 绑定事件</p>
+
+<pre><code class="language-js">// jQuery
+$el.on(eventName, eventHandler);
+
+// Native
+el.addEventListener(eventName, eventHandler);
+</code></pre></li>
+<li><p><a href="#5.2">5.2</a> <a name='5.2'></a> 使用 off 解绑事件</p>
+
+<pre><code class="language-js">// jQuery
+$el.off(eventName, eventHandler);
+
+// Native
+el.removeEventListener(eventName, eventHandler);
+</code></pre></li>
+<li><p><a href="#5.3">5.3</a> <a name='5.3'></a> Trigger</p>
+
+<pre><code class="language-js">// jQuery
+$(el).trigger(&#39;custom-event&#39;, {key1: &#39;data&#39;});
+
+// Native
+if (window.CustomEvent) {
+const event = new CustomEvent(&#39;custom-event&#39;, {detail: {key1: &#39;data&#39;}});
+} else {
+const event = document.createEvent(&#39;CustomEvent&#39;);
+event.initCustomEvent(&#39;custom-event&#39;, true, true, {key1: &#39;data&#39;});
+}
+
+el.dispatchEvent(event);
+</code></pre></li>
+</ul>
+
+<p><strong><a href="#%E7%9B%AE%E5%BD%95">⬆ 回到顶部</a></strong></p>
+
+<h2 id="toc_7">Utilities</h2>
+
+<p>大部分实用工具都能在 native API 中找到. 其他高级功能可以选用专注于该领域的稳定性和性能都更好的库来代替，推荐 <a href="https://lodash.com">lodash</a>。</p>
+
+<ul>
+<li><p><a href="#6.1">6.1</a> <a name='6.1'></a> 基本工具</p>
+
+<ul>
+<li>isArray</li>
+</ul>
+
+<p>检测参数是不是数组。</p>
+
+<pre><code class="language-js">// jQuery
+$.isArray(range);
+
+// Native
+Array.isArray(range);
+</code></pre>
+
+<ul>
+<li>isWindow</li>
+</ul>
+
+<p>检测参数是不是 window。</p>
+
+<pre><code class="language-js">// jQuery
+$.isWindow(obj);
+
+// Native
+function isWindow(obj) {
+return obj !== null &amp;&amp; obj !== undefined &amp;&amp; obj === obj.window;
+}
+</code></pre>
+
+<ul>
+<li>inArray</li>
+</ul>
+
+<p>在数组中搜索指定值并返回索引 (找不到则返回 -1)。</p>
+
+<pre><code class="language-js">// jQuery
+$.inArray(item, array);
+
+// Native
+array.indexOf(item) &gt; -1;
+
+// ES6-way
+array.includes(item);
+</code></pre>
+
+<ul>
+<li>isNumeric</li>
+</ul>
+
+<p>检测传入的参数是不是数字。<br/>
+Use <code>typeof</code> to decide the type or the <code>type</code> example for better accuracy.</p>
+
+<pre><code class="language-js">// jQuery
+$.isNumeric(item);
+
+// Native
+function isNumeric(value) {
+var type = typeof value;
+
+return (type === &#39;number&#39; || type === &#39;string&#39;) &amp;&amp; !Number.isNaN(value - Number.parseFloat(value));
+}
+</code></pre>
+
+<ul>
+<li>isFunction</li>
+</ul>
+
+<p>检测传入的参数是不是 JavaScript 函数对象。</p>
+
+<pre><code class="language-js">// jQuery
+$.isFunction(item);
+
+// Native
+function isFunction(item) {
+if (typeof item === &#39;function&#39;) {
+  return true;
+}
+var type = Object.prototype.toString(item);
+return type === &#39;[object Function]&#39; || type === &#39;[object GeneratorFunction]&#39;;
+}
+</code></pre>
+
+<ul>
+<li>isEmptyObject</li>
+</ul>
+
+<p>检测对象是否为空 (包括不可枚举属性).</p>
+
+<pre><code class="language-js">// jQuery
+$.isEmptyObject(obj);
+
+// Native
+function isEmptyObject(obj) {
+return Object.keys(obj).length === 0;
+}
+</code></pre>
+
+<ul>
+<li>isPlainObject</li>
+</ul>
+
+<p>检测是不是扁平对象 (使用 “{}” 或 “new Object” 创建).</p>
+
+<pre><code class="language-js">// jQuery
+$.isPlainObject(obj);
+
+// Native
+function isPlainObject(obj) {
+if (typeof (obj) !== &#39;object&#39; || obj.nodeType || obj !== null &amp;&amp; obj !== undefined &amp;&amp; obj === obj.window) {
+  return false;
+}
+
+if (obj.constructor &amp;&amp;
+    !Object.prototype.hasOwnProperty.call(obj.constructor.prototype, &#39;isPrototypeOf&#39;)) {
+  return false;
+}
+
+return true;
+}
+</code></pre>
+
+<ul>
+<li>extend</li>
+</ul>
+
+<p>合并多个对象的内容到第一个对象。<br/>
+object.assign 是 ES6 API，也可以使用 <a href="https://github.com/ljharb/object.assign">polyfill</a>。</p>
+
+<pre><code class="language-js">// jQuery
+$.extend({}, defaultOpts, opts);
+
+// Native
+Object.assign({}, defaultOpts, opts);
+</code></pre>
+
+<ul>
+<li>trim</li>
+</ul>
+
+<p>移除字符串头尾空白。</p>
+
+<pre><code class="language-js">// jQuery
+$.trim(string);
+
+// Native
+string.trim();
+</code></pre>
+
+<ul>
+<li>map</li>
+</ul>
+
+<p>将数组或对象转化为包含新内容的数组。</p>
+
+<pre><code class="language-js">// jQuery
+$.map(array, (value, index) =&gt; {
+});
+
+// Native
+array.map((value, index) =&gt; {
+});
+</code></pre>
+
+<ul>
+<li>each</li>
+</ul>
+
+<p>轮询函数，可用于平滑的轮询对象和数组。</p>
+
+<pre><code class="language-js">// jQuery
+$.each(array, (index, value) =&gt; {
+});
+
+// Native
+array.forEach((value, index) =&gt; {
+});
+</code></pre>
+
+<ul>
+<li>grep</li>
+</ul>
+
+<p>找到数组中符合过滤函数的元素。</p>
+
+<pre><code class="language-js">// jQuery
+$.grep(array, (value, index) =&gt; {
+});
+
+// Native
+array.filter((value, index) =&gt; {
+});
+</code></pre>
+
+<ul>
+<li>type</li>
+</ul>
+
+<p>检测对象的 JavaScript [Class] 内部类型。</p>
+
+<pre><code class="language-js">// jQuery
+$.type(obj);
+
+// Native
+function type(item) {
+const reTypeOf = /(?:^\[object\s(.*?)\]$)/;
+return Object.prototype.toString.call(item)
+  .replace(reTypeOf, &#39;$1&#39;)
+  .toLowerCase();
+}
+</code></pre>
+
+<ul>
+<li>merge</li>
+</ul>
+
+<p>合并第二个数组内容到第一个数组。</p>
+
+<pre><code class="language-js">// jQuery
+$.merge(array1, array2);
+
+// Native
+// But concat function doesn&#39;t remove duplicate items.
+function merge(...args) {
+return [].concat(...args)
+}
+</code></pre>
+
+<ul>
+<li>now</li>
+</ul>
+
+<p>返回当前时间的数字呈现。</p>
+
+<pre><code class="language-js">// jQuery
+$.now();
+
+// Native
+Date.now();
+</code></pre>
+
+<ul>
+<li>proxy</li>
+</ul>
+
+<p>传入函数并返回一个新函数，该函数绑定指定上下文。</p>
+
+<pre><code class="language-js">// jQuery
+$.proxy(fn, context);
+
+// Native
+fn.bind(context);
+</code></pre>
+
+<ul>
+<li>makeArray</li>
+</ul>
+
+<p>类数组对象转化为真正的 JavaScript 数组。</p>
+
+<pre><code class="language-js">// jQuery
+$.makeArray(arrayLike);
+
+// Native
+Array.prototype.slice.call(arrayLike);
+
+// ES6-way
+Array.from(arrayLike);
+</code></pre></li>
+<li><p><a href="#6.2">6.2</a> <a name='6.2'></a> 包含</p>
+
+<p>检测 DOM 元素是不是其他 DOM 元素的后代.</p>
+
+<pre><code class="language-js">// jQuery
+$.contains(el, child);
+
+// Native
+el !== child &amp;&amp; el.contains(child);
+</code></pre></li>
+<li><p><a href="#6.3">6.3</a> <a name='6.3'></a> Globaleval</p>
+
+<p>全局执行 JavaScript 代码。</p>
+
+<pre><code class="language-js">// jQuery
+$.globaleval(code);
+
+// Native
+function Globaleval(code) {
+const script = document.createElement(&#39;script&#39;);
+script.text = code;
+
+document.head.appendChild(script).parentNode.removeChild(script);
+}
+
+// Use eval, but context of eval is current, context of $.Globaleval is global.
+eval(code);
+</code></pre></li>
+<li><p><a href="#6.4">6.4</a> <a name='6.4'></a> 解析</p>
+
+<ul>
+<li>parseHTML</li>
+</ul>
+
+<p>解析字符串为 DOM 节点数组.</p>
+
+<pre><code class="language-js">// jQuery
+$.parseHTML(htmlString);
+
+// Native
+function parseHTML(string) {
+const context = document.implementation.createHTMLDocument();
+
+// Set the base href for the created document so any parsed elements with URLs
+// are based on the document&#39;s URL
+const base = context.createElement(&#39;base&#39;);
+base.href = document.location.href;
+context.head.appendChild(base);
+
+context.body.innerHTML = string;
+return context.body.children;
+}
+</code></pre>
+
+<ul>
+<li>parseJSON</li>
+</ul>
+
+<p>传入格式正确的 JSON 字符串并返回 JavaScript 值.</p>
+
+<pre><code class="language-js">// jQuery
+$.parseJSON(str);
+
+// Native
+JSON.parse(str);
+</code></pre></li>
+</ul>
+
+<p><strong><a href="#%E7%9B%AE%E5%BD%95">⬆ 回到顶部</a></strong></p>
+
+<h2 id="toc_8">Promises</h2>
+
+<p>Promise 代表异步操作的最终结果。jQuery 用它自己的方式处理 promises，原生 JavaScript 遵循 <a href="http://promises-aplus.github.io/promises-spec/">Promises/A+</a> 标准实现了最小 API 来处理 promises。</p>
+
+<ul>
+<li><p><a href="#7.1">7.1</a> <a name='7.1'></a> done, fail, always</p>
+
+<p><code>done</code> 会在 promise 解决时调用，<code>fail</code> 会在 promise 拒绝时调用，<code>always</code> 总会调用。</p>
+
+<pre><code class="language-js">// jQuery
+$promise.done(doneCallback).fail(failCallback).always(alwaysCallback)
+
+// Native
+promise.then(doneCallback, failCallback).then(alwaysCallback, alwaysCallback)
+</code></pre></li>
+<li><p><a href="#7.2">7.2</a> <a name='7.2'></a> when</p>
+
+<p><code>when</code> 用于处理多个 promises。当全部 promises 被解决时返回，当任一 promise 被拒绝时拒绝。</p>
+
+<pre><code class="language-js">// jQuery
+$.when($promise1, $promise2).done((promise1Result, promise2Result) =&gt; {
+});
+
+// Native
+Promise.all([$promise1, $promise2]).then([promise1Result, promise2Result] =&gt; {});
+</code></pre></li>
+<li><p><a href="#7.3">7.3</a> <a name='7.3'></a> Deferred</p>
+
+<p>Deferred 是创建 promises 的一种方式。</p>
+
+<pre><code class="language-js">// jQuery
+function asyncFunc() {
+const defer = new $.Deferred();
+setTimeout(() =&gt; {
+  if(true) {
+    defer.resolve(&#39;some_value_computed_asynchronously&#39;);
+  } else {
+    defer.reject(&#39;failed&#39;);
+  }
+}, 1000);
+
+return defer.promise();
+}
+
+// Native
+function asyncFunc() {
+return new Promise((resolve, reject) =&gt; {
+  setTimeout(() =&gt; {
+    if (true) {
+      resolve(&#39;some_value_computed_asynchronously&#39;);
+    } else {
+      reject(&#39;failed&#39;);
+    }
+  }, 1000);
+});
+}
+
+// Deferred way
+function defer() {
+const deferred = {};
+const promise = new Promise((resolve, reject) =&gt; {
+  deferred.resolve = resolve;
+  deferred.reject = reject;
+});
+
+deferred.promise = () =&gt; {
+  return promise;
+};
+
+return deferred;
+}
+
+function asyncFunc() {
+const defer = defer();
+setTimeout(() =&gt; {
+  if(true) {
+    defer.resolve(&#39;some_value_computed_asynchronously&#39;);
+  } else {
+    defer.reject(&#39;failed&#39;);
+  }
+}, 1000);
+
+return defer.promise();
+}
+</code></pre></li>
+</ul>
+
+<p><strong><a href="#%E7%9B%AE%E5%BD%95">⬆ 回到顶部</a></strong></p>
+
+<h2 id="toc_9">Animation</h2>
+
+<ul>
+<li><p><a href="#8.1">8.1</a> <a name='8.1'></a> Show &amp; Hide</p>
+
+<pre><code class="language-js">// jQuery
+$el.show();
+$el.hide();
+
+// Native
+// 更多 show 方法的细节详见 https://github.com/oneuijs/oui-dom-utils/blob/master/src/index.js#L363
+el.style.display = &#39;&#39;|&#39;inline&#39;|&#39;inline-block&#39;|&#39;inline-table&#39;|&#39;block&#39;;
+el.style.display = &#39;none&#39;;
+</code></pre></li>
+<li><p><a href="#8.2">8.2</a> <a name='8.2'></a> Toggle</p>
+
+<p>显示或隐藏元素。</p>
+
+<pre><code class="language-js">// jQuery
+$el.toggle();
+
+// Native
+if (el.ownerDocument.defaultView.getComputedStyle(el, null).display === &#39;none&#39;) {
+el.style.display = &#39;&#39;|&#39;inline&#39;|&#39;inline-block&#39;|&#39;inline-table&#39;|&#39;block&#39;;
+} else {
+el.style.display = &#39;none&#39;;
+}
+</code></pre></li>
+<li><p><a href="#8.3">8.3</a> <a name='8.3'></a> FadeIn &amp; FadeOut</p>
+
+<pre><code class="language-js">// jQuery
+$el.fadeIn(3000);
+$el.fadeOut(3000);
+
+// Native
+el.style.transition = &#39;opacity 3s&#39;;
+// fadeIn
+el.style.opacity = &#39;1&#39;;
+// fadeOut
+el.style.opacity = &#39;0&#39;;
+</code></pre></li>
+<li><p><a href="#8.4">8.4</a> <a name='8.4'></a> FadeTo</p>
+
+<p>调整元素透明度。</p>
+
+<pre><code class="language-js">// jQuery
+$el.fadeTo(&#39;slow&#39;,0.15);
+// Native
+el.style.transition = &#39;opacity 3s&#39;; // 假设 &#39;slow&#39; 等于 3 秒
+el.style.opacity = &#39;0.15&#39;;
+</code></pre></li>
+<li><p><a href="#8.5">8.5</a> <a name='8.5'></a> FadeToggle</p>
+
+<p>动画调整透明度用来显示或隐藏。</p>
+
+<pre><code class="language-js">// jQuery
+$el.fadeToggle();
+
+// Native
+el.style.transition = &#39;opacity 3s&#39;;
+const { opacity } = el.ownerDocument.defaultView.getComputedStyle(el, null);
+if (opacity === &#39;1&#39;) {
+el.style.opacity = &#39;0&#39;;
+} else {
+el.style.opacity = &#39;1&#39;;
+}
+</code></pre></li>
+<li><p><a href="#8.6">8.6</a> <a name='8.6'></a> SlideUp &amp; SlideDown</p>
+
+<pre><code class="language-js">// jQuery
+$el.slideUp();
+$el.slideDown();
+
+// Native
+const originHeight = &#39;100px&#39;;
+el.style.transition = &#39;height 3s&#39;;
+// slideUp
+el.style.height = &#39;0px&#39;;
+// slideDown
+el.style.height = originHeight;
+</code></pre></li>
+<li><p><a href="#8.7">8.7</a> <a name='8.7'></a> SlideToggle</p>
+
+<p>滑动切换显示或隐藏。</p>
+
+<pre><code class="language-js">// jQuery
+$el.slideToggle();
+
+// Native
+const originHeight = &#39;100px&#39;;
+el.style.transition = &#39;height 3s&#39;;
+const { height } = el.ownerDocument.defaultView.getComputedStyle(el, null);
+if (parseInt(height, 10) === 0) {
+el.style.height = originHeight;
+}
+else {
+el.style.height = &#39;0px&#39;;
+}
+</code></pre></li>
+<li><p><a href="#8.8">8.8</a> <a name='8.8'></a> Animate</p>
+
+<p>执行一系列 CSS 属性动画。</p>
+
+<pre><code class="language-js">// jQuery
+$el.animate({ params }, speed);
+
+// Native
+el.style.transition = &#39;all &#39; + speed;
+Object.keys(params).forEach((key) =&gt;
+el.style[key] = params[key];
+)
+</code></pre></li>
+</ul>
+
+<p><strong><a href="#%E7%9B%AE%E5%BD%95">⬆ 回到顶部</a></strong></p>
+
+<h2 id="toc_10">Alternatives</h2>
+
+<ul>
+<li><a href="http://youmightnotneedjquery.com/">你可能不需要 jQuery (You Might Not Need jQuery)</a> - 如何使用原生 JavaScript 实现通用事件，元素，ajax 等用法。</li>
+<li><a href="http://github.com/npm-dom">npm-dom</a> 以及 <a href="http://github.com/webmodules">webmodules</a> - 在 NPM 上提供独立 DOM 模块的组织</li>
+</ul>
+
+<h2 id="toc_11">Browser Support</h2>
+
+<table>
+<thead>
+<tr>
+<th><img src="https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome"/></th>
+<th><img src="https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox"/></th>
+<th><img src="https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png" alt="IE"/></th>
+<th><img src="https://raw.github.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera"/></th>
+<th><img src="https://raw.github.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari"/></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Latest ✔</td>
+<td>Latest ✔</td>
+<td>10+ ✔</td>
+<td>Latest ✔</td>
+<td>6.1+ ✔</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="toc_12">License</h1>
+
+<p>MIT</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[JavaScript Arguments]]></title>
