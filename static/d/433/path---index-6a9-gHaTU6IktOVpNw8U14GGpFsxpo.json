@@ -1,0 +1,1 @@
+{"data":{"site":{"siteMetadata":{"title":"Gatsby Starter Blog"}},"allMarkdownRemark":{"edges":[{"node":{"excerpt":"This is my first post on my new fake blog! How exciting!","fields":{"slug":"/react-demo/"},"frontmatter":{"date":"01 May, 2015","title":"React Demo"}}}]}},"pageContext":{}}
