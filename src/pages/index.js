@@ -3,9 +3,7 @@ import { Link } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 
-import Bio from '../components/Bio'
 import Layout from '../components/layout'
-import { rhythm } from '../utils/typography'
 
 class BlogIndex extends React.Component {
   render() {
@@ -15,17 +13,16 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location}>
         <Helmet title={siteTitle} />
-        <Bio />
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug
           return (
-            <div key={node.fields.slug}>
+            <div key={node.fields.slug} style={{ marginBottom: 46 }}>
               <h3
                 style={{
-                  marginBottom: rhythm(1 / 4),
+                  marginBottom: 16,
                 }}
               >
-                <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
+                <Link style={{ boxShadow: 'none' }} to={node.fields.slug} style={{ textDecoration: 'none' }}>
                   {title}
                 </Link>
               </h3>
@@ -56,7 +53,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "DD MMMM, YYYY")
+            date(formatString: "DD MMMM, YYYY", locale: "zh-CN")
             title
           }
         }

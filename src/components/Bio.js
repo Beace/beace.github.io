@@ -1,11 +1,6 @@
 import React from 'react'
-
-// Import typefaces
-import 'typeface-montserrat'
-import 'typeface-merriweather'
-
-import profilePic from './profile-pic.jpg'
-import { rhythm } from '../utils/typography'
+import { Link } from 'gatsby'
+import './Bio.css'
 
 class Bio extends React.Component {
   render() {
@@ -13,26 +8,34 @@ class Bio extends React.Component {
       <div
         style={{
           display: 'flex',
-          marginBottom: rhythm(2.5),
+          marginBottom: 60,
+          alignItems: 'center',
+          textDecoration: 'none',
         }}
       >
-        <img
-          src={profilePic}
-          alt={`Kyle Mathews`}
-          style={{
-            marginRight: rhythm(1 / 2),
-            marginBottom: 0,
-            width: rhythm(2),
-            height: rhythm(2),
-          }}
-        />
-        <p>
-          Written by <strong>Kyle Mathews</strong> who lives and works in San
-          Francisco building useful things.{' '}
-          <a href="https://twitter.com/kylemathews">
+        <Link to="/" style={{ marginRight: 20 }}>
+          <img
+            src="https://images-manager.oss-cn-shanghai.aliyuncs.com/logo.jpg"
+            alt={`Beace Lee`}
+            style={{
+              marginRight: 20,
+              marginBottom: 0,
+              width: 80,
+              height: 80,
+              borderRadius: '50%',
+            }}
+          />
+        </Link>
+        <div style={{ padding: 0, margin: 0 }}>
+          <h3 style={{ marginBottom: 6 }}>
+            <Link to="/" style={{ textDecoration: 'none' }}>Beace Blog</Link>
+          </h3>
+          Written by <strong>Beace Lee</strong> who lives and works in China
+          building useful things.{' '}
+          <a href="https://twitter.com/beaceshimin">
             You should follow him on Twitter
           </a>
-        </p>
+        </div>
       </div>
     )
   }

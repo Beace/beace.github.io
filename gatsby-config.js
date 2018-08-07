@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Starter Blog',
-    author: 'Kyle Mathews',
-    description: 'A starter blog demonstrating what Gatsby can do.',
-    siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/',
+    title: 'Beace Blog',
+    author: 'Beace Lee',
+    description: 'beacelee,beacelee的博客,web前端,前端开发,react技术栈,scala学习,playframework学习',
+    siteUrl: 'https://beace.github.io/',
   },
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
