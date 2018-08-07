@@ -1,0 +1,228 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/css/0.fd04436f085d8722c1dc.css">code[class*=language-],pre[class*=language-]{-moz-hyphens:none;-moz-tab-size:4;-ms-hyphens:none;-o-tab-size:4;-webkit-hyphens:none;color:#657b83;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;hyphens:none;line-height:1.5;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal;word-wrap:normal}code[class*=language-]::selection,code[class*=language-] ::selection,pre[class*=language-]::selection,pre[class*=language-] ::selection{background:#073642}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background-color:#fdf6e3}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#93a1a1}.token.punctuation{color:#586e75}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#268bd2}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string,.token.url{color:#2aa198}.token.entity{background:#eee8d5;color:#657b83}.token.atrule,.token.attr-value,.token.keyword{color:#859900}.token.class-name,.token.function{color:#b58900}.token.important,.token.regex,.token.variable{color:#cb4b16}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}
+
+/*# sourceMappingURL=0.fd04436f085d8722c1dc.css.map*/</style><style data-href="/css/component---src-templates-blog-post-js.64d6c641ff05a8afebe6.css">@font-face{font-family:Fira Code;font-style:normal;font-weight:300;src:url(/fonts/eot/FiraCode-Light.eot);src:url(/fonts/eot/FiraCode-Light.eot) format("embedded-opentype"),url(/fonts/woff2/FiraCode-Light.woff2) format("woff2"),url(/fonts/woff/FiraCode-Light.woff) format("woff"),url(/fonts/ttf/FiraCode-Light.ttf) format("truetype")}@font-face{font-family:Fira Code Regular;font-style:normal;font-weight:400;src:url(/fonts/eot/FiraCode-Regular.eot);src:url(/fonts/eot/FiraCode-Regular.eot) format("embedded-opentype"),url(/fonts/woff2/FiraCode-Regular.woff2) format("woff2"),url(/fonts/woff/FiraCode-Regular.woff) format("woff"),url(/fonts/ttf/FiraCode-Regular.ttf) format("truetype")}@font-face{font-family:Fira Code Medium;font-style:normal;font-weight:500;src:url(/fonts/eot/FiraCode-Medium.eot);src:url(/fonts/eot/FiraCode-Medium.eot) format("embedded-opentype"),url(/fonts/woff2/FiraCode-Medium.woff2) format("woff2"),url(/fonts/woff/FiraCode-Medium.woff) format("woff"),url(/fonts/ttf/FiraCode-Medium.ttf) format("truetype")}@font-face{font-family:Fira Code Bold;font-style:normal;font-weight:700;src:url(/fonts/eot/FiraCode-Bold.eot);src:url(/fonts/eot/FiraCode-Bold.eot) format("embedded-opentype"),url(/fonts/woff2/FiraCode-Bold.woff2) format("woff2"),url(/fonts/woff/FiraCode-Bold.woff) format("woff"),url(/fonts/ttf/FiraCode-Bold.ttf) format("truetype")}body{background-color:#efefef;font:16px/1.5em Fira Code Medium}code[class*=language-],pre[class*=language-]{font-family:Fira Code Medium}
+
+/*# sourceMappingURL=component---src-templates-blog-post-js.64d6c641ff05a8afebe6.css.map*/</style><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><title data-react-helmet="true">Clean Blog by Node &amp;&amp; React 4 | Beace Blog</title><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:125%/1.4 'Fira Code Medium';box-sizing:border-box;overflow-y:scroll;-webkit-font-smoothing:antialiased;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.87);font-family:'Fira Code Medium';font-weight:400;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";letter-spacing:.03em;}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;color:inherit;font-family:'Fira Code Medium';font-weight:400;text-rendering:optimizeLegibility;font-size:2rem;line-height:1.1;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;color:inherit;font-family:'Fira Code Medium';font-weight:400;text-rendering:optimizeLegibility;font-size:1.51572rem;line-height:1.1;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;color:inherit;font-family:'Fira Code Medium';font-weight:400;text-rendering:optimizeLegibility;font-size:1.31951rem;line-height:1.1;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;color:inherit;font-family:'Fira Code Medium';font-weight:400;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;color:inherit;font-family:'Fira Code Medium';font-weight:400;text-rendering:optimizeLegibility;font-size:0.87055rem;line-height:1.1;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;color:inherit;font-family:'Fira Code Medium';font-weight:400;text-rendering:optimizeLegibility;font-size:0.81225rem;line-height:1.1;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}ul{margin-left:1.4rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.4rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;font-size:0.85rem;line-height:1.4rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;font-size:1rem;line-height:1.4rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}blockquote{margin-left:-1.4rem;margin-right:1.4rem;margin-top:0;padding-bottom:0;padding-left:1.1375rem;padding-right:0;padding-top:0;margin-bottom:1.4rem;font-size:1.1487rem;line-height:1.4rem;color:hsla(0,0%,0%,0.6);border-left:0.2625rem solid hsla(0,0%,0%,0.87);}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.4rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}b{font-weight:700;}strong{font-weight:700;}dt{font-weight:700;}th{font-weight:700;}li{margin-bottom:calc(1.4rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.4rem;margin-bottom:calc(1.4rem / 2);margin-top:calc(1.4rem / 2);}li > ul{margin-left:1.4rem;margin-bottom:calc(1.4rem / 2);margin-top:calc(1.4rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.4rem / 2);}code{font-size:0.85rem;line-height:1.4rem;}kbd{font-size:0.85rem;line-height:1.4rem;}samp{font-size:0.85rem;line-height:1.4rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:0.93333rem;padding-right:0.93333rem;padding-top:0.7rem;padding-bottom:calc(0.7rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}a{color:inherit;}a:hover{color:#3498DB;}@media only screen and (max-width:480px){blockquote{margin-left:-1.05rem;padding-left:0.7875rem;margin-right:0;}}h2,h3{margin-bottom:16;margin-top:0;font-weight:bold;}</style><link href="//fonts.googleapis.com/css?family=Patua+One:400|Cabin+Condensed:400,700" rel="stylesheet" type="text/css"/><link as="script" rel="preload" href="/js/component---src-templates-blog-post-js-3f6db1d5fef615429e73.js"/><link as="script" rel="preload" href="/js/app-ea832d76be6cd4a71dab.js"/><link as="script" rel="preload" href="/js/0-2847203806f482a0ca57.js"/><link as="script" rel="preload" href="/js/webpack-runtime-5504772f07a2e201a621.js"/><link rel="preload" href="/static/d/892/path---clean-blog-by-react-and-nodejs-4-92-c-e28-87x8npN8K7b1jjvZXaHUum68ARE.json" as="fetch" crossOrigin="use-credentials"/></head><body><div id="___gatsby"><div style="padding:50px 200px" data-reactroot=""><div style="display:flex;margin-bottom:60px;align-items:center;text-decoration:none"><a style="margin-right:20px" href="/"><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/logo.jpg" alt="Beace Lee" style="margin-right:20px;margin-bottom:0;width:80px;height:80px;border-radius:50%"/></a><div style="padding:0;margin:0"><h3 style="margin-bottom:6px"><a style="text-decoration:none" href="/">Beace Blog</a></h3>Written by <strong>Beace Lee</strong> who lives and works in China building useful things.<!-- --> <a href="https://twitter.com/beaceshimin">You should follow him on Twitter</a></div></div><h1>Clean Blog by Node &amp;&amp; React 4</h1><p style="display:block;margin-bottom:10px;margin-top:10px">December 17, 2016</p><div><h2>前言</h2>
+<ul>
+<li>此篇接上篇<a href="https://beacelee.com">Clean Blog by Node &#x26;&#x26; React 3</a></li>
+<li>记录<a href="https://github.com/pandao/editor.md">markdown.md</a>的使用</li>
+<li>记录<em>文章详情API</em>以及<em>提交文章API</em>的书写</li>
+</ul>
+<!--more-->
+<h2>开始实战</h2>
+<h3>markdown富文本编辑器的使用</h3>
+<p>之前一直在说<code class="language-text">api</code>和<code class="language-text">前后端路由</code>的书写方式，从来没有注重过前端某些样式。这里由于用到了<code class="language-text">clean-blog</code>这个主题，所以在样式上没有太多修改。但是，有些功能该主题不支持的，比如富文本编辑器。为了找一个顺手的<code class="language-text">markdown</code>富文本编辑器，我也是煞费苦心。在此记录下自己折腾后的总结。</p>
+<p><strong>首先来看下最终效果</strong></p>
+<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/node-react/node-react4/node-react4-1.png" alt="Alt text"></p>
+<h4>如何在项目中引用</h4>
+<ol>
+<li>通过<code class="language-text">bower</code>下载该开源项目代码和依赖</li>
+</ol>
+<div class="gatsby-highlight" data-language="bash">
+      <pre class="language-bash"><code class="language-bash">bower <span class="token function">install</span> --save editormd</code></pre>
+      </div>
+<ol start="2">
+<li>在<code class="language-text">/view/index.ejs</code>中引用其必要的<code class="language-text">css、js</code>文件
+注意： 这里会依赖<code class="language-text">jquery</code>和<code class="language-text">bootstrap</code>的<code class="language-text">css</code>，所以都需要作为前提引入</li>
+</ol>
+<div class="gatsby-highlight" data-language="html">
+      <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/bower_components/editor.md/css/editormd.min.css<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/bower_components/editor.md/editormd.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+      </div>
+<ol start="3">
+<li>在页面添加一个有<code class="language-text">id</code>的<code class="language-text">div</code>元素，在这里我暂时起名为<code class="language-text">myEditor</code>，在<code class="language-text">/views/index.ejs</code>添加如下代码</li>
+</ol>
+<div class="gatsby-highlight" data-language="text">
+      <pre class="language-text"><code class="language-text">var testEditor;
+testEditor = editormd(&quot;myEditor&quot;, {
+	width   : &quot;100%&quot;,
+	height  : 640,
+	emoji : true,
+	path    : &quot;../../bower_components/editor.md/lib/&quot;
+});</code></pre>
+      </div>
+<p>简单解释一下这段代码的用处。该段代码，在<code class="language-text">id</code>为<code class="language-text">myEditor</code>的<code class="language-text">div</code>中插入了一个<code class="language-text">className</code>为<code class="language-text">testEditor</code>的<code class="language-text">textarea</code>,</p>
+<table>
+<thead>
+<tr>
+<th align="right">属性名</th>
+<th align="right">含义</th>
+<th align="right">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">width</td>
+<td align="right">textarea的宽度</td>
+<td align="right"></td>
+</tr>
+<tr>
+<td align="right">height</td>
+<td align="right">textarea的高度</td>
+<td align="right"></td>
+</tr>
+<tr>
+<td align="right">emoji</td>
+<td align="right">是否开启emoji表情</td>
+<td align="right">开启后可以选择输入，但是不翻墙很难加载出来表情</td>
+</tr>
+<tr>
+<td align="right">path</td>
+<td align="right">依赖包所在路径</td>
+<td align="right">由于该编辑器依赖requirejs，所以直接输入包的相对路径即可引用其他css/js文件</td>
+</tr>
+</tbody>
+</table>
+<p>这样做就已经万事俱备了吗？ 当然不可能！</p>
+<p>如果我们不是单页应用，完全可以在添加博客页面增加这样的代码；但是恰恰我们是单页应用，虽然我们在<code class="language-text">/views/index.ejs</code>都可以当做全局引入来作为依赖（其实我们更应该压缩为一个js文件），但是，由于该插件是动态插入<code class="language-text">&lt;textarea&gt;&lt;/textarea&gt;</code>，当我们没有切到文章提交页面时，还没有加载改页面的<code class="language-text">html</code>代码，插件找不到id为myEditor的div，所以会抛出myEditor为undefined的错误。那么，如何在文章提交页引入，成为了我们下一步要解决的问题。</p>
+<p>其实很简单，我们只需要在页面html加载完成是执行该方法即可。因此我们新建<code class="language-text">/beComponents/TextArea</code>, 在<code class="language-text">componentDidMount</code>方法中加入该段代码即可。如下代码所示。</p>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token function">componentDidMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> testEditor<span class="token punctuation">;</span>
+	testEditor <span class="token operator">=</span> <span class="token function">editormd</span><span class="token punctuation">(</span><span class="token string">"myEditor"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+		width   <span class="token punctuation">:</span> <span class="token string">"100%"</span><span class="token punctuation">,</span>
+		height  <span class="token punctuation">:</span> <span class="token number">640</span><span class="token punctuation">,</span>
+		emoji <span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+		path    <span class="token punctuation">:</span> <span class="token string">"../../bower_components/editor.md/lib/"</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> <span class="token punctuation">(</span>
+		<span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">"form-group"</span><span class="token operator">></span>
+			<span class="token operator">&lt;</span>label htmlFor<span class="token operator">=</span><span class="token string">"content"</span><span class="token operator">></span>内容<span class="token operator">&lt;</span><span class="token operator">/</span>label<span class="token operator">></span>
+			<span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"myEditor"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+		<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+	<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+      </div>
+<h3>后端文章提交API书写</h3>
+<p>静态页面设置完成后，可以在里面书写一些内容。例如下图所示。</p>
+<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/node-react/node-react4/node-react4-2.png" alt="Alt text"></p>
+<p><em>如何执行提交操作，并且插入数据库呢？</em></p>
+<p>从先前的例子中都可以看到，我所设计的文档都是通过<code class="language-text">Fetch API</code>去接受<code class="language-text">JSON</code>数据，同样，我也会以<code class="language-text">JSON</code>的形式提交数据。</p>
+<p>根据上一篇文章，提交文章的代码如下。</p>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript">app<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/api/post'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">let</span> model <span class="token operator">=</span> req<span class="token punctuation">.</span>body<span class="token punctuation">;</span>
+	<span class="token keyword">var</span> db <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">createConnection</span><span class="token punctuation">(</span><span class="token string">'localhost'</span><span class="token punctuation">,</span> <span class="token string">'article'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	db<span class="token punctuation">.</span><span class="token function">once</span><span class="token punctuation">(</span><span class="token string">'open'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">var</span> Article <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">'articles'</span><span class="token punctuation">,</span> articleSchema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">var</span> article <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Article</span><span class="token punctuation">(</span>model<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		article<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span>model<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">return</span> err<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+			code <span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+			msg<span class="token punctuation">:</span> <span class="token string">"success"</span>
+		<span class="token punctuation">}</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+      </div>
+<p>这里，我通过<code class="language-text">req.body</code>来接收提交的数据，并且，当数据返回时，返回给客户端这样的<code class="language-text">JSON</code>字符串.</p>
+<div class="gatsby-highlight" data-language="json">
+      <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+	code<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+	message<span class="token operator">:</span> <span class="token string">"success"</span>
+<span class="token punctuation">}</span></code></pre>
+      </div>
+<h3>前端文章提交代码的书写</h3>
+<p>首先要获取数据，并且对数据进行初步校验，即客户端校验。</p>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token function">submitHandler</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">let</span> _this <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">,</span>
+	model <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>model<span class="token punctuation">;</span>
+	model<span class="token punctuation">.</span>content <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.editormd-markdown-textarea'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token keyword">in</span> model<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	    <span class="token keyword">if</span><span class="token punctuation">(</span>model<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">""</span> <span class="token operator">||</span> model<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	        <span class="token keyword">switch</span> <span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	            <span class="token keyword">case</span> <span class="token string">"author"</span><span class="token punctuation">:</span>
+	                <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"作者未填写"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	                <span class="token keyword">break</span><span class="token punctuation">;</span>
+	            <span class="token keyword">case</span> <span class="token string">"abstract"</span><span class="token punctuation">:</span>
+	                <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"摘要未填写"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	                <span class="token keyword">break</span><span class="token punctuation">;</span>
+	            <span class="token keyword">case</span> <span class="token string">"title"</span><span class="token punctuation">:</span>
+	                <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"标题未填写"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	                <span class="token keyword">break</span><span class="token punctuation">;</span>
+	            <span class="token keyword">case</span> <span class="token string">"content"</span><span class="token punctuation">:</span>
+	                <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"内容未填写"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	                <span class="token keyword">break</span><span class="token punctuation">;</span>
+	            <span class="token keyword">default</span><span class="token punctuation">:</span>
+	                <span class="token comment">// nothing</span>
+	        <span class="token punctuation">}</span>
+	        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+	    <span class="token punctuation">}</span>
+	<span class="token punctuation">}</span></code></pre>
+      </div>
+<p>校验完成之后，提交数据。依然通过<code class="language-text">Fetch API</code>提交<code class="language-text">JSON</code>数据.提交成功后，弹出确认框，给予提示。</p>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'http://localhost:3000/api/post'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+         method<span class="token punctuation">:</span> <span class="token string">"POST"</span><span class="token punctuation">,</span>
+         headers<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+             <span class="token string">"Content-Type"</span><span class="token punctuation">:</span> <span class="token string">"application/json"</span>
+         <span class="token punctuation">}</span><span class="token punctuation">,</span>
+         body<span class="token punctuation">:</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>model<span class="token punctuation">)</span>
+     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+         <span class="token keyword">if</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>ok<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+             <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#myModal'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">modal</span><span class="token punctuation">(</span><span class="token string">'show'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+             <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.editormd-markdown-textarea'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+             _this<span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                 model<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                     author<span class="token punctuation">:</span> <span class="token string">"beace"</span><span class="token punctuation">,</span>
+                     abstract<span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+                     title<span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+                     content<span class="token punctuation">:</span> <span class="token string">""</span>
+                 <span class="token punctuation">}</span>
+             <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">401</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+             <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"Oops! You are not authorized."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
+     <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"Error submitting form!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span><span class="token punctuation">)</span>
+ <span class="token punctuation">}</span></code></pre>
+      </div>
+<h3>文章详情API书写</h3>
+<p>当完成提交文章的操作之后，数据库中多了一行记录，如何访问该记录呢？这不得不到了了解文章详情的地步。</p>
+<p>我们在第三次记录的时候就已经将后端路由书写完成，大概是这样的。</p>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript">app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/post/:id'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>doc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+      </div>
+<p>但是，没有定义具体的实现方法，其实，和列表大同小异，只不过，列表中返回的是对象数组的格式(<code class="language-text">find()</code>方法)；在这里，只需要返回一个对象（<code class="language-text">findOne()</code>方法）。</p>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript">app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/post/:id'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">var</span> postId <span class="token operator">=</span> req<span class="token punctuation">.</span>params<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
+   <span class="token keyword">var</span> db <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">createConnection</span><span class="token punctuation">(</span><span class="token string">'localhost'</span><span class="token punctuation">,</span> <span class="token string">'article'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   db<span class="token punctuation">.</span><span class="token function">once</span><span class="token punctuation">(</span><span class="token string">'open'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token keyword">var</span> Article <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">'articles'</span><span class="token punctuation">,</span> articleSchema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       Article<span class="token punctuation">.</span><span class="token function">findOne</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+           _id<span class="token punctuation">:</span> postId
+       <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">,</span> doc<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+           <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+           <span class="token keyword">else</span> <span class="token punctuation">{</span>
+               res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>doc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+           <span class="token punctuation">}</span>
+       <span class="token punctuation">}</span><span class="token punctuation">)</span>
+   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+      </div>
+<p>这样，本篇文章所记录的东西就完成了。</p>
+<h2>总结</h2>
+<p>本篇文章记录了<a href="https://github.com/pandao/editor.md">开源markdown编辑器</a>的使用，以及其使用方式。并且，将提交文章和文章详情的后端接口书写完成。下一篇，将着重介绍后端如何处理<code class="language-text">markdown</code>格式的字符串，并且介绍一下<code class="language-text">react</code>中是如何直接输出<code class="language-text">html</code>的。</p></div><hr style="margin-bottom:10px"/><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/clean-blog-by-react-and-nodejs-3/">← <!-- -->Clean Blog by Node &amp;&amp; React 3</a></li><li><a rel="next" href="/clean-blog-by-react-and-nodejs-5/">Clean Blog by Node &amp;&amp; React 5<!-- --> →</a></li></ul></div></div><script>
+            
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'undefined', 'auto');
+      }
+      </script><script id="gatsby-script-loader">/*<![CDATA[*/window.page={"componentChunkName":"component---src-templates-blog-post-js","jsonName":"clean-blog-by-react-and-nodejs-4-92c","path":"/clean-blog-by-react-and-nodejs-4/"};window.dataPath="892/path---clean-blog-by-react-and-nodejs-4-92-c-e28-87x8npN8K7b1jjvZXaHUum68ARE";/*]]>*/</script><script src="/js/webpack-runtime-5504772f07a2e201a621.js" async=""></script><script src="/js/0-2847203806f482a0ca57.js" async=""></script><script src="/js/app-ea832d76be6cd4a71dab.js" async=""></script><script src="/js/component---src-templates-blog-post-js-3f6db1d5fef615429e73.js" async=""></script></body></html>

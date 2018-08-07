@@ -1,0 +1,189 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/css/0.fd04436f085d8722c1dc.css">code[class*=language-],pre[class*=language-]{-moz-hyphens:none;-moz-tab-size:4;-ms-hyphens:none;-o-tab-size:4;-webkit-hyphens:none;color:#657b83;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;hyphens:none;line-height:1.5;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal;word-wrap:normal}code[class*=language-]::selection,code[class*=language-] ::selection,pre[class*=language-]::selection,pre[class*=language-] ::selection{background:#073642}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background-color:#fdf6e3}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#93a1a1}.token.punctuation{color:#586e75}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#268bd2}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string,.token.url{color:#2aa198}.token.entity{background:#eee8d5;color:#657b83}.token.atrule,.token.attr-value,.token.keyword{color:#859900}.token.class-name,.token.function{color:#b58900}.token.important,.token.regex,.token.variable{color:#cb4b16}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}
+
+/*# sourceMappingURL=0.fd04436f085d8722c1dc.css.map*/</style><style data-href="/css/component---src-templates-blog-post-js.64d6c641ff05a8afebe6.css">@font-face{font-family:Fira Code;font-style:normal;font-weight:300;src:url(/fonts/eot/FiraCode-Light.eot);src:url(/fonts/eot/FiraCode-Light.eot) format("embedded-opentype"),url(/fonts/woff2/FiraCode-Light.woff2) format("woff2"),url(/fonts/woff/FiraCode-Light.woff) format("woff"),url(/fonts/ttf/FiraCode-Light.ttf) format("truetype")}@font-face{font-family:Fira Code Regular;font-style:normal;font-weight:400;src:url(/fonts/eot/FiraCode-Regular.eot);src:url(/fonts/eot/FiraCode-Regular.eot) format("embedded-opentype"),url(/fonts/woff2/FiraCode-Regular.woff2) format("woff2"),url(/fonts/woff/FiraCode-Regular.woff) format("woff"),url(/fonts/ttf/FiraCode-Regular.ttf) format("truetype")}@font-face{font-family:Fira Code Medium;font-style:normal;font-weight:500;src:url(/fonts/eot/FiraCode-Medium.eot);src:url(/fonts/eot/FiraCode-Medium.eot) format("embedded-opentype"),url(/fonts/woff2/FiraCode-Medium.woff2) format("woff2"),url(/fonts/woff/FiraCode-Medium.woff) format("woff"),url(/fonts/ttf/FiraCode-Medium.ttf) format("truetype")}@font-face{font-family:Fira Code Bold;font-style:normal;font-weight:700;src:url(/fonts/eot/FiraCode-Bold.eot);src:url(/fonts/eot/FiraCode-Bold.eot) format("embedded-opentype"),url(/fonts/woff2/FiraCode-Bold.woff2) format("woff2"),url(/fonts/woff/FiraCode-Bold.woff) format("woff"),url(/fonts/ttf/FiraCode-Bold.ttf) format("truetype")}body{background-color:#efefef;font:16px/1.5em Fira Code Medium}code[class*=language-],pre[class*=language-]{font-family:Fira Code Medium}
+
+/*# sourceMappingURL=component---src-templates-blog-post-js.64d6c641ff05a8afebe6.css.map*/</style><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><title data-react-helmet="true">Clean Blog by Node &amp;&amp; React 5 | Beace Blog</title><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:125%/1.4 'Fira Code Medium';box-sizing:border-box;overflow-y:scroll;-webkit-font-smoothing:antialiased;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.87);font-family:'Fira Code Medium';font-weight:400;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";letter-spacing:.03em;}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;color:inherit;font-family:'Fira Code Medium';font-weight:400;text-rendering:optimizeLegibility;font-size:2rem;line-height:1.1;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;color:inherit;font-family:'Fira Code Medium';font-weight:400;text-rendering:optimizeLegibility;font-size:1.51572rem;line-height:1.1;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;color:inherit;font-family:'Fira Code Medium';font-weight:400;text-rendering:optimizeLegibility;font-size:1.31951rem;line-height:1.1;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;color:inherit;font-family:'Fira Code Medium';font-weight:400;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;color:inherit;font-family:'Fira Code Medium';font-weight:400;text-rendering:optimizeLegibility;font-size:0.87055rem;line-height:1.1;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;color:inherit;font-family:'Fira Code Medium';font-weight:400;text-rendering:optimizeLegibility;font-size:0.81225rem;line-height:1.1;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}ul{margin-left:1.4rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.4rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;font-size:0.85rem;line-height:1.4rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;font-size:1rem;line-height:1.4rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}blockquote{margin-left:-1.4rem;margin-right:1.4rem;margin-top:0;padding-bottom:0;padding-left:1.1375rem;padding-right:0;padding-top:0;margin-bottom:1.4rem;font-size:1.1487rem;line-height:1.4rem;color:hsla(0,0%,0%,0.6);border-left:0.2625rem solid hsla(0,0%,0%,0.87);}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.4rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}b{font-weight:700;}strong{font-weight:700;}dt{font-weight:700;}th{font-weight:700;}li{margin-bottom:calc(1.4rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.4rem;margin-bottom:calc(1.4rem / 2);margin-top:calc(1.4rem / 2);}li > ul{margin-left:1.4rem;margin-bottom:calc(1.4rem / 2);margin-top:calc(1.4rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.4rem / 2);}code{font-size:0.85rem;line-height:1.4rem;}kbd{font-size:0.85rem;line-height:1.4rem;}samp{font-size:0.85rem;line-height:1.4rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:0.93333rem;padding-right:0.93333rem;padding-top:0.7rem;padding-bottom:calc(0.7rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}a{color:inherit;}a:hover{color:#3498DB;}@media only screen and (max-width:480px){blockquote{margin-left:-1.05rem;padding-left:0.7875rem;margin-right:0;}}h2,h3{margin-bottom:16;margin-top:0;font-weight:bold;}</style><link href="//fonts.googleapis.com/css?family=Patua+One:400|Cabin+Condensed:400,700" rel="stylesheet" type="text/css"/><link as="script" rel="preload" href="/js/component---src-templates-blog-post-js-3f6db1d5fef615429e73.js"/><link as="script" rel="preload" href="/js/app-ea832d76be6cd4a71dab.js"/><link as="script" rel="preload" href="/js/0-2847203806f482a0ca57.js"/><link as="script" rel="preload" href="/js/webpack-runtime-5504772f07a2e201a621.js"/><link rel="preload" href="/static/d/263/path---clean-blog-by-react-and-nodejs-5-1-a-2-ee5-2ZkLtECzk0W3apoURzJA3DhnOHQ.json" as="fetch" crossOrigin="use-credentials"/></head><body><div id="___gatsby"><div style="padding:50px 200px" data-reactroot=""><div style="display:flex;margin-bottom:60px;align-items:center;text-decoration:none"><a style="margin-right:20px" href="/"><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/logo.jpg" alt="Beace Lee" style="margin-right:20px;margin-bottom:0;width:80px;height:80px;border-radius:50%"/></a><div style="padding:0;margin:0"><h3 style="margin-bottom:6px"><a style="text-decoration:none" href="/">Beace Blog</a></h3>Written by <strong>Beace Lee</strong> who lives and works in China building useful things.<!-- --> <a href="https://twitter.com/beaceshimin">You should follow him on Twitter</a></div></div><h1>Clean Blog by Node &amp;&amp; React 5</h1><p style="display:block;margin-bottom:10px;margin-top:10px">December 21, 2016</p><div><h2>前言</h2>
+<ul>
+<li>此篇接上篇<a href="https://beacelee.com/post/clean-blog-react-node-4.html">Clean Blog by Node &#x26;&#x26; React 4</a></li>
+<li>服务端 <code class="language-text">markdown2html</code></li>
+<li><code class="language-text">react</code>中解析<code class="language-text">html</code>字符串，浏览器渲染</li>
+</ul>
+<!--more-->
+<h2>过渡</h2>
+<p>在<a href="https://beacelee.com/post/clean-blog-react-node-4.html#toc-5ce">上篇</a>已经完成了文章详情接口的书写，但是，由于我们提交带服务器，服务器保存到数据库中的字符串是<code class="language-text">markdown</code>格式的，浏览器不认识，因此，在<code class="language-text">res.send(doc)</code>之前，需要把<code class="language-text">doc</code>中保存的字符串解析为<code class="language-text">html</code>格式，暴露给前端。下面，着重记录这个过程。</p>
+<h2>开始实战</h2>
+<h3>markdown库的选择</h3>
+<p><a href="https://github.com">https://github.com</a> 上有许多可供选择的库。下面列出两个解析内容比较正确的库。</p>
+<ul>
+<li><a href="https://www.npmjs.com/package/markdown">markdown</a></li>
+<li><a href="https://github.com/chjj/marked">marked</a></li>
+</ul>
+<p>我个人比较喜欢<code class="language-text">marked</code>这个库，相对比较准确一点。下面我将着重记录<code class="language-text">marked</code>这个库的使用。两者的安装方式都是一个套路。如果需要代码高亮显示，还需要安装<code class="language-text">highlight.js</code>，并且引入其<a href="https://highlightjs.org/">css</a>.</p>
+<div class="gatsby-highlight" data-language="text">
+      <pre class="language-text"><code class="language-text">npm install highlight.js
+npm install markdown
+npm install marked</code></pre>
+      </div>
+<h3>marked</h3>
+<p>来到详情接口的文件中<code class="language-text">/routes/index.js</code>.添加依赖。</p>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> marked <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'marked'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> highlightjs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'highlight.js'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+      </div>
+<p>在查询到数据库数据之后返回数据之前，使用<code class="language-text">marked()</code>方法，将<code class="language-text">markdown</code>的字符串解析成<code class="language-text">html</code>字符串。</p>
+<div class="gatsby-highlight" data-language="js">
+      <pre class="language-js"><code class="language-js"><span class="token keyword">if</span><span class="token punctuation">(</span>doc<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    marked<span class="token punctuation">.</span><span class="token function">setOptions</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      renderer<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">marked<span class="token punctuation">.</span>Renderer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      gfm<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      tables<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      breaks<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      pedantic<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      sanitize<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      smartLists<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      smartypants<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      highlight<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>code<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> highlightjs<span class="token punctuation">.</span><span class="token function">highlightAuto</span><span class="token punctuation">(</span>code<span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    doc<span class="token punctuation">.</span>content <span class="token operator">=</span> <span class="token function">marked</span><span class="token punctuation">(</span>doc<span class="token punctuation">.</span>content<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>doc<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+      </div>
+<p>这里的<code class="language-text">setOption</code>，是最基本的配置（默认配置），其中，<code class="language-text">highlight</code>属性是一个回调函数，主要作用就是代码高亮。</p>
+<p>在这里，我使用的主题为<code class="language-text">tomorrow</code>。</p>
+<div class="gatsby-highlight" data-language="html">
+      <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/styles/tomorrow.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
+      </div>
+<p>效果如下（背景图片仿照的<a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">mozilla</a>）</p>
+<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/node-react/node-react5/node-react5-1.png" alt="code preivew"></p>
+<h3>markdown</h3>
+<p>使用markdown的话，可以只需要一行代码就可以实现。</p>
+<div class="gatsby-highlight" data-language="js">
+      <pre class="language-js"><code class="language-js">doc<span class="token punctuation">.</span>content <span class="token operator">=</span> markdown<span class="token punctuation">.</span><span class="token function">toHTML</span><span class="token punctuation">(</span>doc<span class="token punctuation">.</span>content<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+      </div>
+<p>但是他的解析不是很准确，生成的标签样式也很难控制，所以决定弃用它。</p>
+<h3>react中html字符串</h3>
+<p>现在我们获取到了解析后的<code class="language-text">html</code>字符串，但是不可以在<code class="language-text">react</code>的<code class="language-text">component</code>中直接输出，如果直接在<code class="language-text">component</code>中当做一个变量去使用，就会发现你的<code class="language-text">tag</code>都没有被浏览器解析，当做普通的字符串去处理了。<code class="language-text">react</code>不支持这个是<a href="https://facebook.github.io/react/docs/dom-elements.html#dangerouslysetinnerhtml">有一定道理的</a>，包括<code class="language-text">angular</code>中类似拼接<code class="language-text">html</code>的方式也会得到警告。</p>
+<blockquote>
+<p>一般来说，从脚本拼接<code class="language-text">HTML</code>是有风险的，因为很容易无意中受到<a href="https://en.wikipedia.org/wiki/Cross-site_scripting">cross-site scripting (XSS)</a>攻击。</p>
+</blockquote>
+<p>但是作为一个静态博客而言，没有用户信息，一般也不会有这方面的影响，因此我们使用<code class="language-text">dangerouslySetInnerHTML</code>这个属性。</p>
+<div class="gatsby-highlight" data-language="jsx">
+      <pre class="language-jsx"><code class="language-jsx"><span class="token punctuation">{</span>
+    model<span class="token punctuation">.</span>content <span class="token operator">?</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">dangerouslySetInnerHTML</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span>__html<span class="token punctuation">:</span> model<span class="token punctuation">.</span>content<span class="token punctuation">}</span><span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span> <span class="token punctuation">:</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Loading</span><span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token punctuation">}</span></code></pre>
+      </div>
+<p>这样浏览器就可以正常解析<code class="language-text">HTML</code>代码了。</p>
+<h3>Loading</h3>
+<p>可以看到，上面我使用了一个<code class="language-text">&lt;Loading/&gt;</code>组件，该组件为数据还未请求到时显示。用法很简单，每次在输出内容是检查该内容是否为空（即是否请求到），如果没有，则显示改组件，否则显示内容。效果如下。</p>
+<p><img src="https://images-manager.oss-cn-shanghai.aliyuncs.com/static/node-react/node-react5/node-react5-2.png"></p>
+<p>我这里在三元表达式中判断完成后，返回组件的时，并没有使用<code class="language-text">return</code>。这是因为在<code class="language-text">react</code>中，组件——其实是一种表达式的存在。可以观察<code class="language-text">babel</code>转义后的代码，<code class="language-text">react</code>调用了<code class="language-text">createElement</code>这个方法去生成它的虚拟DOM。</p>
+<p>如果直接看<code class="language-text">babel</code>简单来演示转义后的代码就可以很明白的看到这个原理。这里我在babel/repl中简单演示下。</p>
+<h4>表达式 ？== 组件  （原理演示）</h4>
+<p>浏览器打开 <a href="https://babeljs.io/repl%EF%BC%8C%E5%BB%BA%E7%AB%8B%E4%B8%A4%E4%B8%AA%60components%60">https://babeljs.io/repl，建立两个<code class="language-text">components</code></a></p>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span>Component<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Loading</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token operator">&lt;</span>div<span class="token operator">></span>Loading<span class="token operator">...</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">App</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        a <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">?</span> <span class="token string">"data ready"</span> <span class="token punctuation">:</span> <span class="token operator">&lt;</span>Loading<span class="token operator">/</span><span class="token operator">></span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+      </div>
+<p>假设以变量<code class="language-text">a</code>为数据请求的标志</p>
+<ul>
+<li><code class="language-text">a &gt; 0</code>表示数据请求完成，显示内容</li>
+<li><code class="language-text">a &lt; 0</code> 表示数据还未请求到，显示<code class="language-text">Loading</code></li>
+</ul>
+<p>这时，看右边实时转义后的代码。</p>
+<div class="gatsby-highlight" data-language="text">
+      <pre class="language-text"><code class="language-text">...
+var App = function (_Component2) {
+  _inherits(App, _Component2);
+
+  function App() {
+    _classCallCheck(this, App);
+
+    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+  }
+
+  _createClass(App, [{
+    key: &quot;render&quot;,
+    value: function render() {
+      var a = -1;
+      return a &gt; 0 ? &quot;data ready&quot; : _react2.default.createElement(Loading, null);
+    }
+  }]);
+
+  return App;
+}(_react.Component);
+...</code></pre>
+      </div>
+<p>这是<code class="language-text">App Component</code>中的内容，注意这几行代码</p>
+<div class="gatsby-highlight" data-language="text">
+      <pre class="language-text"><code class="language-text"> _createClass(App, [{
+    key: &quot;render&quot;,
+    value: function render() {
+      var a = -1;
+      return a &gt; 0 ? &quot;data ready&quot; : _react2.default.createElement(Loading, null);
+    }
+  }]);</code></pre>
+      </div>
+<p><code class="language-text">react</code>在引入<code class="language-text">&lt;Loading/&gt;</code>组件时，创建了一个叫<code class="language-text">loading</code>的元素。这样就可以理解，为什么不需要<code class="language-text">return</code>一串<code class="language-text">html</code>。</p>
+<h2>总结</h2>
+<p>以上内容，包括前4次的记录，总计5篇内容，已经将项目的所有基础内容涵盖。目前已经在 <a href="https://beace.tech">https://beace.tech</a> 上发布。</p>
+<ul>
+<li><a href="https://beacelee.com/post/node-react-1.html">Clean Blog by Node &#x26;&#x26; React 1</a></li>
+<li><a href="https://beacelee.com/post/clean-blog-react-node-2.html">Clean Blog by Node &#x26;&#x26; React 2</a></li>
+<li><a href="https://beacelee.com/post/clean-blog-react-node-3.html">Clean Blog by Node &#x26;&#x26; React 3</a></li>
+<li><a href="https://beacelee.com/post/clean-blog-react-node-4.html">Clean Blog by Node &#x26;&#x26; React 4</a></li>
+<li><a href="https://beacelee.com/post/clean-blog-react-node-5.html">Clean Blog by Node &#x26;&#x26; React 5</a></li>
+</ul>
+<p><strong>有以下几个关键知识点</strong></p>
+<ul>
+<li><code class="language-text">node/expressjs</code> 后端项目结构的构建</li>
+<li><code class="language-text">react/webpack</code> 前端项目结构的构建</li>
+<li>上述两者结合的项目整体架构</li>
+<li><code class="language-text">expressjs + mongodb</code>的增、删、改、查（其实获取详情也是一种查的基础体现）的实现</li>
+<li><code class="language-text">expressjs</code>增、删、改、查API 的书写</li>
+<li>
+<p><code class="language-text">markdown</code>的使用</p>
+<ul>
+<li>编辑器的使用</li>
+<li><code class="language-text">markdown to html</code></li>
+<li><code class="language-text">react/browser string to html</code></li>
+</ul>
+</li>
+<li>
+<p>以及一些细节</p>
+<ul>
+<li><code class="language-text">loading</code>的实现</li>
+<li>部分原理的讲解</li>
+</ul>
+</li>
+</ul></div><hr style="margin-bottom:10px"/><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/clean-blog-by-react-and-nodejs-4/">← <!-- -->Clean Blog by Node &amp;&amp; React 4</a></li><li><a rel="next" href="/div-position-always-bottom/">div始终位于底部的问题<!-- --> →</a></li></ul></div></div><script>
+            
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'undefined', 'auto');
+      }
+      </script><script id="gatsby-script-loader">/*<![CDATA[*/window.page={"componentChunkName":"component---src-templates-blog-post-js","jsonName":"clean-blog-by-react-and-nodejs-5-1a2","path":"/clean-blog-by-react-and-nodejs-5/"};window.dataPath="263/path---clean-blog-by-react-and-nodejs-5-1-a-2-ee5-2ZkLtECzk0W3apoURzJA3DhnOHQ";/*]]>*/</script><script src="/js/webpack-runtime-5504772f07a2e201a621.js" async=""></script><script src="/js/0-2847203806f482a0ca57.js" async=""></script><script src="/js/app-ea832d76be6cd4a71dab.js" async=""></script><script src="/js/component---src-templates-blog-post-js-3f6db1d5fef615429e73.js" async=""></script></body></html>
