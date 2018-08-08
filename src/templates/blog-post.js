@@ -2,6 +2,8 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { Link } from 'gatsby'
 import get from 'lodash/get'
+
+import Comments from './comments'
 import Layout from '../components/layout'
 
 class BlogPostTemplate extends React.Component {
@@ -54,6 +56,7 @@ class BlogPostTemplate extends React.Component {
             </li>
           )}
         </ul>
+        <Comments title={post.frontmatter.title} />
       </Layout>
     )
   }
