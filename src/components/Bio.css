@@ -42,7 +42,7 @@
     font-style: normal;
 }
 
-body { font: 16px/1.5em "Fira Code Medium"; background-color: #efefef }
+body { font: 16px/1.5em "Fira Code Medium"; background-color: ghostwhite }
 
 code[class*="language-"], pre[class*="language-"] {
     font-family: "Fira Code Medium";
