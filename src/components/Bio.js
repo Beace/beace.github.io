@@ -5,17 +5,10 @@ import './Bio.css'
 class Bio extends React.Component {
   render() {
     return (
-      <div
-        style={{
-          display: 'flex',
-          marginBottom: 60,
-          alignItems: 'center',
-          textDecoration: 'none',
-        }}
-      >
-        <Link to="/" style={{ marginRight: 20 }}>
+      <div className="container">
+        <Link to="/" style={{ marginRight: 20, flexShrink: 0, }}>
           <img
-            src="https://images-manager.oss-cn-shanghai.aliyuncs.com/logo.jpg"
+            src="https://imgs.beacelee.com/logo.jpg"
             alt={`Beace Lee`}
             style={{
               marginRight: 20,
@@ -30,11 +23,13 @@ class Bio extends React.Component {
           <h3 style={{ marginBottom: 6 }}>
             <Link to="/" style={{ textDecoration: 'none' }}>Beace Blog</Link>
           </h3>
-          Written by <strong>Beace Lee</strong> who lives and works in China
-          building useful things.{' '}
-          <a href="https://twitter.com/beaceshimin">
-            You should follow him on Twitter
-          </a>
+          <div className="description">
+            Written by <strong>Beace Lee</strong> who lives and works in China
+            building useful things.{' '}
+            <a href="https://twitter.com/beaceshimin">
+              You should follow him on Twitter
+            </a>
+          </div>
         </div>
       </div>
     )
