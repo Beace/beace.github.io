@@ -207,5 +207,3 @@ ipcRenderer.on('getPreferences', () => {
 ```
 
 webContents 属于主进程，向网页发送消息，接收到后打开『偏好设置』。
-
-#我的周报
