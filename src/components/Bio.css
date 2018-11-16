@@ -55,6 +55,7 @@ code[class*="language-"], pre[class*="language-"] {
 }
 .section {
     width: 80%;
+    max-width: 900px;
     margin: 20px auto;
 }
 @media (max-width: 600px) {
