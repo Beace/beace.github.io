@@ -1,0 +1,449 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/0.319712d3e7fffa8163a7.css">code[class*=language-],pre[class*=language-]{color:#657b83;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection{background:#073642}code[class*=language-]::selection,code[class*=language-] ::selection,pre[class*=language-]::selection,pre[class*=language-] ::selection{background:#073642}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto;border-radius:.3em}:not(pre)>code[class*=language-],pre[class*=language-]{background-color:#fdf6e3}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#93a1a1}.token.punctuation{color:#586e75}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#268bd2}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string,.token.url{color:#2aa198}.token.entity{color:#657b83;background:#eee8d5}.token.atrule,.token.attr-value,.token.keyword{color:#859900}.token.class-name,.token.function{color:#b58900}.token.important,.token.regex,.token.variable{color:#cb4b16}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}</style><style data-href="/component---src-templates-blog-post-js.f14badf942c99b62c68d.css">@font-face{font-family:Fira Code;src:url(/fonts/eot/FiraCode-Light.eot);src:url(/fonts/eot/FiraCode-Light.eot) format("embedded-opentype"),url(/fonts/woff2/FiraCode-Light.woff2) format("woff2"),url(/fonts/woff/FiraCode-Light.woff) format("woff"),url(/fonts/ttf/FiraCode-Light.ttf) format("truetype");font-weight:300;font-style:normal}@font-face{font-family:Fira Code Regular;src:url(/fonts/eot/FiraCode-Regular.eot);src:url(/fonts/eot/FiraCode-Regular.eot) format("embedded-opentype"),url(/fonts/woff2/FiraCode-Regular.woff2) format("woff2"),url(/fonts/woff/FiraCode-Regular.woff) format("woff"),url(/fonts/ttf/FiraCode-Regular.ttf) format("truetype");font-weight:400;font-style:normal}@font-face{font-family:Fira Code Medium;src:url(/fonts/eot/FiraCode-Medium.eot);src:url(/fonts/eot/FiraCode-Medium.eot) format("embedded-opentype"),url(/fonts/woff2/FiraCode-Medium.woff2) format("woff2"),url(/fonts/woff/FiraCode-Medium.woff) format("woff"),url(/fonts/ttf/FiraCode-Medium.ttf) format("truetype");font-weight:500;font-style:normal}@font-face{font-family:Fira Code Bold;src:url(/fonts/eot/FiraCode-Bold.eot);src:url(/fonts/eot/FiraCode-Bold.eot) format("embedded-opentype"),url(/fonts/woff2/FiraCode-Bold.woff2) format("woff2"),url(/fonts/woff/FiraCode-Bold.woff) format("woff"),url(/fonts/ttf/FiraCode-Bold.ttf) format("truetype");font-weight:700;font-style:normal}body{font:16px/1.5em Fira Code Medium;background-color:#f8f8ff}code[class*=language-],pre[class*=language-]{font-family:Fira Code Medium}.container{display:flex;margin-bottom:40px;align-items:center;text-decoration:none}.section{width:80%;max-width:900px;margin:20px auto}@media (max-width:600px){.description{display:none}}</style><meta name="generator" content="Gatsby 2.0.0-rc.28"/><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'UA-83986231-3', 'auto', {});
+      
+      }
+      </script><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><title data-react-helmet="true">【译文】理解 JavaScript 中的 for…of 循环 | Beace Blog</title><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:125%/1.4 'Fira Code Medium';box-sizing:border-box;overflow-y:scroll;-webkit-font-smoothing:antialiased;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.87);font-family:'Fira Code Medium';font-weight:400;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";letter-spacing:.03em;}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;color:inherit;font-family:'Fira Code Medium';font-weight:400;text-rendering:optimizeLegibility;font-size:2rem;line-height:1.1;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;color:inherit;font-family:'Fira Code Medium';font-weight:400;text-rendering:optimizeLegibility;font-size:1.51572rem;line-height:1.1;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;color:inherit;font-family:'Fira Code Medium';font-weight:400;text-rendering:optimizeLegibility;font-size:1.31951rem;line-height:1.1;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;color:inherit;font-family:'Fira Code Medium';font-weight:400;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;color:inherit;font-family:'Fira Code Medium';font-weight:400;text-rendering:optimizeLegibility;font-size:0.87055rem;line-height:1.1;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;color:inherit;font-family:'Fira Code Medium';font-weight:400;text-rendering:optimizeLegibility;font-size:0.81225rem;line-height:1.1;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}ul{margin-left:1.4rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.4rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;font-size:0.85rem;line-height:1.4rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;font-size:1rem;line-height:1.4rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}blockquote{margin-left:-1.4rem;margin-right:1.4rem;margin-top:0;padding-bottom:0;padding-left:1.1375rem;padding-right:0;padding-top:0;margin-bottom:1.4rem;font-size:1.1487rem;line-height:1.4rem;color:hsla(0,0%,0%,0.6);border-left:0.2625rem solid hsla(0,0%,0%,0.87);}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.4rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.4rem;}b{font-weight:700;}strong{font-weight:700;}dt{font-weight:700;}th{font-weight:700;}li{margin-bottom:calc(1.4rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.4rem;margin-bottom:calc(1.4rem / 2);margin-top:calc(1.4rem / 2);}li > ul{margin-left:1.4rem;margin-bottom:calc(1.4rem / 2);margin-top:calc(1.4rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.4rem / 2);}code{font-size:0.85rem;line-height:1.4rem;}kbd{font-size:0.85rem;line-height:1.4rem;}samp{font-size:0.85rem;line-height:1.4rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:0.93333rem;padding-right:0.93333rem;padding-top:0.7rem;padding-bottom:calc(0.7rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}a{color:inherit;}a:hover{color:#3498DB;}@media only screen and (max-width:480px){blockquote{margin-left:-1.05rem;padding-left:0.7875rem;margin-right:0;}}h2,h3{margin-bottom:16;margin-top:0;font-weight:bold;}</style><link href="//fonts.googleapis.com/css?family=Patua+One:400|Cabin+Condensed:400,700" rel="stylesheet" type="text/css"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-ba3b7722461ad0f59d96.js"/><link as="script" rel="preload" href="/0-a581f067f7c9e0c9f746.js"/><link as="script" rel="preload" href="/app-8ae4e8b4c10af26da0e0.js"/><link as="script" rel="preload" href="/webpack-runtime-5bf4f132cac5ce799bbc.js"/><link rel="preload" href="/static/d/502/path---2018-12-21-【译文】理解-java-script-中的-for-of-循环-77-f-925-nSn9YGWDy9VzirJoUnJVxbQDBQ.json" as="fetch" crossOrigin="use-credentials"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group"><div class="section"><div class="container"><a style="margin-right:20px;flex-shrink:0" href="/"><img src="https://imgs.beacelee.com/logo.jpg" alt="Beace Lee" style="margin-right:20px;margin-bottom:0;width:80px;height:80px;border-radius:50%"/></a><div style="padding:0;margin:0"><h3 style="margin-bottom:6px"><a style="text-decoration:none" href="/">Beace Blog</a></h3><div class="description">Written by <strong>Beace Lee</strong> who lives and works in China building useful things.<!-- --> <a href="https://twitter.com/beaceshimin">You should follow him on Twitter</a></div></div></div><h1>【译文】理解 JavaScript 中的 for…of 循环</h1><p style="display:block;margin-bottom:10px;margin-top:10px">December 23, 2018</p><div><blockquote>
+<p>原文链接： <a href="https://blog.bitsrc.io/understanding-the-for-of-loop-in-javascript-8aded97d7ef8">Understanding the For…of Loop In JavaScript</a></p>
+</blockquote>
+<p>在  JavaScript 中，我们有很多循环语句。</p>
+<ul>
+<li><code class="language-text">while</code> 语句</li>
+<li><code class="language-text">do...while</code> 语句</li>
+<li><code class="language-text">for</code> 语句</li>
+<li><code class="language-text">for...in</code> 语句</li>
+<li><code class="language-text">for...of</code> 语句</li>
+</ul>
+<p>所有这些语句都有一个最基础的共同功能：他们会一直重复，直到到达某个条件。</p>
+<p>在这篇文章，我们将研究 <code class="language-text">for…of</code> 表达式来查看它是如何工作的并且如何在 JavaScript 应用中利用它书写更好的代码。</p>
+<p>技巧：使用 <a href="https://github.com/teambit/bit">Bit</a>  构造一个 js 应用是非常快速的。使用 Bit 可以快速的在不同项目中分享和复用公共组件，可以在团队中分享，就像玩乐高那样简单。你可以免费使用它。</p>
+<h2>for…of</h2>
+<p><code class="language-text">for…of</code> 是 <code class="language-text">for</code> 语句的一种循环 <code class="language-text">iterables(iterable objects)</code>（可迭代对象） ，直到它到达它的终止条件的一种形式。</p>
+<p>下面是一个简答的例子。</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> a <span class="token keyword">of</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// It logs:</span>
+<span class="token comment">// 2</span>
+<span class="token comment">// 4</span>
+<span class="token comment">// 6</span>
+<span class="token comment">// 8</span>
+<span class="token comment">// 10</span></code></pre></div>
+<p>我们可以用比 <code class="language-text">for</code> 语句更少的代码来迭代数组 <code class="language-text">arr</code>。</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">let</span> myname <span class="token operator">=</span> <span class="token string">"Nnamdi Chidume"</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> a <span class="token keyword">of</span> myname<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// It logs:</span>
+<span class="token comment">// N</span>
+<span class="token comment">// n</span>
+<span class="token comment">// a</span>
+<span class="token comment">// m</span>
+<span class="token comment">// d</span>
+<span class="token comment">// i</span>
+<span class="token comment">//</span>
+<span class="token comment">// C</span>
+<span class="token comment">// h</span>
+<span class="token comment">// i</span>
+<span class="token comment">// d</span>
+<span class="token comment">// u</span>
+<span class="token comment">// m</span>
+<span class="token comment">// e</span></code></pre></div>
+<p>你应该直到，如果使用循环，我们不得不使用相关的数学知识和逻辑来计算到达循环 <code class="language-text">myname</code> 的终点并推出程序。但是 <code class="language-text">for…of</code> 语句帮我们解决了这个头疼的问题。</p>
+<p>正如我们看到的，<code class="language-text">for..of</code>  一般有以下定义：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">for</span> <span class="token punctuation">(</span> variable <span class="token keyword">of</span> iterable<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//...</span>
+<span class="token punctuation">}</span></code></pre></div>
+<ul>
+<li><code class="language-text">variable</code> 保存了每次迭代的 iterable 中对象的值</li>
+<li><code class="language-text">iterable</code> 是要被迭代的对象</li>
+</ul>
+<h2>Iterables and Iterator (迭代对象和迭代器)</h2>
+<p>在 <code class="language-text">for…of</code> 循环的定义中，我们说它“循环遍历可迭代对象（iterable objects）”。因此有了上述定义就意味着 <code class="language-text">for...of</code> 只能被用于可迭代的对象，否则不能使用 <code class="language-text">for...of</code> 循环。</p>
+<p>那么，什么是可迭代对象（Iterables）呢？</p>
+<p>简单的说，可迭代对象是可以执行迭代的对象。在 ECMASCRIPT 2015  中加入了一个 <code class="language-text">coupla</code>。这些新增内容是新协议。协议中包括Iterator协议和Iterable协议。</p>
+<p>根据 Mozilla 开发者说，“iterable 协议允许 JavaScript 对象去定义或者自定义迭代行为，例如在 <code class="language-text">for..of</code> 构造中循环的值。” 并且，“为了可迭代，对象必须实现 <code class="language-text">@@iterator</code> 方法，意味着对象必须包含（或者在其原型链中包含）一个 <code class="language-text">@@interator</code> 的属性，这个属性可以通过常量<code class="language-text">Symbol.iterator</code>获得”</p>
+<p>这实际上意味着，如果想要你的对象可以使用 <code class="language-text">for…of</code> 进行迭代，它必须是可迭代对象（interables），换言之，必须具有 <code class="language-text">@@iterator</code> 属性。这样才符合可迭代协议（iterable protocol）。</p>
+<p>因此，当对对象具有 <code class="language-text">@@iterator</code> 时，它就可以被 <code class="language-text">for…of</code> ，<code class="language-text">@@interator</code> 方法由 <code class="language-text">for...of</code> 调用。<code class="language-text">@@interator</code> 返回一个迭代器（interator）。</p>
+<p>现在，可迭代协议定义了一种可以从对象中返回值的流的方式。迭代器必须实现 <code class="language-text">next</code> 方法。<code class="language-text">next</code> 方法需要遵守以下几个规则。</p>
+<ul>
+<li>必须返回一个带有 <code class="language-text">done</code> 属性的对象。类似<code class="language-text">value {done, value}</code></li>
+<li><code class="language-text">done</code> 属性是一个布尔值，表示是否到达流的末尾</li>
+<li><code class="language-text">value</code> 属性 保存当前周期的值</li>
+</ul>
+<p>举个例子：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">createIterator</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> array <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Nnamdi'</span><span class="token punctuation">,</span><span class="token string">'Chidume'</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span>  <span class="token punctuation">{</span>
+        next<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>index <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>index<span class="token operator">++</span>
+                <span class="token keyword">return</span> <span class="token punctuation">{</span> value<span class="token punctuation">:</span> array<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>index<span class="token punctuation">]</span><span class="token punctuation">,</span> done<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>index <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token punctuation">{</span> value<span class="token punctuation">:</span> array<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>index<span class="token punctuation">]</span><span class="token punctuation">,</span> done<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        index<span class="token punctuation">:</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> iterator <span class="token operator">=</span> <span class="token function">createIterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token function">log</span><span class="token punctuation">(</span>iterator<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// Nnamdi</span>
+<span class="token function">log</span><span class="token punctuation">(</span>iterator<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// Chidume</span></code></pre></div>
+<p>基本上，<code class="language-text">@@iterator</code> 返回了一个迭代器（interator），<code class="language-text">for…of</code> 用来循环对象并且获取其值。因此，如果一个对象不包含<code class="language-text">@@interator</code> 方法并且（或者）返回的不是一个迭代器（interator），<code class="language-text">for…of</code> 语句不能正常迭代。</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> nonIterable <span class="token operator">=</span> <span class="token comment">//...</span>
+ <span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">let</span> a <span class="token keyword">of</span> nonIterable<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     <span class="token comment">// ...</span>
+ <span class="token punctuation">}</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">let</span> a <span class="token keyword">of</span> nonIterable<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+               <span class="token operator">^</span>
+TypeError<span class="token punctuation">:</span> nonIterable is not iterable</code></pre></div>
+<p>例如有一些可迭代对象：</p>
+<ul>
+<li>String</li>
+<li>Map</li>
+<li>TypedArray</li>
+<li>Array</li>
+<li>Set</li>
+<li>Generator</li>
+</ul>
+<p>注意这里少了 <code class="language-text">Object</code>。<code class="language-text">Object</code>不是一个可迭代对象。如果我们尝试使用 <code class="language-text">for…of</code> 循环去遍历 <code class="language-text">Object</code> 中的属性:</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">let</span> obj <span class="token punctuation">{</span>
+    firstname<span class="token punctuation">:</span> <span class="token string">"Nnamdi"</span><span class="token punctuation">,</span>
+    surname<span class="token punctuation">:</span> <span class="token string">"Chidume"</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">const</span> a <span class="token keyword">of</span> obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>它将会抛出以下错误：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">const</span> a <span class="token keyword">of</span> obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+               <span class="token operator">^</span>
+TypeError<span class="token punctuation">:</span> obj is not iterable</code></pre></div>
+<p>我们可以通过以下方式来检查一个对象是否为可迭代对象</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> str <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">'Chidume'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> str<span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span></code></pre></div>
+<p>可以看到，它打印出了 <code class="language-text">function</code>，这表明在 <code class="language-text">String</code> 存在<code class="language-text">@@iterator</code> 属性。如果我们尝试 <code class="language-text">Object</code>:</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    surname<span class="token punctuation">:</span> <span class="token string">"Chidume"</span>
+<span class="token punctuation">}</span>
+<span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> obj<span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+undefined</code></pre></div>
+<p>Woo!!  <code class="language-text">undefined</code> 意味着不存在。</p>
+<h2>for…of: Array</h2>
+<p>数组是可迭代对象。</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token string">"Nnamdi"</span><span class="token punctuation">,</span> <span class="token string">"Chidume"</span><span class="token punctuation">)</span><span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// function</span></code></pre></div>
+<p>这也是为什么我们可以使用 <code class="language-text">for…of</code> 来遍历它的原因。</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Chidume"</span><span class="token punctuation">,</span> <span class="token string">"Nnamdi"</span><span class="token punctuation">,</span> <span class="token string">"loves"</span><span class="token punctuation">,</span> <span class="token string">"JS"</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">const</span> a <span class="token keyword">of</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// It logs:</span>
+<span class="token comment">// Chidume</span>
+<span class="token comment">// Nnamdi</span>
+<span class="token comment">// loves</span>
+<span class="token comment">// JS</span>
+<span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token string">"Chidume"</span><span class="token punctuation">,</span> <span class="token string">"Nnamdi"</span><span class="token punctuation">,</span> <span class="token string">"loves"</span><span class="token punctuation">,</span> <span class="token string">"JS"</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">const</span> a <span class="token keyword">of</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// It logs:</span>
+<span class="token comment">// Chidume</span>
+<span class="token comment">// Nnamdi</span>
+<span class="token comment">// loves</span>
+<span class="token comment">// JS</span></code></pre></div>
+<h2>for…of: String</h2>
+<p><code class="language-text">String</code> 也是可迭代对象。</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> myname <span class="token operator">=</span> <span class="token string">"Chidume Nnamdi"</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">const</span> a <span class="token keyword">of</span> myname<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// It logs:</span>
+<span class="token comment">// C</span>
+<span class="token comment">// h</span>
+<span class="token comment">// i</span>
+<span class="token comment">// d</span>
+<span class="token comment">// u</span>
+<span class="token comment">// m</span>
+<span class="token comment">// e</span>
+<span class="token comment">//</span>
+<span class="token comment">// N</span>
+<span class="token comment">// n</span>
+<span class="token comment">// a</span>
+<span class="token comment">// m</span>
+<span class="token comment">// d</span>
+<span class="token comment">// i</span>
+<span class="token keyword">const</span> str <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"The Young"</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">const</span> a <span class="token keyword">of</span> str<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// It logs:</span>
+<span class="token comment">// T</span>
+<span class="token comment">// h</span>
+<span class="token comment">// e</span>
+<span class="token comment">//</span>
+<span class="token comment">// Y</span>
+<span class="token comment">// o</span>
+<span class="token comment">// u</span>
+<span class="token comment">// n</span>
+<span class="token comment">// g</span></code></pre></div>
+<h2>for…of: Map</h2>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"surname"</span><span class="token punctuation">,</span> <span class="token string">"Chidume"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">"firstname"</span><span class="token punctuation">,</span><span class="token string">"Nnamdi"</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">const</span> a <span class="token keyword">of</span> map<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// It logs:</span>
+<span class="token comment">// ["surname", "Chidume"]</span>
+<span class="token comment">// ["firstname","Nnamdi"]</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token punctuation">[</span>key<span class="token punctuation">,</span> value<span class="token punctuation">]</span> <span class="token keyword">of</span> map<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`key: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>key<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, value: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>value<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// It logs:</span>
+<span class="token comment">// key: surname, value: Chidume</span>
+<span class="token comment">// key: firstname, value: Nnamdi</span></code></pre></div>
+<h2>for…of: Set</h2>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token keyword">set</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"Chidume"</span><span class="token punctuation">,</span><span class="token string">"Nnamdi"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">const</span> a <span class="token keyword">of</span> <span class="token keyword">set</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// It logs:</span>
+<span class="token comment">// Chidume</span>
+<span class="token comment">// Nnamdi</span></code></pre></div>
+<h2>for…of: TypedArray</h2>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> typedarray <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0xe8</span><span class="token punctuation">,</span> <span class="token number">0xb4</span><span class="token punctuation">,</span> <span class="token number">0xf8</span><span class="token punctuation">,</span> <span class="token number">0xaa</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> a <span class="token keyword">of</span> typedarray<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// It logs:</span>
+<span class="token comment">// 232</span>
+<span class="token comment">// 180</span>
+<span class="token comment">// 248</span>
+<span class="token comment">// 170</span></code></pre></div>
+<h2>for…of: arguments</h2>
+<p><code class="language-text">arguments</code> 是可迭代对象吗？让我们来检验一下：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">// testFunc.js</span>
+<span class="token keyword">function</span> <span class="token function">testFunc</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> arguments<span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token function">testFunc</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+$ node testFunc
+<span class="token keyword">function</span></code></pre></div>
+<p>事实证明，它是的。如果我们更进一步调查，<code class="language-text">arguments</code> 实际上是<code class="language-text">IArguments</code>类型，并且实现<code class="language-text">IArguments</code>接口的类具有<code class="language-text">@@iterator</code>属性，该属性使参数可迭代。</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">// testFunc.js</span>
+<span class="token keyword">function</span> <span class="token function">testFunc</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> arguments<span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">const</span> a <span class="token keyword">of</span> arguments<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token function">testFunc</span><span class="token punctuation">(</span><span class="token string">"Chidume"</span><span class="token punctuation">)</span>
+<span class="token comment">// It:</span>
+<span class="token comment">// Chidume</span></code></pre></div>
+<h2>for…of: Custom Iterables</h2>
+<p>正如我们上面所说的，我们创建一个自定义的可迭代对象使得 <code class="language-text">for…of</code> 可以遍历它。</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+obj<span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> array <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Chidume"</span><span class="token punctuation">,</span> <span class="token string">"Nnamdi"</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        next<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">let</span> value <span class="token operator">=</span> <span class="token keyword">null</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>index <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                value <span class="token operator">=</span> array<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>index<span class="token punctuation">]</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>index<span class="token operator">++</span>
+                    <span class="token keyword">return</span> <span class="token punctuation">{</span> value<span class="token punctuation">,</span> done<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>index <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                value <span class="token operator">=</span> array<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>index<span class="token punctuation">]</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>index<span class="token operator">++</span>
+                    <span class="token keyword">return</span> <span class="token punctuation">{</span> value<span class="token punctuation">,</span> done<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>index <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token punctuation">{</span> done<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        index<span class="token punctuation">:</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
+<p>我创建了一个对象 <code class="language-text">obj</code>并且使他可迭代，我通过 <code class="language-text">[Symbol.iterator]</code> 增加了<code class="language-text">@@interator</code> 属性。然后， <code class="language-text">function</code> 最终返回一个迭代器（interator）。</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">//...</span>
+<span class="token keyword">return</span> <span class="token punctuation">{</span>
+    next<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//...</span></code></pre></div>
+<p>记住，一个迭代器需要有一个 <code class="language-text">next</code> 函数。</p>
+<p>在 <code class="language-text">next</code> 函数中，我定义的值将在迭代执行期间返回给 <code class="language-text">for…of</code>。看上面的代码，你可以清楚的看到我做了什么。</p>
+<p>让我们来测试一下 是用 <code class="language-text">for...of</code> 遍历 <code class="language-text">obj</code> 会得到什么：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">// customIterableTest.js</span>
+<span class="token comment">//...</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> a <span class="token keyword">of</span> obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+$ node customIterableTest
+Chidume
+Nnamdi</code></pre></div>
+<p>是的，它正确执行了：）！</p>
+<h2>使对象和普通对象可迭代</h2>
+<p>普通对象(Plain objects)不可迭代，而且<code class="language-text">Object</code>中的对象也不可迭代。</p>
+<p>我们可以通过使用自定义迭代器将 <code class="language-text">@@iterator</code> 添加到Object.prototype来实现。</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">Object<span class="token punctuation">.</span>prototype<span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> properties <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> count <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">let</span> isdone <span class="token operator">=</span> <span class="token boolean">false</span>
+    <span class="token keyword">let</span> <span class="token function-variable function">next</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> value <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">[</span>properties<span class="token punctuation">[</span>count<span class="token punctuation">]</span><span class="token punctuation">]</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>count <span class="token operator">==</span> properties<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            isdone <span class="token operator">=</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span>
+        count<span class="token operator">++</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span> done<span class="token punctuation">:</span> isdone<span class="token punctuation">,</span> value <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span> next <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p><code class="language-text">properties</code> 变量保存使用 <code class="language-text">Object.keys()</code> 获取的对象的属性。在 <code class="language-text">next</code> 函数中，我们简单地返回了从 <code class="language-text">properties</code> 中获取的每一个值并且更新了 <code class="language-text">count</code>，从而使用 <code class="language-text">count</code>作为索引从属性中获取下一个值。
+当 <code class="language-text">count</code> 等于<code class="language-text">properties</code> 长度时，迭代就会停止。</p>
+<p>通过 <code class="language-text">Object</code> 来进行测试：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">let</span> o <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+o<span class="token punctuation">.</span>s <span class="token operator">=</span> <span class="token string">"SK"</span>
+o<span class="token punctuation">.</span>me <span class="token operator">=</span> <span class="token string">'SKODA'</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> a <span class="token keyword">of</span> o<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token constant">SK</span>
+<span class="token constant">SKODA</span></code></pre></div>
+<p>成功执行了！</p>
+<p>对于普通对象：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">let</span> dd <span class="token operator">=</span> <span class="token punctuation">{</span>
+    shit<span class="token punctuation">:</span> <span class="token number">900</span><span class="token punctuation">,</span>
+    opp<span class="token punctuation">:</span> <span class="token number">800</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> a <span class="token keyword">of</span> dd<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token number">900</span>
+<span class="token number">800</span></code></pre></div>
+<p>这样我们就可以将它添加为 polyfill ，在应用中使用 <code class="language-text">for..of</code>。</p>
+<h2>Using for…of on ES6 classes</h2>
+<p>我们可以使用 <code class="language-text">for..of</code> 来遍历类实例中的数据列表。</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">Profiles</span> <span class="token punctuation">{</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span>profiles<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>profiles <span class="token operator">=</span> profiles
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> profiles <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Profiles</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        firstname<span class="token punctuation">:</span> <span class="token string">"Nnamdi"</span><span class="token punctuation">,</span>
+        surname<span class="token punctuation">:</span> <span class="token string">"Chidume"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        firstname<span class="token punctuation">:</span> <span class="token string">"Philip"</span><span class="token punctuation">,</span>
+        surname<span class="token punctuation">:</span> <span class="token string">"David"</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre></div>
+<p>类 <code class="language-text">Profiles</code> 具有一个 <code class="language-text">profile</code> 属性包含一个数组 <code class="language-text">users</code> 。我们可能需要在应用程序中使用 <code class="language-text">for...of</code>展示此数据。如果我们这样做：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">//...</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">const</span> a <span class="token keyword">of</span> profiles<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>显然，它不能正常工作。</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">const</span> a <span class="token keyword">of</span> profiles<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+               <span class="token operator">^</span>
+TypeError<span class="token punctuation">:</span> profiles is not iterable</code></pre></div>
+<p>需要让 <code class="language-text">profiles</code> 迭代对象具有以下规则</p>
+<ul>
+<li>对象必须包含 <code class="language-text">@@iterator</code> 属性</li>
+<li><code class="language-text">@@iterator</code> 必须返回一个迭代器 <code class="language-text">interator</code></li>
+<li><code class="language-text">iterator</code> 迭代器必须有 <code class="language-text">next</code>  方法的实现</li>
+</ul>
+<p>我们通过 <code class="language-text">[Symbol.iterator]</code> 来定义了 <code class="language-text">@@interator</code>。</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">Profiles</span> <span class="token punctuation">{</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span>profiles<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>profiles <span class="token operator">=</span> profiles
+        <span class="token punctuation">}</span>
+        <span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">let</span> props <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>profiles
+            <span class="token keyword">let</span> propsLen <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>profiles<span class="token punctuation">.</span>length
+            <span class="token keyword">let</span> count <span class="token operator">=</span> <span class="token number">0</span>
+            <span class="token keyword">return</span> <span class="token punctuation">{</span>
+                next<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">if</span> <span class="token punctuation">(</span>count <span class="token operator">&lt;</span> propsLen<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        <span class="token keyword">return</span> <span class="token punctuation">{</span> value<span class="token punctuation">:</span> props<span class="token punctuation">[</span>count<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">,</span> done<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span>
+                    <span class="token keyword">if</span> <span class="token punctuation">(</span>count <span class="token operator">==</span> propsLen<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        <span class="token keyword">return</span> <span class="token punctuation">{</span> done<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>然后我们执行以下代码：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">//...</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">const</span> a <span class="token keyword">of</span> profiles<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+$ node profile<span class="token punctuation">.</span>js
+<span class="token punctuation">{</span> firstname<span class="token punctuation">:</span> <span class="token string">'Nnamdi'</span><span class="token punctuation">,</span> surname<span class="token punctuation">:</span> <span class="token string">'Chidume'</span> <span class="token punctuation">}</span>
+<span class="token punctuation">{</span> firstname<span class="token punctuation">:</span> <span class="token string">'Philip'</span><span class="token punctuation">,</span> surname<span class="token punctuation">:</span> <span class="token string">'David'</span> <span class="token punctuation">}</span></code></pre></div>
+<p><code class="language-text">profiles</code> 属性正确展示了。</p>
+<h2>异步迭代器（Async Iterator）</h2>
+<p>ECMAScript 2018引入了一个新的构造，以便能够遍历Promises数组，这个新构造是 <code class="language-text">for-await-of</code> 和一个新的 <code class="language-text">Symbol</code> <code class="language-text">Symbol.asyncIterator</code>。</p>
+<p><code class="language-text">Symbol.asyncIterator</code> 函数是一个可以返回 <code class="language-text">promise</code> 迭代器的可迭代对象。</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> f <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>asyncIterator<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p><code class="language-text">[Symbol.iterator]</code> 与 <code class="language-text">[Symbol.asyncIterator]</code> 的区别在于前者返回 <code class="language-text">{ value, done }</code>, 后者返回 promise resolve <code class="language-text">{ value, done }</code>。</p>
+<p>上面的<code class="language-text">f</code> 函数类似下面这样：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> f <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>asyncIterator<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+            next<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>index <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">this</span><span class="token punctuation">.</span>index<span class="token operator">++</span>
+                        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span>res <span class="token operator">=></span> <span class="token function">res</span><span class="token punctuation">(</span><span class="token punctuation">{</span> value<span class="token punctuation">:</span> <span class="token number">900</span><span class="token punctuation">,</span> done<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span>res <span class="token operator">=></span> <span class="token function">res</span><span class="token punctuation">(</span><span class="token punctuation">{</span> value<span class="token punctuation">:</span> <span class="token number">1900</span><span class="token punctuation">,</span> done<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            index<span class="token punctuation">:</span> <span class="token number">0</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p><code class="language-text">f</code> 是异步可迭代的对象。你可以看到它返回了一个 <code class="language-text">promise</code>, Promise  的 <code class="language-text">resolve</code> 方法在每一个迭代中都返回了 <code class="language-text">value</code>。</p>
+<p>要迭代<code class="language-text">f</code>，我们将不会使用 <code class="language-text">for..of</code> 而是我们将使用新的 <code class="language-text">for-await-of</code>这样：</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">// ...</span>
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">fAsyncLoop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token keyword">await</span> <span class="token punctuation">(</span><span class="token keyword">const</span> _f <span class="token keyword">of</span> f<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">log</span><span class="token punctuation">(</span>_f<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token function">fAsyncLoop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+$ node fAsyncLoop<span class="token punctuation">.</span>js
+<span class="token number">900</span></code></pre></div>
+<p>我们可以使用 <code class="language-text">for-await-of</code> 来循环一个 Promise 数组。</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> arrayOfPromises <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span>res <span class="token operator">=></span> <span class="token function">res</span><span class="token punctuation">(</span><span class="token string">"Nnamdi"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span>res <span class="token operator">=></span> <span class="token function">res</span><span class="token punctuation">(</span><span class="token string">"Chidume"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">]</span>
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">arrayOfPromisesLoop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token keyword">await</span> <span class="token punctuation">(</span><span class="token keyword">const</span> p <span class="token keyword">of</span> arrayOfPromises<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">log</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token function">arrayOfPromisesLoop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+$ node arrayOfPromisesLoop<span class="token punctuation">.</span>js
+Nnamdi
+Chidume</code></pre></div>
+<h2>总结</h2>
+<p>在这篇文章中，我们深入挖掘了<code class="language-text">for... of</code>循环。我们首先定义<code class="language-text">for..of</code>是什么，然后继续看看是什么使得可迭代。然后，我们查看了JS中完整的可迭代列表，并浏览了它们中的每一个，以了解如何使用它们的循环。</p>
+<p>就像我在开始时说的那样，<code class="language-text">for..of</code> 为我们节省了许多复杂性和逻辑，并有助于使我们的代码看起来更清晰，更易读。如果您还没有尝试过这种令人敬畏的<code class="language-text">for</code>循环变异，我认为现在是时候这样做了。</p>
+<p>如果您对此或我应该添加，更正或删除的任何问题有任何疑问，请随时在下面发表评论，以及任何事情或DM我。谢谢阅读！ :)</p></div><hr style="margin-bottom:10px"/><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/2018/12-21/圣诞节快到了，你还在网上买圣诞彩灯吗，骚年，WS2812了解一下/">← <!-- -->圣诞节快到了，你还在网上买圣诞彩灯吗，骚年，WS2812了解一下</a></li></ul><div><div><div id="disqus_thread"></div></div></div></div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.page={"componentChunkName":"component---src-templates-blog-post-js","jsonName":"2018-12-21-【译文】理解-java-script-中的-for-of-循环-77f","path":"/2018/12-21/【译文】理解 JavaScript 中的 for…of 循环/"};window.dataPath="502/path---2018-12-21-【译文】理解-java-script-中的-for-of-循环-77-f-925-nSn9YGWDy9VzirJoUnJVxbQDBQ";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-8ae4e8b4c10af26da0e0.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-8f84fcc61749d6953357.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js.f14badf942c99b62c68d.css","/component---src-templates-blog-post-js-ba3b7722461ad0f59d96.js"],"component---src-pages-404-js":["/component---src-pages-404-js-2bf63172538bff50bcec.js"],"component---src-pages-index-js":["/component---src-pages-index-js.f14badf942c99b62c68d.css","/component---src-pages-index-js-51064e43341f44736f88.js"]};/*]]>*/</script><script src="/webpack-runtime-5bf4f132cac5ce799bbc.js" async=""></script><script src="/app-8ae4e8b4c10af26da0e0.js" async=""></script><script src="/0-a581f067f7c9e0c9f746.js" async=""></script><script src="/component---src-templates-blog-post-js-ba3b7722461ad0f59d96.js" async=""></script></body></html>
