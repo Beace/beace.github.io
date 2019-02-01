@@ -4,7 +4,8 @@ date: 2017-02-21T18:51:01
 updated: Wed Feb 22 2017 10:13:46 GMT+0800 (CST)
 comments: 1
 categories:
-tags: [[object Object],[object Object]]
+tags:
+  - JavaScript
 permalink: c01-arrow-function
 ---
 

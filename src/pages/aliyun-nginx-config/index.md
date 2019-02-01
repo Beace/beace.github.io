@@ -4,7 +4,8 @@ date: 2016-09-12T20:53:23
 updated: Sun Sep 18 2016 16:37:25 GMT+0800 (CST)
 comments: 1
 categories:
-tags: [[object Object],[object Object],[object Object],[object Object]]
+tags:
+  - JavaScript
 permalink: aliyun-domain-nginx
 ---
 

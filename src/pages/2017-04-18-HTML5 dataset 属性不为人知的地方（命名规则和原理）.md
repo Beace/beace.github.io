@@ -4,7 +4,9 @@ date: 2017-08-18T15:19:03
 updated: Tue Apr 18 2017 15:19:27 GMT+0800 (CST)
 comments: 1
 categories: js
-tags: [[object Object],[object Object],[object Object]]
+tags:
+  - HTML5
+  - JavaScript
 permalink: html5-dataset
 ---
 

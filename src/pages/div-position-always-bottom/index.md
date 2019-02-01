@@ -4,7 +4,8 @@ date: 2017-01-16T17:08:09
 updated: Mon Feb 06 2017 10:48:17 GMT+0800 (CST)
 comments: 1
 categories:
-tags: [[object Object],[object Object],[object Object],[object Object],[object Object]]
+tags:
+  - JavaScript
 permalink: div-always-on-bottom
 ---
 

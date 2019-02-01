@@ -4,7 +4,8 @@ date: 2016-11-14T17:53:28
 updated: Mon Nov 14 2016 21:38:08 GMT+0800 (CST)
 comments: 1
 categories:
-tags: [[object Object],[object Object],[object Object]]
+tags:
+  - Scala
 permalink: scala-playframework-database-mysql-delete-update
 ---
 

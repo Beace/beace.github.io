@@ -4,7 +4,8 @@ date: 2017-03-18T17:16:19
 updated: Sat Mar 18 2017 17:16:19 GMT+0800 (CST)
 comments: 1
 categories: js
-tags: [[object Object]]
+tags:
+  - JavaScript
 permalink: javascript-trick-tip
 ---
 

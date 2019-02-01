@@ -4,7 +4,8 @@ date: 2016-09-01T16:39:36
 updated: Tue Sep 20 2016 08:03:08 GMT+0800 (CST)
 comments: 1
 categories:
-tags: [[object Object],[object Object]]
+tags:
+  - JavaScript
 permalink: react-dynamic-add-rows
 ---
 

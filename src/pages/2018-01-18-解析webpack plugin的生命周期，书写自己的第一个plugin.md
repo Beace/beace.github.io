@@ -4,7 +4,7 @@ date: 2018-01-18T10:39:40
 updated: Thu Jan 18 2018 10:44:07 GMT+0800 (CST)
 comments: 1
 categories: js
-tags: [[object Object],[object Object],[object Object]]
+tags: ['JavaScript', 'Webpack']
 permalink: webpack-plugin-custome-plugin
 ---
 

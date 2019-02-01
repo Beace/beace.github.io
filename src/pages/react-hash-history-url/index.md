@@ -4,7 +4,8 @@ date: 2016-06-27T00:00:00
 updated: Thu Sep 22 2016 20:31:23 GMT+0800 (CST)
 comments: 1
 categories:
-tags: [[object Object],[object Object]]
+tags:
+  - JavaScript
 permalink: react-hashhistory-url
 ---
 

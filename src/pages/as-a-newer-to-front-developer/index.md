@@ -4,7 +4,8 @@ date: 2016-09-23T00:54:49
 updated: Fri Sep 23 2016 00:55:08 GMT+0800 (CST)
 comments: 1
 categories:
-tags: [[object Object],[object Object]]
+tags:
+  - JavaScript
 permalink: the-view-of-new-web-developer-for-the-new-world
 ---
 

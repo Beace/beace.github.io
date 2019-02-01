@@ -4,7 +4,8 @@ date: 2016-10-25T15:51:03
 updated: Fri Oct 28 2016 00:45:06 GMT+0800 (CST)
 comments: 1
 categories:
-tags: [[object Object],[object Object],[object Object]]
+tags:
+  - Scala
 permalink: play-framework-scala-userlist
 ---
 

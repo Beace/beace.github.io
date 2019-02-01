@@ -4,7 +4,8 @@ date: 2016-07-05T00:00:00
 updated: Thu Sep 22 2016 19:53:00 GMT+0800 (CST)
 comments: 1
 categories:
-tags: [[object Object],[object Object],[object Object]]
+tags:
+  - Scala
 permalink: playframework-running-hold-on-problem
 ---
 

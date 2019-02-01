@@ -4,7 +4,8 @@ date: 2017-02-23T23:45:05
 updated: Mon Feb 27 2017 15:06:55 GMT+0800 (CST)
 comments: 1
 categories:
-tags: [[object Object]]
+tags:
+  - JavaScript
 permalink: ejs-script-tag-object-not-working
 ---
 

@@ -4,7 +4,8 @@ date: 2016-12-16T15:19:25
 updated: Fri Dec 16 2016 15:19:37 GMT+0800 (CST)
 comments: 1
 categories:
-tags: [[object Object],[object Object],[object Object],[object Object]]
+tags:
+  - JavaScript
 permalink: clean-blog-react-node-3
 ---
 

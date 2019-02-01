@@ -4,7 +4,8 @@ date: 2016-10-31T20:16:31
 updated: Mon Oct 31 2016 22:17:59 GMT+0800 (CST)
 comments: 1
 categories:
-tags: [[object Object],[object Object]]
+tags:
+  - JavaScript
 permalink: javascript-not-defined-or-undefined
 ---
 

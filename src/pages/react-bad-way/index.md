@@ -4,7 +4,8 @@ date: 2016-09-12T16:53:48
 updated: Mon Sep 12 2016 16:54:26 GMT+0800 (CST)
 comments: 1
 categories:
-tags: [[object Object]]
+tags:
+  - JavaScript
 permalink: react-bad-condition
 ---
 

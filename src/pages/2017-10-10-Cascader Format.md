@@ -4,7 +4,8 @@ date: 2017-10-10T17:43:20
 updated: Mon Nov 20 2017 18:18:48 GMT+0800 (CST)
 comments: 1
 categories: js
-tags: [[object Object],[object Object]]
+tags:
+  - JavaScript
 permalink: Cascader-format
 ---
 

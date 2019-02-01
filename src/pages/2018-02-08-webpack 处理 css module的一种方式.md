@@ -4,7 +4,7 @@ date: 2018-02-08T14:13:08
 updated: Thu Feb 08 2018 14:13:08 GMT+0800 (CST)
 comments: 1
 categories: js
-tags: [[object Object],[object Object],[object Object],[object Object]]
+tags: ['JavaScript', 'Webpack']
 permalink: webpack-css-module-postcss-css-loader
 ---
 

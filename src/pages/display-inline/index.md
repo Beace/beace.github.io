@@ -4,7 +4,8 @@ date: 2016-09-10T20:49:02
 updated: Wed Sep 21 2016 13:59:17 GMT+0800 (CST)
 comments: 1
 categories:
-tags: [[object Object],[object Object],[object Object]]
+tags:
+  - JavaScript
 permalink: display-inline-block
 ---
 

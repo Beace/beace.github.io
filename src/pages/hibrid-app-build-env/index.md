@@ -4,7 +4,8 @@ date: 2015-12-05T02:00:00
 updated: Thu Sep 22 2016 10:27:05 GMT+0800 (CST)
 comments: 1
 categories:
-tags: [[object Object],[object Object],[object Object],[object Object]]
+tags:
+  - hybrid
 permalink: build-hybridapp
 ---
 

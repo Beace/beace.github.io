@@ -4,7 +4,8 @@ date: 2016-09-10T21:01:20
 updated: Sun Sep 18 2016 16:45:17 GMT+0800 (CST)
 comments: 1
 categories:
-tags: [[object Object],[object Object],[object Object]]
+tags:
+  - JavaScript
 permalink: react-indexroute-always-active
 ---
 

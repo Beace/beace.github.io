@@ -4,7 +4,8 @@ date: 2016-10-10T11:58:23
 updated: 2016-10-10T11:58:23
 comments: 1
 categories:
-tags: [[object Object],[object Object],[object Object]]
+tags:
+  - JavaScript
 permalink: react-state-change-problem
 ---
 

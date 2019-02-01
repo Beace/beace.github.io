@@ -4,7 +4,8 @@ date: 2016-09-12T17:11:07
 updated: Sun Sep 18 2016 16:44:36 GMT+0800 (CST)
 comments: 1
 categories:
-tags: [[object Object]]
+tags:
+  - JavaScript
 permalink: github-login-passport
 ---
 

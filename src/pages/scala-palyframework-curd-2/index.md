@@ -4,7 +4,8 @@ date: 2016-10-28T00:52:46
 updated: Fri Oct 28 2016 00:56:43 GMT+0800 (CST)
 comments: 1
 categories:
-tags: [[object Object],[object Object],[object Object]]
+tags:
+  - Scala
 permalink: router-static-page
 ---
 

@@ -1,0 +1,30 @@
+.top-nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 54px;
+  line-height: 54px;
+  background-color: #fff;
+}
+.top-nav-container {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 900px;
+}
+.top-nav-container a {
+  text-decoration: none;
+}
+.top-nav-item {
+  display: inline-block;
+  padding: 0 20px;
+  cursor: pointer;
+}
+.top-nav-item i {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.top-nav-item:hover {
+  border-bottom: 1px solid skyblue;
+}

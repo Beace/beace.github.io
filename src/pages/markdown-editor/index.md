@@ -4,7 +4,8 @@ date: 2016-11-15T15:08:59
 updated: Tue Nov 15 2016 15:09:28 GMT+0800 (CST)
 comments: 1
 categories:
-tags: [[object Object]]
+tags:
+  - JavaScript
 permalink: best-markdown-editor
 ---
 

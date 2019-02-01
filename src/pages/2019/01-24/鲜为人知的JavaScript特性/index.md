@@ -1,6 +1,8 @@
 ---
 title: 【译文】鲜为人知的JavaScript特性
 date: 2019-01-24T16:00:23
+tags:
+  - JavaScript
 ---
 
 > 翻译自：[Little known features of JavaScript – Noteworthy - The Journal Blog](https://blog.usejournal.com/little-known-features-of-javascript-901665291387)

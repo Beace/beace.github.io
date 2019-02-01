@@ -4,7 +4,8 @@ date: 2017-02-22T11:58:00
 updated: Wed Feb 22 2017 11:59:01 GMT+0800 (CST)
 comments: 1
 categories:
-tags: [[object Object],[object Object]]
+tags:
+  - JavaScript
 permalink: javascript-math.random
 ---
 

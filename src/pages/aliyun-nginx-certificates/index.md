@@ -4,7 +4,8 @@ date: "2016-09-18T17:46:40"
 updated: Thu Sep 22 2016 22:57:47 GMT+0800 (CST)
 comments: 1
 categories:
-tags: [[object Object],[object Object],[object Object],[object Object]]
+tags:
+  - JavaScript
 permalink: aliyun-ecs-nginx-ssl-certificate-config
 ---
 

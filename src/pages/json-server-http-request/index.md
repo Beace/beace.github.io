@@ -4,7 +4,8 @@ date: 2016-10-29T11:53:06
 updated: Sat Oct 29 2016 11:53:31 GMT+0800 (CST)
 comments: 1
 categories:
-tags: [[object Object],[object Object],[object Object]]
+tags:
+  - JavaScript
 permalink: json-server-and-xmlhttprequest
 ---
 

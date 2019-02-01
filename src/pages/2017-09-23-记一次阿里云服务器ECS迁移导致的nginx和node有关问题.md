@@ -4,7 +4,8 @@ date: 2017-09-23T00:03:55
 updated: Sat Sep 23 2017 00:05:14 GMT+0800 (CST)
 comments: 1
 categories: node
-tags: [[object Object],[object Object],[object Object]]
+tags:
+  - JavaScript
 permalink: aliyun-ecs-qianyi-nginx-node
 ---
 

@@ -4,7 +4,8 @@ date: 2016-11-01T23:23:14
 updated: Tue Nov 01 2016 23:31:40 GMT+0800 (CST)
 comments: 1
 categories:
-tags: [[object Object],[object Object],[object Object],[object Object]]
+tags:
+  - Scala
 permalink: scala-playframework-database-mysql
 ---
 

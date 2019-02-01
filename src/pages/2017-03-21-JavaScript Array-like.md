@@ -4,7 +4,8 @@ date: 2017-03-21T13:06:29
 updated: Tue Mar 21 2017 13:06:59 GMT+0800 (CST)
 comments: 1
 categories:
-tags: [[object Object],[object Object],[object Object]]
+tags:
+  - JavaScript
 permalink: javascript-array-like-arguments
 ---
 

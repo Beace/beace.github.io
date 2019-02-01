@@ -16,15 +16,7 @@ class BlogPostTemplate extends React.Component {
       <Layout location={this.props.location}>
         <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
         <h1>{post.frontmatter.title}</h1>
-        <p
-          style={{
-            display: 'block',
-            marginBottom: 10,
-            marginTop: 10,
-          }}
-        >
-          {post.frontmatter.date}
-        </p>
+        <p>{post.frontmatter.date}</p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{

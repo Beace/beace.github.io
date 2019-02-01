@@ -4,7 +4,8 @@ date: 2018-06-27T18:29:48
 updated: Wed Jun 27 2018 21:21:47 GMT+0800 (CST)
 comments: 1
 categories:
-tags: [[object Object],[object Object]]
+tags:
+  - GitLab
 permalink:  gitlab-gitlab-runner-install
 ---
 

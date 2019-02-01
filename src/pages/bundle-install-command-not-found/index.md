@@ -4,7 +4,8 @@ date: 2016-10-10T10:29:14
 updated: Mon Oct 10 2016 10:37:53 GMT+0800 (CST)
 comments: 1
 categories:
-tags: [[object Object],[object Object],[object Object]]
+tags:
+  - JavaScript
 permalink: bundle-install-command-not-found
 ---
 

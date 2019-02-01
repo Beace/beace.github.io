@@ -4,7 +4,8 @@ date: 2017-08-24T16:11:35
 updated: Mon Apr 24 2017 16:11:48 GMT+0800 (CST)
 comments: 1
 categories: js
-tags: [[object Object],[object Object]]
+tags:
+  - JavaScript
 permalink: ecmascript6-feature
 ---
 

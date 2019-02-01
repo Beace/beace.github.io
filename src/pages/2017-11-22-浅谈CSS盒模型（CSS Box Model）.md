@@ -4,7 +4,8 @@ date: "2017-11-22T16:04:21"
 updated: 2017-11-22T16:04:31
 comments: 1
 categories: css
-tags: [[object Object],[object Object]]
+tags:
+  - CSS
 permalink: css-box-model
 ---
 

@@ -4,7 +4,7 @@ date: 2016-12-12T20:54:03
 updated: Mon Dec 12 2016 21:07:48 GMT+0800 (CST)
 comments: 1
 categories:
-tags: [[object Object],[object Object],[object Object],[object Object]]
+tags: ['JavaScript', 'Webpack']
 permalink: node-react-1
 ---
 
@@ -56,7 +56,7 @@ permalink: node-react-1
     /node_modules
     /public
     	|- stylesheets
-    	|- javascripts
+    	|- JavaScripts
     	|- images
     /routes
     	|- index.js

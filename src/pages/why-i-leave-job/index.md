@@ -4,7 +4,8 @@ date: 2017-02-19T16:53:28
 updated: Sun Feb 19 2017 16:53:28 GMT+0800 (CST)
 comments: 1
 categories:
-tags: [[object Object]]
+tags:
+  - JavaScript
 permalink: why-i-quit
 ---
 
