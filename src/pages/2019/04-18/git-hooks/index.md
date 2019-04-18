@@ -1,11 +1,9 @@
 ---
-title: 【译文】如何在 React 中渲染模态框
-date: 2019-01-01T23:00:23
+title: 如何通过 githooks 强制规范 git commit message
+date: 2019-04-18T12:00:23
 tags:
   - git
 ---
-
-# 如何通过 githooks 强制规范 git commit message
 
 git commit 不仅能体现你对工作（编码）内容的概括能力，而且能够在书写完代码后做一个完美的总结。我极力推崇**详细**的 git commit message 来描述编码内容。这里强调了“详细”二字。之所以做这个强调，是因为大部分人都不太想去写 git commit message 了。这样会导致一下几个严重的问题。
 
