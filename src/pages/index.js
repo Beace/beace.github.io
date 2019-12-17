@@ -31,7 +31,7 @@ class BlogIndex extends React.Component {
             </div>
           )
         })}
-        <footer style={{ textAlign: "center", fontWeight: 'bold' }}>冀ICP备19023659号-1</footer>
+        <footer style={{ textAlign: "center", fontWeight: 'bold' }}><a href="http://beian.miit.gov.cn/">冀ICP备19023659号-1</a></footer>
       </Layout>
     )
   }
