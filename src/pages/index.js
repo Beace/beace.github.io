@@ -31,6 +31,7 @@ class BlogIndex extends React.Component {
             </div>
           )
         })}
+        <footer style={{ textAlign: "center", fontWeight: 'bold' }}>冀ICP备19023659号-1</footer>
       </Layout>
     )
   }
