@@ -63,6 +63,17 @@ class Nav extends React.Component {
             <i className="iconfont icon-GitHub" />
             GitHub
           </a>
+          <Link
+            to="/friends/"
+            className="top-nav-item"
+            activeStyle={{
+              color: 'skyblue',
+              borderBottom: '1px solid skyblue',
+            }}
+          >
+            <i className="iconfont icon-about" />
+            Friends
+          </Link>
         </div>
       </nav>
     )
